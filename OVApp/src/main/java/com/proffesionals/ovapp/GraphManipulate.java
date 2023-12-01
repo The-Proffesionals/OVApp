@@ -2,14 +2,16 @@ package com.proffesionals.ovapp;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.LinkedHashMap;
 
 public class GraphManipulate { // class for manipulating the graph
 
-    public Map<Edge, LocalTime> getRoute(Point start, Point end, Graph graph, LocalTime starttime){ // returns a list of edges that form the route from start to end
+    public Map<Edge, LocalTime> getRoute(Point start, Point end, Graph graph, LocalTime time, Boolean startOrEndTime){ // returns a list of edges that form the route from start to end
         Map<Edge,LocalTime> returnMap = new LinkedHashMap();
+        Map<Edge,LocalTime> invertedMap = new LinkedHashMap();
         List<Edge> route = new ArrayList<>();
        Integer startIndex = getPointIndex(start, graph);
         Integer endIndex = getPointIndex(end, graph);
@@ -24,15 +26,27 @@ public class GraphManipulate { // class for manipulating the graph
                 route.add(graph.getEdgesUp().get(i)); // add edges to route
             }
         }
-        for (Edge edge : route) {
-            returnMap.put(edge, getTime(starttime, edge)); 
-            starttime = getTime(starttime, edge); // set starttime to the time of arrival at the end point of the edge
+        if(startOrEndTime){ // if start time is given
+            for (Edge edge : route) {
+                returnMap.put(edge, time); 
+                time = addTime(time, edge); // set starttime to the time of arrival at the end point of the edge
+            }
+        } else { // if end time is given
+            time = removeTime(time, route.get(route.size() - 1)); // set starttime to the time of arrival at the end point of the edge
+            for (int i = route.size() - 1; i >= 0; i--) {
+                invertedMap.put(route.get(i), time); 
+                time = removeTime(time, route.get(i)); // set starttime to the time of arrival at the end point of the edge
+            }
+            returnMap = reverseMap(invertedMap); // reverse the map
         }
         return returnMap; // return route
     }
 
-    private LocalTime getTime(LocalTime time, Edge edge){ // returns the time of arrival at the end point of an edge
+    private LocalTime addTime(LocalTime time, Edge edge){ // returns the time of arrival at the end point of an edge
         return time.plusMinutes(edge.getDistance());
+    }
+    private LocalTime removeTime(LocalTime time, Edge edge){ // returns the time of arrival at the start point of an edge
+        return time.minusMinutes(edge.getDistance());
     }
 
     private Integer getPointIndex(Point point, Graph graph){ // returns the index of a point in the graph
@@ -42,5 +56,20 @@ public class GraphManipulate { // class for manipulating the graph
             }
         }
         return null;
+    }
+    private static Map<Edge, LocalTime> reverseMap(Map<Edge, LocalTime> originalMap) {
+        // Extract the map entries into a list
+        ArrayList<Map.Entry<Edge, LocalTime>> entries = new ArrayList<>(originalMap.entrySet());
+        
+        // Reverse the list
+        Collections.reverse(entries);
+        
+        // Create a new LinkedHashMap and populate it with the reversed entries
+        LinkedHashMap<Edge, LocalTime> reversedMap = new LinkedHashMap<>();
+        for (Map.Entry<Edge, LocalTime> entry : entries) {
+            reversedMap.put(entry.getKey(), entry.getValue());
+        }
+        
+        return reversedMap;
     }
 }

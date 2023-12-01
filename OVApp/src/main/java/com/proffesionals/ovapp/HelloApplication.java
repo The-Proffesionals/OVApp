@@ -48,7 +48,7 @@ public class HelloApplication extends Application {
 
         Graph graph = new Graph(edgesUp, edgesDown, points); // create new graph
 
-        Map<Edge, LocalTime> route = graphManipulate.getRoute(graph.getPointByName("Amsterdam Centraal"), graph.getPointByName("Maastricht Centraal"), graph, LocalTime.now()); // get route from Utrecht to Maastricht
+        Map<Edge, LocalTime> route = graphManipulate.getRoute(graph.getPointByName("Amsterdam Centraal"), graph.getPointByName("Maastricht Centraal"), graph, LocalTime.of(17, 50), false); // get route from Utrecht to Maastricht
         for (Map.Entry<Edge, LocalTime> entry : route.entrySet()) {
             String formattedTime = entry.getValue().format(DateTimeFormatter.ofPattern("HH:mm")); // format time
             System.out.format("van: %s / naar: %s om: %s\n", entry.getKey().getPoint1().getName(), entry.getKey().getPoint2().getName(), formattedTime); // print route
