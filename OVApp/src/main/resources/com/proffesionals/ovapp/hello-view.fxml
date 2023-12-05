@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.proffesionals.ovapp.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<VBox alignment="CENTER" minHeight="1080.0" minWidth="1920.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proffesionals.ovapp.HelloController">
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+          <Button onAction="#onTerugButtonClick" text="Terug" />
+          <Button onAction="#onHomeButtonClick" text="Home" />
+          <Button onAction="#onVertrekButtonClick" text="Vertrek" />
+          <Button onAction="#onAankomstButtonClick" text="Aankomst" />
+      </children>
+   </HBox>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <ComboBox prefWidth="150.0" />
+         <ComboBox prefWidth="150.0" />
+      </children></HBox>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+       <children>
+           <ComboBox prefWidth="150.0" />
+           <ComboBox prefWidth="150.0" />
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+       </children>
+
+   </HBox>
+
+
+
+   <HBox prefHeight="100.0" prefWidth="200.0">
+
+      <children>
+          <Button onAction="#onPlanJeReisButtonClick" text="Plan je reis" />
+      </children>
+   </HBox>
 </VBox>

@@ -8,7 +8,30 @@ public class HelloController {
     private Label welcomeText;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Trek een bak als je dit leest");
+    protected void onTerugButtonClick() {
+        System.out.println("TerugButtonClick");
     }
+    @FXML
+    protected void onHomeButtonClick() {
+        System.out.println("HomeButtonClick");
+
+    }
+    @FXML
+    protected void onVertrekButtonClick() {
+        System.out.println("VertrekButtonClick");
+
+    }
+    @FXML
+    protected void onAankomstButtonClick() {
+        System.out.println("AankomstButtonClick");
+    }
+    @FXML
+    protected void onPlanJeReisButtonClick() {
+        System.out.println("Plan je reis");
+    }
+
+
+
+
+
 }
