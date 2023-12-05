@@ -18,7 +18,7 @@ public class HelloController {
     }
     @FXML
     protected void onVertrekButtonClick() {
-        System.out.println("VertrekButtonClick");
+        System.out.println("VertrekButtonClickk");
 
     }
     @FXML
