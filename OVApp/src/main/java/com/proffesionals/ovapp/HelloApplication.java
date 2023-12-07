@@ -15,7 +15,8 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1920, 1080);
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setMaximized(true);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
@@ -26,6 +27,7 @@ public class HelloApplication extends Application {
         launch();
     }
 
+    
     public static void intializeGraph(){ // tet intializeGraph method
         GraphManipulate graphManipulate = new GraphManipulate();
         ArrayList<Point> points = new ArrayList<>();
