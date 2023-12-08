@@ -10,8 +10,8 @@ import java.util.LinkedHashMap;
 public class GraphManipulate { // class for manipulating the graph
 
     public Map<Edge, LocalTime> getRoute(Point start, Point end, Graph graph, LocalTime time, Boolean startOrEndTime){ // returns a list of edges that form the route from start to end
-        Map<Edge,LocalTime> returnMap = new LinkedHashMap();
-        Map<Edge,LocalTime> invertedMap = new LinkedHashMap();
+        Map<Edge,LocalTime> returnMap = new LinkedHashMap<>();
+        Map<Edge,LocalTime> invertedMap = new LinkedHashMap<>();
         List<Edge> route = new ArrayList<>();
        Integer startIndex = getPointIndex(start, graph);
         Integer endIndex = getPointIndex(end, graph);
