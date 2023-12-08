@@ -14,14 +14,15 @@
    </HBox>
    <HBox prefHeight="100.0" prefWidth="200.0">
       <children>
-         <ComboBox  fx:id="DepBox" prefWidth="150.0" />
-         <ComboBox  fx:id="ArrBox" prefWidth="150.0" />
+         <ComboBox  fx:id="DepBox" />
+         <Button onAction="#onSwapButtonClick" text="Swap" />
+         <ComboBox  fx:id="ArrBox" />
       </children></HBox>
    <HBox prefHeight="100.0" prefWidth="200.0">
        <children>
            <ComboBox fx:id="HourBox" prefWidth="150.0" />
            <ComboBox fx:id="MinutesBox" prefWidth="150.0" />
-           <DatePicker/>
+           <DatePicker fx:id="DatePicker"/>
        </children>
 
    </HBox>

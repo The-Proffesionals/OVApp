@@ -6,15 +6,25 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.LinkedHashMap;
+import java.time.LocalDate;
 
 public class GraphManipulate { // class for manipulating the graph
 
+<<<<<<< HEAD
     public Map<Edge, LocalTime> getRoute(Point start, Point end, Graph graph, LocalTime time, Boolean startOrEndTime){ // returns a list of edges that form the route from start to end
         Map<Edge,LocalTime> returnMap = new LinkedHashMap<>();
         Map<Edge,LocalTime> invertedMap = new LinkedHashMap<>();
+=======
+    public Map<Edge, LocalTime> getRoute(String departureString, String arrivalString, Graph graph, LocalTime time, LocalDate Date, Boolean startOrEndTime){ // returns a list of edges that form the route from start to end
+        Map<Edge,LocalTime> returnMap = new LinkedHashMap();
+        Map<Edge,LocalTime> invertedMap = new LinkedHashMap();
+>>>>>>> lucas
         List<Edge> route = new ArrayList<>();
-       Integer startIndex = getPointIndex(start, graph);
-        Integer endIndex = getPointIndex(end, graph);
+        Point departure = getPoint(departureString, graph);
+        Point arrival = getPoint(arrivalString, graph);
+        Integer startIndex = getPointIndex(departure, graph);
+        Integer endIndex = getPointIndex(arrival, graph);
+
         if(startIndex == null || endIndex == null){ // if start or end point is not in the graph
             return null;
         } else if (startIndex > endIndex){ // if start point is higher than end point
@@ -26,6 +36,7 @@ public class GraphManipulate { // class for manipulating the graph
                 route.add(graph.getEdgesUp().get(i)); // add edges to route
             }
         }
+
         if(startOrEndTime){ // if start time is given
             for (Edge edge : route) {
                 returnMap.put(edge, time); 
@@ -71,5 +82,13 @@ public class GraphManipulate { // class for manipulating the graph
         }
         
         return reversedMap;
+    }
+    private Point getPoint(String name, Graph graph){ // returns the point with the given name
+        for (Point point : graph.getPoints()) {
+            if(point.getName().equals(name)){
+                return point;
+            }
+        }
+        return null;
     }
 }
