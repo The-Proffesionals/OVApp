@@ -6,12 +6,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Map;
 
 public class HelloApplication extends Application {
+    public static Graph graph; // create new graph
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
@@ -23,13 +22,12 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        intializeGraph();
+        graph = intializeGraph();
         launch();
     }
 
     
-    public static void intializeGraph(){ // tet intializeGraph method
-        GraphManipulate graphManipulate = new GraphManipulate();
+    public static Graph intializeGraph(){ // tet intializeGraph method
         ArrayList<Point> points = new ArrayList<>();
         ArrayList<Edge> edgesUp = new ArrayList<>();
         ArrayList<Edge> edgesDown = new ArrayList<>();
@@ -48,13 +46,8 @@ public class HelloApplication extends Application {
             edgesDown.add(new Edge(points.get(i+1), points.get(i), 15));
         }
 
-        Graph graph = new Graph(edgesUp, edgesDown, points); // create new graph
+        return new Graph(edgesUp, edgesDown, points); // create new graph
 
-        Map<Edge, LocalTime> route = graphManipulate.getRoute(graph.getPointByName("Amsterdam Centraal"), graph.getPointByName("Maastricht Centraal"), graph, LocalTime.of(17, 50), false); // get route from Utrecht to Maastricht
-        for (Map.Entry<Edge, LocalTime> entry : route.entrySet()) {
-            String formattedTime = entry.getValue().format(DateTimeFormatter.ofPattern("HH:mm")); // format time
-            System.out.format("van: %s / naar: %s om: %s\n", entry.getKey().getPoint1().getName(), entry.getKey().getPoint2().getName(), formattedTime); // print route
-        }
     }
 
 }
