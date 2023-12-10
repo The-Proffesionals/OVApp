@@ -2,6 +2,7 @@ package com.proffesionals.ovapp;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -9,11 +10,13 @@ import javafx.scene.control.DatePicker;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class HelloController implements Initializable {
+
+public class RouteInformationController implements Initializable {
     @FXML
     private ComboBox<String> DepBox;
     @FXML
@@ -24,10 +27,12 @@ public class HelloController implements Initializable {
     private ComboBox<Integer> HourBox;
     @FXML
     private DatePicker DatePicker;
+
+    private boolean depOrArrTime = true;
+
     private ObservableList<String> allStations = FXCollections.observableArrayList("Amsterdam Centraal", "Utrecht Centraal", "Rotterdam Centraal", "Den Haag Centraal", "Eindhoven Centraal", "Maastricht Centraal");
     private LocalTime currentTime = LocalTime.now();
-    private boolean depOrArrTime = true;
-    private GraphManipulate GraphManipulater = new GraphManipulate();
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
@@ -43,6 +48,7 @@ public class HelloController implements Initializable {
             MinutesBox.getItems().add(minutes);
         }
         MinutesBox.setValue(currentTime.getMinute());
+        DatePicker.setValue(LocalDate.now());
     }
 
     @FXML
@@ -63,19 +69,9 @@ public class HelloController implements Initializable {
         depOrArrTime = false;
     }
     @FXML
-    protected void onSearchButtonClick() {
-        String Departure = DepBox.getValue();
-        String Arrival = ArrBox.getValue();
-        int Hour = HourBox.getValue();
-        int Minutes = MinutesBox.getValue();
-        LocalDate localDate = DatePicker.getValue();
-        LocalTime time = LocalTime.of(Hour, Minutes);
-        
-        Map<Edge, LocalTime> answer = GraphManipulater.getRoute(Departure, Arrival, HelloApplication.graph, time, localDate, depOrArrTime);
-        System.out.println(answer);
-        for (Map.Entry<Edge, LocalTime> entry : answer.entrySet()) {
-            System.out.println(entry.getKey().getPoint1().getName() + " " + entry.getKey().getPoint2().getName() + " time:" + entry.getValue() + " distance:" + entry.getKey().getDistance());
-        }
+    protected void onSearchButtonClick(ActionEvent actionEvent) throws IOException {
+        SceneController sceneController = new SceneController(actionEvent);
+        sceneController.setScene("routes");
     }
 
     @FXML
@@ -84,5 +80,10 @@ public class HelloController implements Initializable {
         String Arrival = ArrBox.getValue();
         DepBox.setValue(Arrival);
         ArrBox.setValue(Departure);
+    }
+
+    public Map<Edge, LocalTime> getRoute(){
+        GraphManipulate graphManipulate = new GraphManipulate();
+        return graphManipulate.getRoute(DepBox.getValue(), ArrBox.getValue(), HelloApplication.graph, LocalTime.of(HourBox.getValue(), MinutesBox.getValue()), DatePicker.getValue(), depOrArrTime);
     }
 }

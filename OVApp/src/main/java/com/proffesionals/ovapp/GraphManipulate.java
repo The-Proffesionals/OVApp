@@ -11,8 +11,8 @@ import java.time.LocalDate;
 public class GraphManipulate { // class for manipulating the graph
 
     public Map<Edge, LocalTime> getRoute(String departureString, String arrivalString, Graph graph, LocalTime time, LocalDate Date, Boolean startOrEndTime){ // returns a list of edges that form the route from start to end
-        Map<Edge,LocalTime> returnMap = new LinkedHashMap();
-        Map<Edge,LocalTime> invertedMap = new LinkedHashMap();
+        Map<Edge,LocalTime> returnMap = new LinkedHashMap<>();
+        Map<Edge,LocalTime> invertedMap = new LinkedHashMap<>();
         List<Edge> route = new ArrayList<>();
         Point departure = getPoint(departureString, graph);
         Point arrival = getPoint(arrivalString, graph);

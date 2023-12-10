@@ -3,7 +3,7 @@ package com.proffesionals.ovapp;
 public class Train extends Edge{
     private int distance;
 
-    Train(Point point1, Point point2, int distance, String trainNumber, String trainType){
+    Train(Point point1, Point point2, int distance){
         super(point1, point2, distance);
     }
 

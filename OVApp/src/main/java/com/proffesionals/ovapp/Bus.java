@@ -3,7 +3,7 @@ package com.proffesionals.ovapp;
 public class Bus extends Edge {
     private int distance;
 
-    Bus(Point point1, Point point2, int distance, String busNumber, String busType){
+    Bus(Point point1, Point point2, int distance){
         super(point1, point2, distance);
     }
 
