@@ -12,5 +12,5 @@
     </padding>
 
     <Label fx:id="route"/>
-    
+    <Button onAction="#onBackButtonClick" text="Terug"/>
 </VBox>

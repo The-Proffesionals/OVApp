@@ -40,6 +40,8 @@ public class RouteInformationController implements Initializable {
         ArrBox.setValue("Arrival");
         DepBox.setItems(allStations);
         DepBox.setValue("Departure");
+        
+
         for (int hour = 0; hour < 24 ; hour++){
             HourBox.getItems().add(hour);
         }
@@ -70,8 +72,7 @@ public class RouteInformationController implements Initializable {
     }
     @FXML
     protected void onSearchButtonClick(ActionEvent actionEvent) throws IOException {
-        System.out.println("Search button clicked");
-        if (DepBox.getValue() != null && ArrBox.getValue() != null && HourBox.getValue() != null && MinutesBox.getValue() != null && DatePicker.getValue() != null) {
+        if (DepBox.getValue() != null && ArrBox.getValue() != null && DepBox.getValue() != "Departure" && ArrBox.getValue() != "Arrival" && HourBox.getValue() != null && MinutesBox.getValue() != null && DatePicker.getValue() != null) {
             RouteInformation.arrivalDestination = ArrBox.getValue();
             RouteInformation.departureDestination = DepBox.getValue();
             RouteInformation.hours = HourBox.getValue();
@@ -80,7 +81,7 @@ public class RouteInformationController implements Initializable {
             RouteInformation.departureorarrival = depOrArrTime;
 
             SceneController sceneController = new SceneController(actionEvent);
-            sceneController.setScene("routes");
+            sceneController.setScene("Routes");
         }
 
     }
@@ -95,6 +96,6 @@ public class RouteInformationController implements Initializable {
 
     public Map<Edge, LocalTime> getRoute(){
         GraphManipulate graphManipulate = new GraphManipulate();
-        return graphManipulate.getRoute(DepBox.getValue(), ArrBox.getValue(), HelloApplication.graph, LocalTime.of(HourBox.getValue(), MinutesBox.getValue()), DatePicker.getValue(), depOrArrTime);
+        return graphManipulate.getRoute(DepBox.getValue(), ArrBox.getValue(), OvApp.graph, LocalTime.of(HourBox.getValue(), MinutesBox.getValue()), DatePicker.getValue(), depOrArrTime);
     }
 }
