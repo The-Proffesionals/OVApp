@@ -70,8 +70,19 @@ public class RouteInformationController implements Initializable {
     }
     @FXML
     protected void onSearchButtonClick(ActionEvent actionEvent) throws IOException {
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("routes");
+        System.out.println("Search button clicked");
+        if (DepBox.getValue() != null && ArrBox.getValue() != null && HourBox.getValue() != null && MinutesBox.getValue() != null && DatePicker.getValue() != null) {
+            RouteInformation.arrivalDestination = ArrBox.getValue();
+            RouteInformation.departureDestination = DepBox.getValue();
+            RouteInformation.hours = HourBox.getValue();
+            RouteInformation.minutes = MinutesBox.getValue();
+            RouteInformation.date = DatePicker.getValue();
+            RouteInformation.departureorarrival = depOrArrTime;
+
+            SceneController sceneController = new SceneController(actionEvent);
+            sceneController.setScene("routes");
+        }
+
     }
 
     @FXML

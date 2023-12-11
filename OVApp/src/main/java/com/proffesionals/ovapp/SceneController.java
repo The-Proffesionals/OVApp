@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.HashMap;
+
 public class SceneController {
 
     HashMap<String, String> sceneTitles = new HashMap<String, String>();
@@ -30,7 +31,7 @@ public class SceneController {
     }
 
     public void setScene(String sceneName) throws IOException {
-        main.setRoot(FXMLLoader.load(getClass().getResource( sceneName + ".fxml" )));
+        main.setRoot(FXMLLoader.load(getClass().getResource(sceneName + ".fxml")));
         stage.show();
     }
 }
