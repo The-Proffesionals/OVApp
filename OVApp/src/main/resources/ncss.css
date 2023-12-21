@@ -1,0 +1,169 @@
+
+/*
+.button
+{
+   -fx-background-color : #239c9c;
+   -fx-background-radius :  30 0 0 30;
+}
+.button:hover
+{
+   -fx-background-color : #07f7f7;
+   -fx-background-radius : 30 0 0 30;
+}
+.button:pressed
+{
+   -fx-background-color : #239c9c;
+   -fx-background-radius :  30 0 0 30;
+}
+*/
+
+@font-face {
+    font-family: 'Inter';
+    src: url('font/static/Inter-Bold.ttf'); /* Relatief pad vanaf de locatie van de CSS */
+}
+.combo-box
+{
+    -fx-flex-shrink: 0;
+    -fx-background-radius: 75px;
+    -fx-background-color: #FF0;
+}
+
+
+.combo-box-base .text
+{
+    -fx-fill: rgba(10, 23, 88, 1);
+    -fx-font-family: "Inter";
+    -fx-font-weight: bold;
+    -fx-font-size: 85;
+}
+
+
+.button
+{
+   /* -fx-min-width: 751px;
+    -fx-max-width: 751px;
+    -fx-min-height: 210px;
+    -fx-max-height: 210px; */
+
+    -fx-flex-shrink: 0;
+    -fx-background-radius: 75px;
+    -fx-background-color: #FF0;
+
+    -fx-font-family: "Inter"; /* Gebruik de eerder gedefinieerde naam voor het lettertype */
+    -fx-text-fill: "#0a1758";
+    -fx-font-weight: bold;
+    -fx-font-size: 85;
+}
+
+.viekantButton
+{
+    -fx-min-width: 292px;
+    -fx-max-width: 292px;
+    -fx-min-height: 245px;
+    -fx-max-height: 245px;
+    -fx-flex-shrink: 0;
+
+    -fx-font-family: "Inter"; /* Gebruik de eerder gedefinieerde naam voor het lettertype */
+    -fx-text-fill: "#0a1758";
+    -fx-font-weight: bold;
+    -fx-font-size: 115;
+}
+
+.label-style
+{
+    -fx-width: 151px;
+    -fx-height: 199px;
+    -fx-alignment: center;
+    -fx-text-fill: #0A1758; /* Tekstkleur, vervang de hex-code naar wens */
+    -fx-font-family: "Inter";
+    -fx-font-size: 150px;
+    -fx-font-weight: normal; /* Of -fx-font-weight: bold; voor vetgedrukt */
+    -fx-text-alignment: center; /* Voor tekstuitlijning */
+    -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
+}
+
+.vertrek-button
+{
+/* Display style */
+    -fx-display: flex; /* Hiermee wordt flexbox-layout gebruikt voor positionering en uitlijning van elementen. */
+
+    /* Afmetingen */
+    -fx-width: 386px; /* Breedte van het label */
+    -fx-height: 102px; /* Hoogte van het label */
+    -fx-background-color: transparent;
+
+    /* Flexbox eigenschappen */
+    -fx-flex-direction: column; /* Bepaalt de richting van de flex-items in de container (kolomrichting) */
+    -fx-justify-content: center; /* Hiermee wordt de inhoud van het label verticaal gecentreerd */
+    -fx-flex-shrink: 0; /* Voorkomt dat het label krimpt wanneer dat niet nodig is */
+
+    /* Tekststijlen */
+    -fx-alignment: center; /* Uitlijning van de tekst binnen het label */
+    -fx-font-family: "Inter"; /* Lettertypefamilie */
+    -fx-font-size: 96px; /* Tekstgrootte */
+    -fx-font-weight: bold; /* Dikte van het lettertype */
+   /* -fx-line-spacing: normal; /* Afstand tussen regels tekst */
+}
+
+/*
+.button-with-image
+{
+-fx-background-size: cover; * Om de afbeelding te schalen zodat deze de hele button bedekt *
+-fx-background-position: center; * Om de positie van de afbeelding in de button aan te passen *
+}
+*/
+.back-button
+{
+    -fx-background-image: url('image/pijlterug.png');
+    -fx-background-size: 60px auto;
+    -fx-background-color: #FF0;
+    -fx-background-position: 50px center;
+    -fx-background-repeat: no-repeat;
+}
+
+.home-button
+{
+    -fx-background-image: url('image/house.png');
+    -fx-background-size: 110px auto;
+    -fx-background-color: #FF0;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+
+.date-picker
+{
+-fx-background-size: 0 0; /* Set the size of the transparent image to zero */
+    -fx-padding: 0; /* Remove padding */
+    -fx-min-width: 0; /* Set minimum width to zero */
+}
+
+
+.date-picker .arrow-button
+ {
+     -fx-background-image: url('image/calendar.png');
+     -fx-shape: null;
+     -fx-flex-shrink: 0;
+     -fx-background-radius: 75px;
+     -fx-background-color: #FF0;
+
+     -fx-background-position: center;
+     -fx-background-repeat: no-repeat;
+
+
+}
+
+.date-picker .arrow-button .arrow
+{
+    -fx-shape: null;
+    -fx-background-color: transparent;
+}
+
+.date-picker .text-field
+{
+    -fx-opacity: 0;
+    -fx-pref-width: 0px;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+

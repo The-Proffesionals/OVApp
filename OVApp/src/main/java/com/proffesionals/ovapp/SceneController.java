@@ -17,7 +17,7 @@ public class SceneController {
 
     SceneController(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(OvApp.class.getResource("RouteInformation.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = new Scene(fxmlLoader.load(), 1920, 1080);
         primaryStage.setMaximized(true);
         primaryStage.setTitle("Route planner");
         primaryStage.setScene(scene);
