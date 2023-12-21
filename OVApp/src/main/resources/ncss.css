@@ -133,11 +133,12 @@
 
 .date-picker
 {
--fx-background-size: 0 0; /* Set the size of the transparent image to zero */
-    -fx-padding: 0; /* Remove padding */
-    -fx-min-width: 0; /* Set minimum width to zero */
+    -fx-background-color: transparent;
 }
-
+.date-picker-popup .month-year-pane .button .arrow-button
+{
+-fx-background-color: "#0a1758";
+}
 
 .date-picker .arrow-button
  {
