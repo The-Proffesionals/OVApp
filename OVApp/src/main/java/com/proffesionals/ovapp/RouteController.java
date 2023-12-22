@@ -8,7 +8,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-
 public class RouteController {
     @FXML
     private Label route;
@@ -17,7 +16,9 @@ public class RouteController {
     protected void initialize() {
         GraphManipulate graphManipulate = new GraphManipulate();
         Map<Edge, LocalTime> routeInformation = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph ,LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, RouteInformation.departureorarrival);
-        route.setText(RouteInformation.departureDestination + " -> " + RouteInformation.arrivalDestination + "\n");
+        for (Map.Entry<Edge, LocalTime> entry : routeInformation.entrySet()) {
+            route.setText(route.getText() + entry.getKey().getPoint1().getName() + " -> " + entry.getKey().getPoint2().getName() + " " + entry.getValue() + "\n");
+        }
     }
 
     @FXML
