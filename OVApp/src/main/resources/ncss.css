@@ -35,8 +35,20 @@
     -fx-font-family: "Inter";
     -fx-font-weight: bold;
     -fx-font-size: 85;
+    -fx-padding: 0 20 0 20;
 }
 
+.combo-box-remove-arrow .arrow
+{
+    -fx-background-color: #CCCCCC; /* Kleur van de pijl */
+    -fx-background-radius: 75px;
+
+     /*-fx-background-image: url('path/to/custom-arrow.png');
+     -fx-background-position: center;
+     -fx-background-repeat: no-repeat; */
+     -fx-background-size: 10px 10px; /* Pas de afmetingen aan */
+     -fx-padding: 0; /* Optioneel om de standaard pijl te verbergen */
+}
 
 .button
 {
@@ -105,6 +117,30 @@
    /* -fx-line-spacing: normal; /* Afstand tussen regels tekst */
 }
 
+.selected
+{
+    /* Display style */
+    -fx-display: flex; /* Hiermee wordt flexbox-layout gebruikt voor positionering en uitlijning van elementen. */
+
+    /* Afmetingen */
+    -fx-width: 386px; /* Breedte van het label */
+    -fx-height: 102px; /* Hoogte van het label */
+    -fx-background-color: transparent;
+
+    /* Flexbox eigenschappen */
+    -fx-flex-direction: column; /* Bepaalt de richting van de flex-items in de container (kolomrichting) */
+    -fx-justify-content: center; /* Hiermee wordt de inhoud van het label verticaal gecentreerd */
+    -fx-flex-shrink: 0; /* Voorkomt dat het label krimpt wanneer dat niet nodig is */
+
+    /* Tekststijlen */
+    -fx-alignment: center; /* Uitlijning van de tekst binnen het label */
+    -fx-font-family: "Inter"; /* Lettertypefamilie */
+    -fx-font-size: 96px; /* Tekstgrootte */
+    -fx-font-weight: bold; /* Dikte van het lettertype */
+    -fx-text-fill: grey;
+    /* -fx-line-spacing: normal; /* Afstand tussen regels tekst */
+}
+
 /*
 .button-with-image
 {
@@ -134,10 +170,34 @@
 .date-picker
 {
     -fx-background-color: transparent;
+
 }
+
 .date-picker-popup .month-year-pane .button .arrow-button
 {
 -fx-background-color: "#0a1758";
+}
+
+.date-picker-popup .calendar-grid
+{
+-fx-pref-width: 700;
+-fx-pref-height: 700;
+}
+/* Stel de grootte van de kalenderpop-up in */
+.date-picker-popup .popup-content {
+    -fx-pref-width: 700px; /* Pas de breedte aan */
+    -fx-pref-height: 700px; /* Pas de hoogte aan */
+}
+/* Pas de tekstgrootte aan binnen de DatePicker */
+.date-picker .text-field {
+    -fx-font-size: 3px; /* Pas de tekstgrootte aan */
+}
+
+.date-picker-popup  .week-number-cell {
+    -fx-pref-width: 0;
+    -fx-min-width: 0;
+    -fx-max-width: 0;
+    visibility: hidden;
 }
 
 .date-picker .arrow-button
@@ -150,8 +210,6 @@
 
      -fx-background-position: center;
      -fx-background-repeat: no-repeat;
-
-
 }
 
 .date-picker .arrow-button .arrow
@@ -168,3 +226,13 @@
     -fx-background-insets: 0;
 }
 
+.date-picker .day-cell:hover
+{
+    -fx-background-color: "#FFFF00";
+    -fx-text-fill: black;
+}
+
+.date-picker .day-cell:selected
+{
+    -fx-background-color: "#FFFF00";
+}

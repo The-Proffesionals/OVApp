@@ -16,7 +16,7 @@
 }
 .combo-box .listview
 {
-    -f-text-fill: red;
+    -fx-text-fill: red;
 }
 
 .combo-box .list-view {
@@ -36,8 +36,8 @@
 }
 .combo-box .arrow-button {
     -fx-background-image: url('/image/arrowdown.png')
-
 }
+
 
 
 .combo-box .cell {

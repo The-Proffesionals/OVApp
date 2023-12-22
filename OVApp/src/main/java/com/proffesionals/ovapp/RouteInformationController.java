@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Button;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -27,6 +28,10 @@ public class RouteInformationController implements Initializable {
     private ComboBox<Integer> HourBox;
     @FXML
     private DatePicker DatePicker;
+    @FXML
+    private Button Vertrek;
+    @FXML
+    private Button Aankomst;
 
     private boolean depOrArrTime = true;
 
@@ -65,10 +70,14 @@ public class RouteInformationController implements Initializable {
     @FXML
     protected void onDepartureButtonClick() {
         depOrArrTime = true;
+        Vertrek.setStyle("-fx-text-fill: #0A1758;");
+        Aankomst.setStyle("-fx-text-fill: #gray;");
     }
     @FXML
     protected void onArrivalButtonClick() {
         depOrArrTime = false;
+        Vertrek.setStyle("-fx-text-fill: #gray;");
+        Aankomst.setStyle("-fx-text-fill: #0A1758;");
     }
     @FXML
     protected void onSearchButtonClick(ActionEvent actionEvent) throws IOException {
