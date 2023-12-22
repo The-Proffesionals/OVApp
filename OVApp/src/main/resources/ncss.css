@@ -170,11 +170,34 @@
 .date-picker
 {
     -fx-background-color: transparent;
+
 }
 
 .date-picker-popup .month-year-pane .button .arrow-button
 {
 -fx-background-color: "#0a1758";
+}
+
+.date-picker-popup .calendar-grid
+{
+-fx-pref-width: 700;
+-fx-pref-height: 700;
+}
+/* Stel de grootte van de kalenderpop-up in */
+.date-picker-popup .popup-content {
+    -fx-pref-width: 700px; /* Pas de breedte aan */
+    -fx-pref-height: 700px; /* Pas de hoogte aan */
+}
+/* Pas de tekstgrootte aan binnen de DatePicker */
+.date-picker .text-field {
+    -fx-font-size: 3px; /* Pas de tekstgrootte aan */
+}
+
+.date-picker-popup  .week-number-cell {
+    -fx-pref-width: 0;
+    -fx-min-width: 0;
+    -fx-max-width: 0;
+    visibility: hidden;
 }
 
 .date-picker .arrow-button
@@ -187,8 +210,6 @@
 
      -fx-background-position: center;
      -fx-background-repeat: no-repeat;
-
-
 }
 
 .date-picker .arrow-button .arrow
