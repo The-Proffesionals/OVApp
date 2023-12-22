@@ -117,6 +117,30 @@
    /* -fx-line-spacing: normal; /* Afstand tussen regels tekst */
 }
 
+.selected
+{
+    /* Display style */
+    -fx-display: flex; /* Hiermee wordt flexbox-layout gebruikt voor positionering en uitlijning van elementen. */
+
+    /* Afmetingen */
+    -fx-width: 386px; /* Breedte van het label */
+    -fx-height: 102px; /* Hoogte van het label */
+    -fx-background-color: transparent;
+
+    /* Flexbox eigenschappen */
+    -fx-flex-direction: column; /* Bepaalt de richting van de flex-items in de container (kolomrichting) */
+    -fx-justify-content: center; /* Hiermee wordt de inhoud van het label verticaal gecentreerd */
+    -fx-flex-shrink: 0; /* Voorkomt dat het label krimpt wanneer dat niet nodig is */
+
+    /* Tekststijlen */
+    -fx-alignment: center; /* Uitlijning van de tekst binnen het label */
+    -fx-font-family: "Inter"; /* Lettertypefamilie */
+    -fx-font-size: 96px; /* Tekstgrootte */
+    -fx-font-weight: bold; /* Dikte van het lettertype */
+    -fx-text-fill: grey;
+    /* -fx-line-spacing: normal; /* Afstand tussen regels tekst */
+}
+
 /*
 .button-with-image
 {

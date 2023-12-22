@@ -21,7 +21,14 @@ public class SceneController {
         primaryStage.setMaximized(true);
         primaryStage.setTitle("Route planner");
         primaryStage.setScene(scene);
+
+        primaryStage.setResizable(false);
+        primaryStage.setFullScreen(true);
+
+
         primaryStage.show();
+
+
     }
 
     public SceneController(ActionEvent actionEvent) throws IOException {
