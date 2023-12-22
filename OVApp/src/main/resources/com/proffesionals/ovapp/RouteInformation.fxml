@@ -29,8 +29,8 @@
                <String fx:value="list-cell" />
                <String fx:value="combo-box" />
             </styleClass></ComboBox>
-           <ComboBox fx:id="MinutesBox" layoutX="1228.0" layoutY="643.0" prefWidth="150.0" promptText="1" styleClass="button" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="286.0" AnchorPane.leftAnchor="378.0" AnchorPane.rightAnchor="1250.0" AnchorPane.topAnchor="549.0" />
-           <ComboBox fx:id="HourBox" layoutX="1143.0" layoutY="40.0" prefWidth="150.0" promptText="2" styleClass="button" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="286.0" AnchorPane.leftAnchor="823.0" AnchorPane.rightAnchor="811.0" AnchorPane.topAnchor="549.0" />
+           <ComboBox fx:id="MinutesBox" layoutX="822.0" layoutY="545.0" prefWidth="150.0" styleClass="combo-box-remove-arrow" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="290.0" AnchorPane.leftAnchor="822.0" AnchorPane.rightAnchor="806.0" AnchorPane.topAnchor="545.0" />
+           <ComboBox fx:id="HourBox" layoutX="379.0" layoutY="545.0" prefWidth="150.0" styleClass="combo-box-remove-arrow" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="290.0" AnchorPane.leftAnchor="379.0" AnchorPane.rightAnchor="1255.0" AnchorPane.topAnchor="545.0" />
           <Button onAction="#onSearchButtonClick" stylesheets="@../../../ncss.css" text="Plan je reis" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="856.0" />
           <Button layoutX="767.0" layoutY="64.0" onAction="#onDepartureButtonClick" styleClass="vertrek-button" stylesheets="@../../../ncss.css" text="Vertrek" />
           <Button layoutX="1273.0" layoutY="64.0" onAction="#onArrivalButtonClick" styleClass="vertrek-button" stylesheets="@../../../ncss.css" text="Aankomst" />
