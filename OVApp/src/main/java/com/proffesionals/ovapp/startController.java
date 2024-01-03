@@ -1,18 +1,21 @@
 package com.proffesionals.ovapp;
 
 import javafx.fxml.FXML;
-
+import javafx.event.ActionEvent;
+import java.io.IOException;
 
 public class startController {
-
     @FXML
-    protected void onRouteSelect(){
-        System.out.println("Route select");
+    protected void onRouteSelect(ActionEvent actionEvent) throws IOException {
+        SceneController sceneController = new SceneController(actionEvent);
+        sceneController.setScene("routeInformation");
+
     }
 
     @FXML
-    protected void onFavorite(){
-        System.out.println("Favorite");
+    protected void onFavorite(ActionEvent actionEvent) throws IOException {
+        SceneController sceneController = new SceneController(actionEvent);
+        sceneController.setScene("favorite");
     }
 
     @FXML

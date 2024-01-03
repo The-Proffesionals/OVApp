@@ -42,9 +42,16 @@ public class RouteInformationController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources){
         ArrBox.setItems(allStations);
-        ArrBox.setValue("Arrival");
         DepBox.setItems(allStations);
-        DepBox.setValue("Departure");
+
+        if (RouteInformation.departureDestination != null && RouteInformation.arrivalDestination != null){
+            ArrBox.setValue(RouteInformation.arrivalDestination);
+            DepBox.setValue(RouteInformation.departureDestination);
+        }
+        else {
+            ArrBox.setValue("Arrival");
+            DepBox.setValue("Departure");
+        }
         
         for (int hour = 0; hour < 24 ; hour++){
             HourBox.getItems().add(hour);
