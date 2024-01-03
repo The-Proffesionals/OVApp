@@ -46,7 +46,6 @@ public class RouteInformationController implements Initializable {
         DepBox.setItems(allStations);
         DepBox.setValue("Departure");
         
-
         for (int hour = 0; hour < 24 ; hour++){
             HourBox.getItems().add(hour);
         }
@@ -56,6 +55,8 @@ public class RouteInformationController implements Initializable {
         }
         MinutesBox.setValue(currentTime.getMinute());
         DatePicker.setValue(LocalDate.now());
+
+        Vertrek.setStyle("-fx-text-fill: #0A1758;");
     }
 
     @FXML
