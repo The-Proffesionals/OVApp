@@ -60,8 +60,10 @@ public class RouteInformationController implements Initializable {
     }
 
     @FXML
-    protected void onBackButtonClick() {
+    protected void onBackButtonClick(ActionEvent actionEvent) throws IOException {
         // add your code here for the onBackButtonClick event
+        SceneController sceneController = new SceneController(actionEvent);
+        sceneController.setScene("start");
     }
 
     @FXML
