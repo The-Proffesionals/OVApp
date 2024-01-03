@@ -3,8 +3,12 @@ package com.proffesionals.ovapp;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import java.io.IOException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-public class startController {
+import static com.proffesionals.ovapp.RouteInformationController.journeyHistoryListView;
+
+public class StartController {
     @FXML
     protected void onRouteSelect(ActionEvent actionEvent) throws IOException {
         SceneController sceneController = new SceneController(actionEvent);
@@ -20,8 +24,8 @@ public class startController {
 
     @FXML
     protected void onTravelHistory(){
-        System.out.println("Travel history");
-        
+        ObservableList<String> displayTexts = FXCollections.observableArrayList(Journey.getJourneyHistoryDisplayTexts());
+        journeyHistoryListView.setItems(displayTexts);
     }
 
     @FXML
@@ -29,6 +33,4 @@ public class startController {
         System.out.println("Change languege");
 
     }
-
-
 }
