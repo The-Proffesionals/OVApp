@@ -5,6 +5,12 @@
 }
 
 
+.root {
+    -fx-background-color: #FF0; /* Verander de achtergrondkleur naar lichtblauw */
+}
+
+
+
 .button:hover
 {
   -fx-background-color : #07f7f7;
@@ -61,20 +67,42 @@
     -fx-background-color: #FF0;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-}
-.label-style
-{
-    -fx-width: 151px;
-    -fx-height: 199px;
-    -fx-alignment: center;
-    -fx-text-fill: #0A1758; /* Tekstkleur, vervang de hex-code naar wens */
-    -fx-font-family: "Inter";
-    -fx-font-size: 150px;
-    -fx-font-weight: normal; /* Of -fx-font-weight: bold; voor vetgedrukt */
-    -fx-text-alignment: center; /* Voor tekstuitlijning */
-    -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
+
 }
 
+.vbox {
+    -fx-background-color: white; /* Achtergrondkleur van de VBox */
+   -fx-background-radius: 75;
+
+}
+
+.back-button
+{
+    -fx-background-image: url('image/pijlterug.png');
+    -fx-background-size: 60px auto;
+    -fx-background-color: transparent;
+    -fx-background-position: 50px center;
+    -fx-background-repeat: no-repeat;
+}
+
+.home-button
+{
+    -fx-background-image: url('image/house.png');
+    -fx-background-size: 110px auto;
+    -fx-background-color: transparent;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+
+/*
+.rectangle
+{
+    -fx-fill: red; /* Vulkleur van de rechthoek *
+    -fx-stroke: black; /* Lijnkleur van de rechthoek *
+    -fx-stroke-width: 2; /* Lijndikte van de rechthoek *
+}
+*/
 
 
 
