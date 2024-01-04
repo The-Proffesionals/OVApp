@@ -8,14 +8,14 @@ public class StartController {
     @FXML
     protected void onRouteSelect(ActionEvent actionEvent) throws IOException {
         SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("routeInformation");
+        sceneController.setScene("RouteInformation");
 
     }
 
     @FXML
     protected void onFavorite(ActionEvent actionEvent) throws IOException {
         SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("favorite");
+        sceneController.setScene("Favorite");
     }
 
     @FXML

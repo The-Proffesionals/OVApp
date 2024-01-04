@@ -14,16 +14,20 @@ public class FavoriteController {
 
     @FXML
     protected void initialize() {
-        for (List<String> favorite : RouteInformation.favorite) {
-            Button button = new Button(favorite.get(0) + " " + favorite.get(1));
-            button.setOnAction(actionEvent -> {
-                try {
-                    goToRouteInformation(actionEvent, favorite);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
-            Favorite.getChildren().add(button);
+        if (RouteInformation.favorite.isEmpty()) {
+            Favorite.getChildren().add(new Button("No favorites"));
+        } else {
+            for (List<String> favorite : RouteInformation.favorite) {
+                Button button = new Button(favorite.get(0) + " " + favorite.get(1));
+                button.setOnAction(actionEvent -> {
+                    try {
+                        goToRouteInformation(actionEvent, favorite);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+                Favorite.getChildren().add(button);
+            }
         }
     }
 

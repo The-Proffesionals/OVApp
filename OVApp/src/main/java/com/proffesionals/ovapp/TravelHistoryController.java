@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import java.io.IOException;
+import javafx.scene.control.Label;
 
 public class TravelHistoryController {
     @FXML
@@ -13,16 +14,20 @@ public class TravelHistoryController {
 
     @FXML
     protected void initialize() {
-        for (Journey journey : RouteInformation.journeyhistory) {
-            Button button = new Button(journey.getDeparture() + " " + journey.getArrival() + "om: " + journey.getDateTime());
-            button.setOnAction(actionEvent -> {
-                try {
-                    goToRouteInformation(actionEvent, journey);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
-            History.getChildren().add(button);
+        if (RouteInformation.journeyhistory.isEmpty()) {
+            History.getChildren().add(new Label("No history"));
+        } else{ 
+            for (Journey journey : RouteInformation.journeyhistory) {
+                Button button = new Button(journey.getDeparture() + " -> " + journey.getArrival() + " " + journey.getDateTime().toString());
+                button.setOnAction(actionEvent -> {
+                    try {
+                        goToRouteInformation(actionEvent, journey);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+                History.getChildren().add(button);
+            }
         }
     }
 

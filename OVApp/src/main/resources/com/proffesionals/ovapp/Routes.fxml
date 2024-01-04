@@ -13,5 +13,8 @@
     </padding>
 
     <Label fx:id="route"/>
+    <Button fx:id="FavoriteButton" onAction="#onAddToFavorite" text="Add to favorite"/>
     <Button onAction="#onBackButtonClick" text="Terug"/>
+    <Button onAction="#onHomeButtonClick" text="home"/>
+
 </VBox>
