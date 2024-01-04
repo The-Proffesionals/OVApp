@@ -4,6 +4,8 @@ package com.proffesionals.ovapp;
 import javafx.scene.layout.VBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+
 import java.util.List;
 import javafx.event.ActionEvent;
 import java.io.IOException;
@@ -15,7 +17,7 @@ public class FavoriteController {
     @FXML
     protected void initialize() {
         if (RouteInformation.favorite.isEmpty()) {
-            Favorite.getChildren().add(new Button("No favorites"));
+            Favorite.getChildren().add(new Label("No favorites"));
         } else {
             for (List<String> favorite : RouteInformation.favorite) {
                 Button button = new Button(favorite.get(0) + " " + favorite.get(1));
