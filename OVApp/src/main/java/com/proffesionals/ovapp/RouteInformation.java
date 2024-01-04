@@ -12,4 +12,5 @@ public class RouteInformation {
     public static boolean departureorarrival;
     public static LocalDate date;
     public static List<List<String>> favorite = new ArrayList<>();
+    public static List<Journey> journeyhistory = new ArrayList<>();
 }

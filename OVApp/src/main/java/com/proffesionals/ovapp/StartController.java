@@ -3,10 +3,6 @@ package com.proffesionals.ovapp;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import java.io.IOException;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
-import static com.proffesionals.ovapp.RouteInformationController.journeyHistoryListView;
 
 public class StartController {
     @FXML
@@ -23,9 +19,9 @@ public class StartController {
     }
 
     @FXML
-    protected void onTravelHistory(){
-        ObservableList<String> displayTexts = FXCollections.observableArrayList(Journey.getJourneyHistoryDisplayTexts());
-        journeyHistoryListView.setItems(displayTexts);
+    protected void onTravelHistory(ActionEvent actionEvent) throws IOException {
+        SceneController sceneController = new SceneController(actionEvent);
+        sceneController.setScene("TravelHistory");
     }
 
     @FXML

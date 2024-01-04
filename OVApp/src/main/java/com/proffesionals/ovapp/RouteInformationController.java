@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -114,29 +113,13 @@ public class RouteInformationController implements Initializable {
             RouteInformation.minutes = MinutesBox.getValue();
             RouteInformation.date = DatePicker.getValue();
             RouteInformation.departureorarrival = depOrArrTime;
-
-            //ADD JOURNEY INFO TO TRAVEL HISTORY
-      /*      Journey newJourney = new Journey(DepBox.getValue(), ArrBox.getValue(), LocalDateTime.of(RouteInformation.date, LocalTime.of(RouteInformation.hours, RouteInformation.minutes)));
-            Journey.getJourneyHistory().add(newJourney);
-            UpdateJourneyHistory();*/
+            RouteInformation.journeyhistory.add(new Journey(DepBox.getValue(), ArrBox.getValue(), LocalDateTime.of(DatePicker.getValue(), LocalTime.of(HourBox.getValue(), MinutesBox.getValue()))));
 
             SceneController sceneController = new SceneController(actionEvent);
             sceneController.setScene("Routes");
         }
 
     }
-
-    //UPDATE JOURNEY HISTORY IN GUI
-    @FXML
-    public void UpdateJourneyHistory() {
-
-        List<String> displayTexts = Journey.getJourneyHistoryDisplayTexts();
-        if (journeyHistoryListView != null) {
-            journeyHistoryListView.setItems(FXCollections.observableArrayList(displayTexts));
-        }
-    //    journeyHistoryListView.setItems(FXCollections.observableArrayList(displayTexts));
-    }
-
 
     public Map<Edge, LocalTime> getRoute(){
         GraphManipulate graphManipulate = new GraphManipulate();

@@ -7,7 +7,6 @@ import javafx.scene.control.Button;
 import java.util.List;
 import javafx.event.ActionEvent;
 import java.io.IOException;
-import java.util.Map;
 
 public class FavoriteController {
     @FXML
