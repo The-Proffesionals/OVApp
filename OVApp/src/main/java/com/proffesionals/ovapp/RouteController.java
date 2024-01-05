@@ -13,7 +13,15 @@ import javafx.scene.control.Button;
 
 public class RouteController {
     @FXML
-    private Label route;
+    public Label route1;
+    @FXML
+    public Label route2;
+    @FXML
+    public Label route3;
+    @FXML
+    public Label route4;
+
+
     @FXML
     private Button FavoriteButton;
 
@@ -21,7 +29,6 @@ public class RouteController {
     protected void initialize() {
         GraphManipulate graphManipulate = new GraphManipulate();
         Map<Edge, LocalTime> routeInformation = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph ,LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, RouteInformation.departureorarrival);
-        route.setText(RouteInformation.departureDestination + " -> " + RouteInformation.arrivalDestination + "\n");
     }
 
     @FXML
