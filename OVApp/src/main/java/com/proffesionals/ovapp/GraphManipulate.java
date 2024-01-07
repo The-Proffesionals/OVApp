@@ -26,34 +26,30 @@ public class GraphManipulate { // class for manipulating the graph
         Journey journey = new Journey(BusOrTrain);
         Integer startIndex = getPointIndex(departure, graph);
         Integer endIndex = getPointIndex(arrival, graph);
+        LocalTime newTime = currentTime;
         if (startIndex < endIndex) {
             for (int i = startIndex; i < endIndex; i++) {
                 Edge edge = graph.getEdges().get(i);
-                journey.addStop(new Stop(edge.getPoint1(), currentTime));
+                journey.addStop(new Stop(edge.getPoint1(), newTime));
                 if (BusOrTrain){
-                    if (edge instanceof Bus) {
-                        Bus bus = (Bus) edge;
-                        currentTime = currentTime.plusMinutes(bus.getTime());
-
-                        // Now you can use bus as a Bus
-                    }
+                    
+                    Bus bus = new Bus(edge);
+                    newTime = newTime.plusMinutes(bus.getTime());
                 } else {
-                    if (edge instanceof Train) {
-                        Train train = (Train) edge;
-                        currentTime = currentTime.plusMinutes(train.getTime());
-
-                        // Now you can use train as a Train
-                    } 
+                    Train train = new Train(edge);
+                    newTime = newTime.plusMinutes(train.getTime());
                 }
             }
         } else {
             for (int i = startIndex; i > endIndex; i--) {
                 Edge edge = graph.getEdges().get(i);
-                journey.addStop(new Stop(edge.getPoint1(), currentTime));
+                journey.addStop(new Stop(edge.getPoint1(), newTime));
                 if (BusOrTrain){
-                    currentTime.minusMinutes(((Bus) edge).getTime());
+                    Bus bus = new Bus(edge);
+                    newTime = newTime.minusMinutes(bus.getTime());
                 } else {
-                    currentTime.minusMinutes(((Train)edge).getTime());
+                    Train train = new Train(edge);
+                    newTime = newTime.minusMinutes(train.getTime());
                 }
             }
         }

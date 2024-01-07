@@ -1,21 +1,19 @@
 package com.proffesionals.ovapp;
 
 public class Train extends Edge{
-    private int distance;
-
     float priceConstant = 0.96f;
     float priceVariable = 0.20f;
     float timeVariable = 1.4f;
-    
-    Train(Point point1, Point point2, int distance){
-        super(point1, point2, distance);
+
+    Train(Edge edge){
+        super(edge.getPoint1(), edge.getPoint2(), edge.getDistance());
     }
 
     public float getPrice(){
-        return priceConstant + priceVariable * distance;
+        return priceConstant + priceVariable * getDistance();
     }
     public int getTime(){
-        return (int) (distance / timeVariable);
+        return (int) (getDistance() / timeVariable);
     }
     
 }

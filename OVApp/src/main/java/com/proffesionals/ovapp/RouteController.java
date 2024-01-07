@@ -12,15 +12,17 @@ import javafx.scene.layout.VBox;
 
 public class RouteController {
     @FXML
-    private Label route;
+    private VBox Journeys;
     @FXML
     private Button FavoriteButton;
 
     @FXML
     protected void initialize() {
         GraphManipulate graphManipulate = new GraphManipulate();
-        Map<Edge, LocalTime> routeInformation = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph ,LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, RouteInformation.departureorarrival);
-        route.setText(RouteInformation.departureDestination + " -> " + RouteInformation.arrivalDestination + "\n");
+        List<Journey> journeys = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph, LocalTime.now(), RouteInformation.date, true);
+        for (Journey journey : journeys) {
+            Journeys.getChildren().add(new Label(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime().getHour() + ":"+ journey.getStart().getTime().getMinute() + " -> " + journey.getEnd().getTime().getHour() + ":" + journey.getEnd().getTime().getMinute()));
+        }
     }
 
     @FXML
