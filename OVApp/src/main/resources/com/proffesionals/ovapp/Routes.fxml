@@ -3,33 +3,55 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" spacing="20.0" stylesheets="@../../../routes.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.proffesionals.ovapp.RouteController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" spacing="20.0" stylesheets="@../../../routes.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proffesionals.ovapp.RouteController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <VBox prefHeight="943.0" prefWidth="1797.0" styleClass="vbox" stylesheets="@../../../routes.css">
+   <VBox prefHeight="943.0" prefWidth="1797.0" styleClass="vbox" stylesheets="@../../../routes.css" VBox.vgrow="SOMETIMES">
       <children>
-         <HBox prefHeight="100.0" prefWidth="200.0">
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../../routes.css" VBox.vgrow="SOMETIMES">
             <children>
-                <Button id="back" maxHeight="0.0" maxWidth="0.0" onAction="#onBackButtonClick" prefHeight="0.0" prefWidth="0.0" styleClass="back-button">
+                <Button id="back" maxHeight="160.0" maxWidth="166.0" onAction="#onBackButtonClick" prefHeight="160.0" prefWidth="122.0" styleClass="back-button">
                   <HBox.margin>
                      <Insets />
                   </HBox.margin>
                </Button>
-                <Button onAction="#onHomeButtonClick" prefHeight="160.0" prefWidth="205.0" styleClass="home-button" />
-                <Button fx:id="FavoriteButton" onAction="#onAddToFavorite" text="Add to favorite" />
+                <Button onAction="#onHomeButtonClick" prefHeight="160.0" prefWidth="106.0" styleClass="home-button" HBox.hgrow="SOMETIMES">
+                  <HBox.margin>
+                     <Insets left="81.0" />
+                  </HBox.margin></Button>
+               <Region prefHeight="160.0" prefWidth="270.0" />
+               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="137.0" prefWidth="613.0" styleClass="label-style-title" stylesheets="@../../../routes.css" text="Beste optie" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="SOMETIMES">
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </Label>
+               <Region prefHeight="160.0" prefWidth="415.0" />
+                <Button id="Add to favorite" fx:id="FavoriteButton" onAction="#onAddToFavorite" styleClass="star-button" HBox.hgrow="SOMETIMES">
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin></Button>
             </children>
             <VBox.margin>
-               <Insets left="25.0" top="50.0" />
+               <Insets bottom="30.0" top="50.0" />
             </VBox.margin>
          </HBox>
-         <VBox prefHeight="200.0" prefWidth="100.0" fx:id="journeys">
+         <VBox prefHeight="200.0" prefWidth="100.0">
             <children>
+            
+                <Label fx:id="route" alignment="TOP_LEFT" contentDisplay="CENTER" styleClass="label-style" stylesheets="@../../../routes.css" text="testTekst" />
             </children>
-         </VBox>
+            <VBox.margin>
+               <Insets left="372.0" right="372.0" />
+            </VBox.margin>
+         </HBox>
       </children>
       <VBox.margin>
          <Insets bottom="79.0" left="62.0" right="61.0" top="80.0" />

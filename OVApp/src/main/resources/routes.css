@@ -3,7 +3,11 @@
     font-family: 'Inter';
     src: url('font/static/Inter-Bold.ttf'); /* Relatief pad vanaf de locatie van de CSS */
 }
-
+@font-face
+{
+    font-family: 'InterRegular';
+    src: url('font/static/Inter-Regular.ttf'); /* Relatief pad vanaf de locatie van de CSS */
+}
 
 .root {
     -fx-background-color: #FF0; /* Verander de achtergrondkleur naar lichtblauw */
@@ -40,14 +44,24 @@
     -fx-font-size: 85;
 }
 
-.label-style
+.label-style-title
 {
-    -fx-width: 151px;
-    -fx-height: 199px;
+    -fx-width: 0px;
+    -fx-height: 0px;
     -fx-alignment: center;
     -fx-text-fill: #0A1758; /* Tekstkleur, vervang de hex-code naar wens */
     -fx-font-family: "Inter";
-    -fx-font-size: 150px;
+    -fx-font-size: 100px;
+    -fx-font-weight: bold; /* Of -fx-font-weight: bold; voor vetgedrukt */
+    -fx-text-alignment: center; /* Voor tekstuitlijning */
+    -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
+}
+.label-style-tijd
+{
+    -fx-alignment: center;
+    -fx-text-fill: #0A1758; /* Tekstkleur, vervang de hex-code naar wens */
+    -fx-font-family: "InterRegular";
+    -fx-font-size: 90px;
     -fx-font-weight: normal; /* Of -fx-font-weight: bold; voor vetgedrukt */
     -fx-text-alignment: center; /* Voor tekstuitlijning */
     -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
@@ -95,14 +109,18 @@
 }
 
 
-/*
-.rectangle
+.line
 {
-    -fx-fill: red; /* Vulkleur van de rechthoek *
-    -fx-stroke: black; /* Lijnkleur van de rechthoek *
-    -fx-stroke-width: 2; /* Lijndikte van de rechthoek *
+-fx-stroke: #FF0; /* Kleur van de lijn */ ;
+-fx-stroke-width: 28; /* Dikte van de lijn */
 }
-*/
 
 
-
+.star-button
+{
+    -fx-background-image: url('image/star.png');
+    -fx-background-size: 110px auto;
+    -fx-background-color: transparent;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
