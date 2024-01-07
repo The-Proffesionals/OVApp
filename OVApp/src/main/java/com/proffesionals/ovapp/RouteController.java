@@ -2,26 +2,31 @@ package com.proffesionals.ovapp;
 
 import java.io.IOException;
 import java.time.LocalTime;
-import java.util.Map;
 import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
-
+import javafx.scene.layout.VBox;
 
 public class RouteController {
     @FXML
-    private Label route;
+    private VBox journeys;
     @FXML
     private Button FavoriteButton;
 
     @FXML
     protected void initialize() {
         GraphManipulate graphManipulate = new GraphManipulate();
-        Map<Edge, LocalTime> routeInformation = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph ,LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, RouteInformation.departureorarrival);
-        route.setText(RouteInformation.departureDestination + " -> " + RouteInformation.arrivalDestination + "\n");
+        List<Journey> routeInformation = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph ,LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, RouteInformation.departureorarrival);
+        for (Journey journey : routeInformation) {
+            Button button = new Button(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + journey.getStart().getTime().toString() + " -> " + journey.getEnd().getTime().toString());
+            button.setOnAction(e -> {
+                System.out.println("Button clicked = " + button.getText());
+            });
+            journeys.getChildren().add(button);
+        }
     }
 
     @FXML

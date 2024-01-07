@@ -26,7 +26,7 @@ public class Edge {
     public float getPrice(){
         return 0;
     }
-    public float getTime(){
+    public int getTime(){
         return 0;
     }
 }

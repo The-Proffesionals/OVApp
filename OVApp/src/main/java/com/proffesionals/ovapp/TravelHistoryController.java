@@ -18,7 +18,7 @@ public class TravelHistoryController {
             History.getChildren().add(new Label("No history"));
         } else{ 
             for (Journey journey : RouteInformation.journeyhistory) {
-                Button button = new Button(journey.getDeparture() + " -> " + journey.getArrival() + " " + journey.getDateTime().toString());
+                Button button = new Button(journey.getStart() + " -> " + journey.getStops());
                 button.setOnAction(actionEvent -> {
                     try {
                         goToRouteInformation(actionEvent, journey);
@@ -38,11 +38,11 @@ public class TravelHistoryController {
     }
 
     private void goToRouteInformation(ActionEvent actionEvent, Journey journey) throws IOException {
-        RouteInformation.departureDestination = journey.getDeparture();
-        RouteInformation.arrivalDestination = journey.getArrival();
-        RouteInformation.date = journey.getDateTime().toLocalDate();
-        RouteInformation.hours = journey.getDateTime().getHour();
-        RouteInformation.minutes = journey.getDateTime().getMinute();
+        // RouteInformation.departureDestination = journey.getDeparture();
+        // RouteInformation.arrivalDestination = journey.getArrival();
+        // RouteInformation.date = journey.getDateTime().toLocalDate();
+        // RouteInformation.hours = journey.getDateTime().getHour();
+        // RouteInformation.minutes = journey.getDateTime().getMinute();
         SceneController sceneController = new SceneController(actionEvent);
         sceneController.setScene("routeInformation");
     }
