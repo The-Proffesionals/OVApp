@@ -19,7 +19,7 @@ public class RouteController {
     @FXML
     protected void initialize() {
         GraphManipulate graphManipulate = new GraphManipulate();
-        List<Journey> journeys = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph, LocalTime.now(), RouteInformation.date, true);
+        List<Journey> journeys = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph, LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, true);
         for (Journey journey : journeys) {
             Journeys.getChildren().add(new Label(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime().getHour() + ":"+ journey.getStart().getTime().getMinute() + " -> " + journey.getEnd().getTime().getHour() + ":" + journey.getEnd().getTime().getMinute()));
         }
