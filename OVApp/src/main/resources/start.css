@@ -1,0 +1,80 @@
+@font-face
+{
+    font-family: 'Inter';
+    src: url('font/static/Inter-Bold.ttf'); /* Relatief pad vanaf de locatie van de CSS */
+}
+
+
+.button:hover
+{
+  -fx-background-color : #07f7f7;
+}
+
+.button:pressed
+{
+    -fx-background-color : #29D9D9;
+}
+
+
+
+.button
+{
+   /* -fx-min-width: 751px;
+    -fx-max-width: 751px;
+    -fx-min-height: 210px;
+    -fx-max-height: 210px; */
+
+    -fx-flex-shrink: 0;
+    -fx-background-radius: 75px;
+    -fx-background-color: #FF0;
+
+    -fx-font-family: "Inter"; /* Gebruik de eerder gedefinieerde naam voor het lettertype */
+    -fx-text-fill: "#0a1758";
+   /* -fx-font-weight: bold;*/
+    -fx-font-size: 85;
+}
+
+.label-style
+{
+    -fx-width: 151px;
+    -fx-height: 199px;
+    -fx-alignment: center;
+    -fx-text-fill: #0A1758; /* Tekstkleur, vervang de hex-code naar wens */
+    -fx-font-family: "Inter";
+    -fx-font-size: 150px;
+    -fx-font-weight: normal; /* Of -fx-font-weight: bold; voor vetgedrukt */
+    -fx-text-alignment: center; /* Voor tekstuitlijning */
+    -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
+}
+.languageD-button
+{
+    -fx-background-image: url('image/dutch.png');
+    -fx-background-size: 100px auto;
+    -fx-background-color: #FF0;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+.languageE-button
+{
+    -fx-background-image: url('image/eng.png');
+    -fx-background-size: 110px auto;
+    -fx-background-color: #FF0;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+.label-style
+{
+    -fx-width: 151px;
+    -fx-height: 199px;
+    -fx-alignment: center;
+    -fx-text-fill: #0A1758; /* Tekstkleur, vervang de hex-code naar wens */
+    -fx-font-family: "Inter";
+    -fx-font-size: 150px;
+    -fx-font-weight: normal; /* Of -fx-font-weight: bold; voor vetgedrukt */
+    -fx-text-alignment: center; /* Voor tekstuitlijning */
+    -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
+}
+
+
+
+

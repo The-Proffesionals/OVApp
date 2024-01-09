@@ -1,26 +1,45 @@
 
-/*
-.button
-{
-   -fx-background-color : #239c9c;
-   -fx-background-radius :  30 0 0 30;
-}
-.button:hover
-{
-   -fx-background-color : #07f7f7;
-   -fx-background-radius : 30 0 0 30;
-}
-.button:pressed
-{
-   -fx-background-color : #239c9c;
-   -fx-background-radius :  30 0 0 30;
-}
-*/
-
 @font-face {
     font-family: 'Inter';
     src: url('font/static/Inter-Bold.ttf'); /* Relatief pad vanaf de locatie van de CSS */
 }
+
+.button:hover
+{
+  -fx-background-color : #07f7f7;
+}
+
+.button:pressed
+{
+    -fx-background-color : #29D9D9;
+}
+
+
+.combo-box:hover
+{
+  -fx-background-color : #07f7f7;
+}
+
+.combo-box:pressed
+{
+  -fx-background-color : #29D9D9;
+}
+
+
+.date-picker .arrow-button:hover
+{
+-fx-background-color : #07f7f7;
+}
+
+.date-picker .arrow-button:pressed
+{
+-fx-background-color : #29D9D9;
+}
+
+
+
+
+
 .combo-box
 {
     -fx-flex-shrink: 0;

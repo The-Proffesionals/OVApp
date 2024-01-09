@@ -26,7 +26,7 @@ public class Edge {
     public float getPrice(){
         return distance;
     }
-    public float getTime(){
-        return distance;
+    public int getTime(){
+        return 0;
     }
 }

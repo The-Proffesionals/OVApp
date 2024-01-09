@@ -7,8 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class OvApp extends Application {
-    public static Graph graph; 
-    
+    public static Graph graph;     
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -24,7 +23,6 @@ public class OvApp extends Application {
     public static Graph initializeGraph(){ 
         ArrayList<Point> points = new ArrayList<>();
         ArrayList<Edge> edges = new ArrayList<>();
-
 
         points.add(new Point("Den Helder Centraal"));
         points.add(new Point("Utrecht Centraal"));
@@ -42,7 +40,6 @@ public class OvApp extends Application {
         edges.add(new Edge(points.get(5), points.get(6), 43));
 
         return new Graph(edges, points);
-
     }
 
 }
