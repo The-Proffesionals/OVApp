@@ -44,10 +44,6 @@
             </VBox.margin>
          </HBox>
          <VBox prefHeight="200.0" prefWidth="100.0" fx:id="Journeys">
-            <children>
-            
-                <Label fx:id="route" alignment="TOP_LEFT" contentDisplay="CENTER" styleClass="label-style" stylesheets="@../../../routes.css" text="testTekst" />
-            </children>
             <VBox.margin>
                <Insets left="372.0" right="372.0" />
             </VBox.margin>

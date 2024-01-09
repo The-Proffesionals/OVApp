@@ -21,16 +21,18 @@ public class RouteController {
         GraphManipulate graphManipulate = new GraphManipulate();
         List<Journey> journeys = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph, LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, true);
         for (Journey journey : journeys) {
-            Journeys.getChildren().add(new Label(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime().getHour() + ":"+ journey.getStart().getTime().getMinute() + " -> " + journey.getEnd().getTime().getHour() + ":" + journey.getEnd().getTime().getMinute()));
+            Label label = new Label(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime().getHour() + ":"+ journey.getStart().getTime().getMinute() + " -> " + journey.getEnd().getTime()+ " " + journey.getbusOrTrain());
+            label.setOnMouseClicked(actionEvent -> {
+                System.out.println(journey.getStart().getPoint().getName() + " " + journey.getEnd().getPoint().getName());
+            });
+            Journeys.getChildren().add(label);
         }
     }
 
     @FXML
     protected void onAddToFavorite() {
         RouteInformation.favorite.add(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination));
-        FavoriteButton.setText("Added to favorite");
         FavoriteButton.setDisable(true);
-
     }
 
     @FXML

@@ -10,12 +10,9 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 
@@ -86,13 +83,13 @@ public class RouteInformationController implements Initializable {
     protected void onDepartureButtonClick() {
         depOrArrTime = true;
         Vertrek.setStyle("-fx-text-fill: #0A1758;");
-        Aankomst.setStyle("-fx-text-fill: #gray;");
+        Aankomst.setStyle("-fx-text-fill: #808080;");
     }
 
     @FXML
     protected void onArrivalButtonClick() {
         depOrArrTime = false;
-        Vertrek.setStyle("-fx-text-fill: #gray;");
+        Vertrek.setStyle("-fx-text-fill: #808080;");
         Aankomst.setStyle("-fx-text-fill: #0A1758;");
     }
 
@@ -118,7 +115,5 @@ public class RouteInformationController implements Initializable {
             SceneController sceneController = new SceneController(actionEvent);
             sceneController.setScene("Routes");
         }
-
     }
-
 }
