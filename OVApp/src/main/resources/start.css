@@ -19,11 +19,6 @@
 
 .button
 {
-   /* -fx-min-width: 751px;
-    -fx-max-width: 751px;
-    -fx-min-height: 210px;
-    -fx-max-height: 210px; */
-
     -fx-flex-shrink: 0;
     -fx-background-radius: 75px;
     -fx-background-color: #FF0;
@@ -53,14 +48,16 @@
     -fx-background-color: #FF0;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
+    -fx-background-radius: 30px;
 }
 .languageE-button
 {
     -fx-background-image: url('image/eng.png');
-    -fx-background-size: 110px auto;
+    -fx-background-size: 100px auto;
     -fx-background-color: #FF0;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
+    -fx-background-radius: 30px;
 }
 .label-style
 {

@@ -6,11 +6,13 @@ import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
 public class RouteController {
+    public Label route;
     @FXML
     private VBox Journeys;
     @FXML
@@ -23,6 +25,7 @@ public class RouteController {
         for (Journey journey : journeys) {
             Journeys.getChildren().add(new Label(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime().getHour() + ":"+ journey.getStart().getTime().getMinute() + " -> " + journey.getEnd().getTime().getHour() + ":" + journey.getEnd().getTime().getMinute()));
         }
+
     }
 
     @FXML

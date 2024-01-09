@@ -14,48 +14,61 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <VBox prefHeight="943.0" prefWidth="1797.0" styleClass="vbox" stylesheets="@../../../routes.css" VBox.vgrow="SOMETIMES">
-      <children>
-         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../../routes.css" VBox.vgrow="SOMETIMES">
-            <children>
-                <Button id="back" maxHeight="160.0" maxWidth="166.0" onAction="#onBackButtonClick" prefHeight="160.0" prefWidth="122.0" styleClass="back-button">
-                  <HBox.margin>
-                     <Insets />
-                  </HBox.margin>
-               </Button>
-                <Button onAction="#onHomeButtonClick" prefHeight="160.0" prefWidth="106.0" styleClass="home-button" HBox.hgrow="SOMETIMES">
-                  <HBox.margin>
-                     <Insets left="81.0" />
-                  </HBox.margin></Button>
-               <Region prefHeight="160.0" prefWidth="270.0" />
-               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="137.0" prefWidth="613.0" styleClass="label-style-title" stylesheets="@../../../routes.css" text="Beste optie" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" HBox.hgrow="SOMETIMES">
-                  <HBox.margin>
-                     <Insets />
-                  </HBox.margin>
-               </Label>
-               <Region prefHeight="160.0" prefWidth="415.0" />
-                <Button id="Add to favorite" fx:id="FavoriteButton" onAction="#onAddToFavorite" styleClass="star-button" HBox.hgrow="SOMETIMES">
-                  <HBox.margin>
-                     <Insets />
-                  </HBox.margin></Button>
-            </children>
+    <VBox prefHeight="943.0" prefWidth="1797.0" styleClass="vbox" stylesheets="@../../../routes.css" VBox.vgrow="SOMETIMES">
+        <VBox.margin>
+            <Insets bottom="79.0" left="62.0" right="61.0" top="80.0" />
+        </VBox.margin>
+        <HBox alignment="CENTER" prefWidth="1757.0" stylesheets="@../../../routes.css">
             <VBox.margin>
-               <Insets bottom="30.0" top="50.0" />
+                <Insets bottom="30.0" top="30.0" />
             </VBox.margin>
-         </HBox>
-         <VBox prefHeight="200.0" prefWidth="100.0" fx:id="Journeys">
-            <children>
-            
-                <Label fx:id="route" alignment="TOP_LEFT" contentDisplay="CENTER" styleClass="label-style" stylesheets="@../../../routes.css" text="testTekst" />
-            </children>
+            <Button id="back" maxHeight="-Infinity" maxWidth="166.0" onAction="#onBackButtonClick" prefWidth="122.0" styleClass="back-button">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            </Button>
+            <Button onAction="#onHomeButtonClick" prefWidth="106.0" styleClass="home-button">
+                <HBox.margin>
+                    <Insets left="81.0" />
+                </HBox.margin>
+            </Button>
+            <Region prefHeight="160.0" prefWidth="266.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="613.0" styleClass="label-style-title" stylesheets="@../../../routes.css" text="Beste optie" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            </Label>
+            <Region prefHeight="160.0" prefWidth="375.0" />
+            <Button id="Add to favorite" fx:id="FavoriteButton" onAction="#onAddToFavorite" styleClass="star-button">
+                <HBox.margin>
+                    <Insets right="40.0" />
+                </HBox.margin>
+            </Button>
+        </HBox>
+      <Line endX="1629.0" startX="-100.0" strokeMiterLimit="0.0" styleClass="line" />
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="421.0" spacing="60.0">
             <VBox.margin>
-               <Insets left="372.0" right="372.0" />
+                <Insets top="45.0" />
             </VBox.margin>
-         </VBox>
-      </children>
-      <VBox.margin>
-         <Insets bottom="79.0" left="62.0" right="61.0" top="80.0" />
-      </VBox.margin>
-   </VBox>
+            <VBox fx:id="Journeys" styleClass="label-style-tijd" stylesheets="@../../../routes.css" />
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+                <ImageView fitHeight="111.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../../image/trein.png" />
+                </ImageView>
+                <ImageView fitHeight="102.0" fitWidth="107.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../../image/bus.png" />
+                </ImageView>
+                <ImageView fitHeight="111.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../../image/trein.png" />
+                </ImageView>
+                <ImageView fitHeight="102.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../../image/bus.png" />
+                </ImageView>
+            </VBox>
+        </HBox>
+    </VBox>
 
 </VBox>
