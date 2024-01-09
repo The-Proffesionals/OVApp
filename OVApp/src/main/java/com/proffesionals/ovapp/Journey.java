@@ -1,29 +1,36 @@
 package com.proffesionals.ovapp;
 
-import java.time.LocalDateTime;
+import java.util.List;
+import java.util.ArrayList;
+
 
 public class Journey {
-    private String departure;
-    private String arrival;
-    private LocalDateTime dateTime;
+    private List<Stop> stops;
+    private boolean BusOrTrain;
 
-    public Journey(String departure, String arrival, LocalDateTime dateTime) {
-        this.departure = departure;
-        this.arrival = arrival;
-        this.dateTime = dateTime;
+    public Journey(boolean BusOrTrain) {
+        this.BusOrTrain = BusOrTrain;
+        this.stops = new ArrayList<>();
     }
 
-    // Getters and setters
-    public String getDeparture() {
-        return departure;
+    public void addStop(Stop stop) {
+        stops.add(stop);
     }
 
-    public String getArrival() {
-        return arrival;
+    public List<Stop> getStops() {
+        return stops;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public Stop getStart() {
+        return stops.get(0);
+    }
+
+    public Stop getEnd() {
+        return stops.get(stops.size() - 1);
+    }
+
+    public boolean getbusOrTrain(){
+        return BusOrTrain;
     }
 }
 

@@ -40,7 +40,7 @@ public class RouteInformationController implements Initializable {
 
     private boolean depOrArrTime = true;
 
-    private ObservableList<String> allStations = FXCollections.observableArrayList("Amsterdam Centraal", "Utrecht Centraal", "Rotterdam Centraal", "Den Haag Centraal", "Eindhoven Centraal", "Maastricht Centraal");
+    private ObservableList<String> allStations = FXCollections.observableArrayList("Den Helder Centraal","Utrecht Centraal","Amsterdam Centraal","s-Hertogenbosch Centraal","Eindhoven Centraal","Roermond Centraal","Maastricht Centraal");
     private LocalTime currentTime = LocalTime.now();
 
 
@@ -114,7 +114,6 @@ public class RouteInformationController implements Initializable {
             RouteInformation.minutes = MinutesBox.getValue();
             RouteInformation.date = DatePicker.getValue();
             RouteInformation.departureorarrival = depOrArrTime;
-            RouteInformation.journeyhistory.add(new Journey(DepBox.getValue(), ArrBox.getValue(), LocalDateTime.of(DatePicker.getValue(), LocalTime.of(HourBox.getValue(), MinutesBox.getValue()))));
 
             SceneController sceneController = new SceneController(actionEvent);
             sceneController.setScene("Routes");
@@ -122,8 +121,4 @@ public class RouteInformationController implements Initializable {
 
     }
 
-    public Map<Edge, LocalTime> getRoute(){
-        GraphManipulate graphManipulate = new GraphManipulate();
-        return graphManipulate.getRoute(DepBox.getValue(), ArrBox.getValue(), OvApp.graph, LocalTime.of(HourBox.getValue(), MinutesBox.getValue()), DatePicker.getValue(), depOrArrTime);
-    }
 }

@@ -2,33 +2,27 @@ package com.proffesionals.ovapp;
 
 import java.io.IOException;
 import java.time.LocalTime;
-import java.util.Map;
 import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
-
+import javafx.scene.layout.VBox;
 
 public class RouteController {
     @FXML
-    public Label route1;
-    @FXML
-    public Label route2;
-    @FXML
-    public Label route3;
-    @FXML
-    public Label route4;
-
-
+    private VBox Journeys;
     @FXML
     private Button FavoriteButton;
 
     @FXML
     protected void initialize() {
         GraphManipulate graphManipulate = new GraphManipulate();
-        Map<Edge, LocalTime> routeInformation = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph ,LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, RouteInformation.departureorarrival);
+        List<Journey> journeys = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph, LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, true);
+        for (Journey journey : journeys) {
+            Journeys.getChildren().add(new Label(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime().getHour() + ":"+ journey.getStart().getTime().getMinute() + " -> " + journey.getEnd().getTime().getHour() + ":" + journey.getEnd().getTime().getMinute()));
+        }
     }
 
     @FXML
