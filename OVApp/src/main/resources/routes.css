@@ -66,6 +66,11 @@
     -fx-text-alignment: center; /* Voor tekstuitlijning */
     -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
 }
+
+.label-style-tijd:hover
+{
+    -fx-text-fill: #07f7f7;
+}
 .languageD-button
 {
     -fx-background-image: url('image/dutch.png');
