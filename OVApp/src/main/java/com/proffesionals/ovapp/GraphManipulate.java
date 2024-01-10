@@ -28,20 +28,20 @@ public class GraphManipulate { // class for manipulating the graph
         Integer endIndex = getPointIndex(arrival, graph);
         LocalTime newTime = currentTime;
         if (startIndex < endIndex) {
+            Edge edge = graph.getEdges().get(startIndex);
+            journey.addStop(new Stop(edge.getPoint1(), newTime));
             for (int i = startIndex; i < endIndex; i++) {
-                Edge edge = graph.getEdges().get(i);
-                journey.addStop(new Stop(edge.getPoint1(), newTime));
                 if (BusOrTrain){
-                    
                     Bus bus = new Bus(edge);
                     newTime = newTime.plusMinutes(bus.getTime());
                 } else {
                     Train train = new Train(edge);
                     newTime = newTime.plusMinutes(train.getTime());
                 }
+                edge = graph.getEdges().get(i);
+                journey.addStop(new Stop(edge.getPoint2(), newTime));
             }
-            Edge edge = graph.getEdges().get(endIndex);
-            journey.addStop(new Stop(edge.getPoint2(), newTime));
+
         } else {
             for (int i = startIndex - 1; i > endIndex - 1; i--) {
                 Edge edge = graph.getEdges().get(i);
