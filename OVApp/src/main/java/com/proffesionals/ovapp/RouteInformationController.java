@@ -41,7 +41,7 @@ public class RouteInformationController implements Initializable {
 
     private boolean depOrArrTime = true;
 
-    private ObservableList<String> allStations = FXCollections.observableArrayList("Den Helder Centraal","Utrecht Centraal","Amsterdam Centraal","s-Hertogenbosch Centraal","Eindhoven Centraal","Roermond Centraal","Maastricht Centraal");
+    private ObservableList<String> allStations = FXCollections.observableArrayList("Den Helder C","Utrecht C","Amsterdam C","Den Bosch C","Eindhoven C","Roermond C","Maastricht C");
     private LocalTime currentTime = LocalTime.now();
 
 

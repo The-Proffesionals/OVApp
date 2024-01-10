@@ -29,13 +29,13 @@ public class OvApp extends Application {
         ArrayList<Point> points = new ArrayList<>();
         ArrayList<Edge> edges = new ArrayList<>();
 
-        points.add(new Point("Den Helder Centraal"));
-        points.add(new Point("Utrecht Centraal"));
-        points.add(new Point("Amsterdam Centraal"));
-        points.add(new Point("s-Hertogenbosch Centraal"));
-        points.add(new Point("Eindhoven Centraal"));
-        points.add(new Point("Roermond Centraal"));
-        points.add(new Point("Maastricht Centraal"));
+        points.add(new Point("Den Helder C"));
+        points.add(new Point("Utrecht C"));
+        points.add(new Point("Amsterdam C"));
+        points.add(new Point("Den Bosch C"));
+        points.add(new Point("Eindhoven C"));
+        points.add(new Point("Roermond C"));
+        points.add(new Point("Maastricht C"));
 
         edges.add(new Edge(points.get(0), points.get(1), 65));
         edges.add(new Edge(points.get(1), points.get(2), 34));

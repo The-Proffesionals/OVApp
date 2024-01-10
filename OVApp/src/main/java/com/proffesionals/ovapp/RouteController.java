@@ -24,7 +24,7 @@ public class RouteController {
         GraphManipulate graphManipulate = new GraphManipulate();
         List<Journey> journeys = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph, LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, true);
         for (Journey journey : journeys) {
-            Label label = new Label(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime().getHour() + ":"+ journey.getStart().getTime().getMinute() + " -> " + journey.getEnd().getTime()+ " " + journey.getbusOrTrain());
+            Label label = new Label(journey.getStart().getTime() + " -> " + journey.getEnd().getTime());
             label.getStyleClass().add("label-style-tijd");
             label.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
                 @Override
