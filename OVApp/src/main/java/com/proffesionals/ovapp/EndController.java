@@ -39,13 +39,17 @@ public class EndController {
         arrivalTimeLabel.setText(RouteInformation.currentJourney.getEnd().getTime().toString());
         if (RouteInformation.currentJourney.getbusOrTrain() == true){
             spoorLabel.setText("Spoor: 1");
-            spoor2Label.setText("Spoor: 1");        }
+            spoor2Label.setText("Spoor: 1");
+        }
         else{
             spoorLabel.setText("Bus: 1");
             spoor2Label.setText("Bus: 1");
         }
         travelInformationLabel.setText(RouteInformation.currentJourney.getStart().getPoint().getName() + " -> " + RouteInformation.currentJourney.getEnd().getPoint().getName());
-        
+        intermediateStopsLabel.setText(String.valueOf(RouteInformation.currentJourney.getStops().size() - 2));
+        moneyLabel.setText(RouteInformation.currentJourney.getPrice());
+        departureDestinationLabel.setText(RouteInformation.currentJourney.getStart().getPoint().getName());
+        arrivalDestinationLabel.setText(RouteInformation.currentJourney.getEnd().getPoint().getName());
     }
 
     @FXML
