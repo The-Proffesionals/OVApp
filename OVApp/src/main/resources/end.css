@@ -70,6 +70,18 @@
     -fx-font-weight: 400;
     -fx-alignment: center;
 }
+.label-style-departureTime
+{
+     -fx-text-fill: #0A1758;
+     -fx-font-family: 'Inter';
+     -fx-font-size: 64px;
+     -fx-font-style: normal;
+     -fx-font-weight: 400;
+}
+
+
+
+
 
 .background {
     -fx-background-color: white; /* Achtergrondkleur van de VBox */
