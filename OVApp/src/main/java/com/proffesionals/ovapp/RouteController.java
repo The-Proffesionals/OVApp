@@ -25,13 +25,7 @@ public class RouteController {
         List<Journey> journeys = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph, LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, true);
         for (Journey journey : journeys) {
             Label label = new Label(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime().getHour() + ":"+ journey.getStart().getTime().getMinute() + " -> " + journey.getEnd().getTime()+ " " + journey.getbusOrTrain());
-            label.hoverProperty().addListener((observable, oldValue, newValue) -> {
-                if (newValue) {
-                    label.setStyle("-fx-background-color: #00ff00");
-                } else {
-                    label.setStyle("-fx-background-color: #ffffff");
-                }
-            });
+            label.getStyleClass().add("label-style-tijd");
             label.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
