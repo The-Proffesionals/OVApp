@@ -5,10 +5,13 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.io.IOException;
@@ -18,6 +21,8 @@ import java.util.ResourceBundle;
 
 
 public class RouteInformationController implements Initializable {
+    @FXML
+    public Button Search;
     @FXML
     private ComboBox<String> DepBox;
     @FXML
@@ -32,8 +37,7 @@ public class RouteInformationController implements Initializable {
     private Button Vertrek;
     @FXML
     private Button Aankomst;
-    @FXML
-    static ListView<String> journeyHistoryListView;
+
 
     private boolean depOrArrTime = true;
 
@@ -50,8 +54,8 @@ public class RouteInformationController implements Initializable {
             ArrBox.setValue(RouteInformation.arrivalDestination);
             DepBox.setValue(RouteInformation.departureDestination);
         } else {
-            ArrBox.setValue("Arrival");
-            DepBox.setValue("Departure");
+            ArrBox.setValue("Aankomst");
+            DepBox.setValue("Vertrek");
         }
 
         for (int hour = 0; hour < 24; hour++) {
@@ -65,6 +69,11 @@ public class RouteInformationController implements Initializable {
         DatePicker.setValue(LocalDate.now());
 
         Vertrek.setStyle("-fx-text-fill: #0A1758;");
+
+        if (StartController.isLangButtonClicked()) {
+            updateText();
+         //   StartController.setLangButtonClicked(false); // Reset the flag
+        }
     }
 
     @FXML
@@ -115,5 +124,12 @@ public class RouteInformationController implements Initializable {
             SceneController sceneController = new SceneController(actionEvent);
             sceneController.setScene("Routes");
         }
+    }
+    public void updateText() {
+        Aankomst.setText(LanguageManager.getText("Aankomst"));
+        Vertrek.setText(LanguageManager.getText("Vertrek"));
+        DepBox.setValue(LanguageManager.getText("DepBox"));
+        ArrBox.setValue(LanguageManager.getText("ArrBox"));
+        Search.setText(LanguageManager.getText("Search"));
     }
 }

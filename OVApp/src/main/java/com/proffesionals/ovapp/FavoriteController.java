@@ -17,7 +17,7 @@ public class FavoriteController {
     @FXML
     protected void initialize() {
         if (RouteInformation.favorite.isEmpty()) {
-            Favorite.getChildren().add(new Label("No favorites"));
+            Favorite.getChildren().add(new Label("Nog geen favorieten"));
         } else {
             for (List<String> favorite : RouteInformation.favorite) {
                 Button button = new Button(favorite.get(0) + " " + favorite.get(1));
