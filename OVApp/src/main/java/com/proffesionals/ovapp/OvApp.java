@@ -16,7 +16,7 @@ public class OvApp extends Application {
     }
 
     public static void main(String[] args) {
-        graph = initializeGraph();
+        graph = intializeGraph();
         launch();
     }
 
