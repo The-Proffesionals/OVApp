@@ -7,8 +7,6 @@ import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.ButtonBar.ButtonData;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.event.EventHandler;
@@ -27,7 +25,7 @@ public class RouteController {
         List<Journey> journeys = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph, LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, true);
         for (Journey journey : journeys) {
             Label label = new Label(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime().getHour() + ":"+ journey.getStart().getTime().getMinute() + " -> " + journey.getEnd().getTime()+ " " + journey.getbusOrTrain());
-
+            label.getStyleClass().add("label-style-tijd");
             label.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
