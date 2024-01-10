@@ -61,6 +61,26 @@
     -fx-text-alignment: center; /* Voor tekstuitlijning */
     -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
 }
+.label-style-date
+{
+    -fx-text-fill: #0A1758;
+    -fx-font-family: 'Inter';
+    -fx-font-size: 96px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-alignment: center;
+}
+.label-style-departureTime
+{
+     -fx-text-fill: #0A1758;
+     -fx-font-family: 'Inter';
+     -fx-font-size: 64px;
+     -fx-font-style: normal;
+     -fx-font-weight: 400;
+}
+
+
+
 
 
 .background {
