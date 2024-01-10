@@ -59,8 +59,8 @@
 
 .combo-box-remove-arrow .arrow
 {
-    -fx-background-color: #CCCCCC; /* Kleur van de pijl */
-    -fx-background-radius: 75px;
+      -fx-background-color: #CCCCCC; /* Kleur van de pijl */
+      -fx-background-radius: 75px;
 
      /*-fx-background-image: url('path/to/custom-arrow.png');
      -fx-background-position: center;
