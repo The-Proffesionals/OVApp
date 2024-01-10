@@ -62,7 +62,7 @@ public class GraphManipulate { // class for manipulating the graph
     }
 
 
-    private Integer getPointIndex(Point point, Graph graph){ // returns the index of a point in the graph
+    private static Integer getPointIndex(Point point, Graph graph){ // returns the index of a point in the graph
         for (int i = 0; i < graph.getPoints().size(); i++) {
             if(graph.getPoints().get(i).equals(point)){
                 return i;
@@ -80,4 +80,45 @@ public class GraphManipulate { // class for manipulating the graph
         return null;
     }
 
+    public static float getPrice(Journey journey){
+        Graph graph = OvApp.graph;
+        float price = 0;
+        Integer startIndex = getPointIndex(journey.getStart().getPoint(), graph);
+        Integer endIndex = getPointIndex(journey.getEnd().getPoint(), graph);
+        if (startIndex < endIndex) {
+            Edge edge = graph.getEdges().get(startIndex);
+            for (int i = startIndex; i < endIndex; i++) {
+                if (journey.getbusOrTrain()){
+                    Bus bus = new Bus(edge);
+                    price += bus.getPrice();
+                } else {
+                    Train train = new Train(edge);
+                    price += train.getPrice();
+                }
+                edge = graph.getEdges().get(i);
+            }
+            if (journey.getbusOrTrain()) {
+                price += 1.25f;
+            } else {
+                price += 0.96f;
+            }
+        } else {
+            for (int i = startIndex - 1; i > endIndex - 1; i--) {
+                Edge edge = graph.getEdges().get(i);
+                if (journey.getbusOrTrain()){
+                    Bus bus = new Bus(edge);
+                    price += bus.getPrice();
+                } else {
+                    Train train = new Train(edge);
+                    price += train.getPrice();
+                }
+            }
+            if (journey.getbusOrTrain()) {
+                price += 1.25f;
+            } else {
+                price += 0.96f;
+            }
+        }
+        return price;
+    }
 }

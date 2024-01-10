@@ -1,7 +1,6 @@
 package com.proffesionals.ovapp;
 
 public class Bus extends Edge{
-    float priceConstant = 1.25f;
     float priceVariable = 0.96f;
     float timeVariable = 0.95f;
     
@@ -10,7 +9,7 @@ public class Bus extends Edge{
     }
 
     public float getPrice(){
-        return priceConstant + priceVariable * getDistance();
+        return priceVariable * getDistance();
     }
     public int getTime(){
         return (int) (getDistance() / timeVariable);

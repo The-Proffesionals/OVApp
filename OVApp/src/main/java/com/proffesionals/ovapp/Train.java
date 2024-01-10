@@ -1,7 +1,6 @@
 package com.proffesionals.ovapp;
 
 public class Train extends Edge{
-    float priceConstant = 0.96f;
     float priceVariable = 0.20f;
     float timeVariable = 1.4f;
 
@@ -10,7 +9,7 @@ public class Train extends Edge{
     }
 
     public float getPrice(){
-        return priceConstant + priceVariable * getDistance();
+        return priceVariable * getDistance();
     }
     public int getTime(){
         return (int) (getDistance() / timeVariable);

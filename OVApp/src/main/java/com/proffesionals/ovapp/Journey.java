@@ -1,7 +1,12 @@
 package com.proffesionals.ovapp;
 
 import java.util.List;
+
+import java.time.Duration;
 import java.util.ArrayList;
+import java.time.LocalTime;
+import java.time.LocalDate;
+
 
 
 public class Journey {
@@ -31,6 +36,14 @@ public class Journey {
 
     public boolean getbusOrTrain(){
         return BusOrTrain;
+    }
+
+    public Duration getDuration() {
+        return Duration.between(getStart().getTime(), getEnd().getTime());
+    }
+    public String getPrice(){
+        Float Price = GraphManipulate.getPrice(this);
+        return String.format("%.2f", Price);
     }
 }
 
