@@ -4,9 +4,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proffesionals.ovapp.EndController">
-   <Button layoutX="161.0" layoutY="158.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Button" />
-   <Button layoutX="248.0" layoutY="171.0" mnemonicParsing="false" onAction="#onHomeButtonClick" text="Button" />
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../../../end.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proffesionals.ovapp.EndController">
+   <AnchorPane styleClass="background" AnchorPane.bottomAnchor="321.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="292.0" />
+   <Button layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="160.0" prefWidth="174.0" styleClass="back-button" AnchorPane.bottomAnchor="865.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="1653.0" AnchorPane.topAnchor="63.0" />
+   <Button layoutX="288.0" layoutY="97.0" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="160.0" prefWidth="192.0" styleClass="home-button" AnchorPane.bottomAnchor="865.0" AnchorPane.leftAnchor="324.0" AnchorPane.rightAnchor="1397.0" AnchorPane.topAnchor="63.0" />
    <Label fx:id="date" layoutX="286.0" layoutY="63.0" text="date" />
    <Label fx:id="duration" layoutX="286.0" layoutY="63.0" text="duration" />
    <Label fx:id="departureTime" layoutX="286.0" layoutY="63.0" text="departureTime" />
@@ -18,5 +19,7 @@
    <Label fx:id="money" layoutX="286.0" layoutY="63.0" text="money" />
    <Label fx:id="departureDestination" layoutX="286.0" layoutY="63.0" text="departureDestination" />
    <Label fx:id="arrivalDestination" layoutX="286.0" layoutY="63.0" text="arrivalDestination" />
+   <AnchorPane layoutX="10.0" layoutY="10.0" styleClass="background" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="897.0" AnchorPane.topAnchor="844.0" />
+   <AnchorPane layoutX="10.0" layoutY="10.0" styleClass="background" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="1307.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="841.0" />
 
 </AnchorPane>

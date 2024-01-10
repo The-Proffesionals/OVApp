@@ -29,7 +29,6 @@
 
 .button
 {
-
     -fx-flex-shrink: 0;
     -fx-background-radius: 75px;
     -fx-background-color: #FF0;
@@ -63,39 +62,17 @@
     -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
 }
 
-.label-style-tijd:hover
-{
-    -fx-text-fill: #07f7f7;
-}
-.languageD-button
-{
-    -fx-background-image: url('image/dutch.png');
-    -fx-background-size: 100px auto;
-    -fx-background-color: #FF0;
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-}
-.languageE-button
-{
-    -fx-background-image: url('image/eng.png');
-    -fx-background-size: 110px auto;
-    -fx-background-color: #FF0;
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
 
-}
-
-.vbox {
+.background {
     -fx-background-color: white; /* Achtergrondkleur van de VBox */
-    -fx-background-radius: 75;
+   -fx-background-radius: 75;
 }
-
 
 .back-button
 {
     -fx-background-image: url('image/pijlterug.png');
     -fx-background-size: 60px auto;
-    -fx-background-color: transparent;
+    -fx-background-color: white;
     -fx-background-position: 50px center;
     -fx-background-repeat: no-repeat;
 }
@@ -104,24 +81,10 @@
 {
     -fx-background-image: url('image/house.png');
     -fx-background-size: 110px auto;
-    -fx-background-color: transparent;
+    -fx-background-color: white;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
 }
 
 
-.line
-{
--fx-stroke: #FF0; /* Kleur van de lijn */ ;
--fx-stroke-width: 28; /* Dikte van de lijn */
-}
 
-
-.star-button
-{
-    -fx-background-image: url('image/star.png');
-    -fx-background-size: 110px auto;
-    -fx-background-color: transparent;
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-}

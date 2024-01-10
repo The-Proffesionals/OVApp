@@ -20,7 +20,12 @@ public class OvApp extends Application {
     }
 
 
+
+
+
     public static Graph initializeGraph(){
+
+
         ArrayList<Point> points = new ArrayList<>();
         ArrayList<Edge> edges = new ArrayList<>();
 
