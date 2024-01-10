@@ -5,7 +5,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class OvApp extends Application {
     public static Graph graph;
