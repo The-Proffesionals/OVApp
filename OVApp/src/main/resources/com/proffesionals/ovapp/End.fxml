@@ -9,26 +9,30 @@
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../../../end.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proffesionals.ovapp.EndController">
    <AnchorPane styleClass="background" AnchorPane.bottomAnchor="321.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="292.0">
       <children>
-         <Label fx:id="departureTime" layoutX="224.0" layoutY="172.0" styleClass="label-style-departureTime" text="10:00" AnchorPane.leftAnchor="71.0" AnchorPane.topAnchor="57.0" />
-         <Label fx:id="arrivalTime" styleClass="label-style-departureTime" text="11:11" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="86.0" />
+         <Label fx:id="departureTime" alignment="CENTER" layoutX="224.0" layoutY="172.0" styleClass="label-style-departureTime" text="10:00" AnchorPane.leftAnchor="71.0" AnchorPane.topAnchor="57.0" />
+         <Label fx:id="arrivalTime" alignment="CENTER" styleClass="label-style-departureTime" text="11:11" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="86.0" />
          <ImageView fitHeight="390.0" fitWidth="92.0" layoutX="274.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="274.0" AnchorPane.topAnchor="48.0">
             <image>
                <Image url="@../../../image/Point%20to%20point.png" />
             </image>
          </ImageView>
+         <Label fx:id="departureDestination" layoutX="421.0" layoutY="30.0" styleClass="label-style-departureDestination" stylesheets="@../../../end.css" text="Amersfoort" AnchorPane.leftAnchor="432.0" AnchorPane.topAnchor="36.0" />
+         <Label fx:id="arrivalDestination" layoutX="421.0" layoutY="326.0" styleClass="label-style-departureDestination" text="Utecht" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="432.0" />
+         <Label fx:id="travelInformation" layoutX="429.0" layoutY="204.0" styleClass="label-style-travelInfo" text="Bus 420 Maastricht" AnchorPane.leftAnchor="432.0" />
+         <Label fx:id="spoor" alignment="CENTER" layoutX="1270.0" layoutY="47.0" styleClass="label-style-spoor" text="spoor 1" AnchorPane.rightAnchor="77.0" AnchorPane.topAnchor="47.0" />
+         <Label fx:id="spoor2" alignment="CENTER" layoutX="1269.0" layoutY="310.0" styleClass="label-style-spoor" text="spoor 1" AnchorPane.bottomAnchor="33.0" AnchorPane.rightAnchor="78.0" />
       </children></AnchorPane>
    <Button layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="160.0" prefWidth="174.0" styleClass="back-button" AnchorPane.bottomAnchor="865.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="1653.0" AnchorPane.topAnchor="63.0" />
    <Button layoutX="288.0" layoutY="97.0" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="160.0" prefWidth="192.0" styleClass="home-button" AnchorPane.bottomAnchor="865.0" AnchorPane.leftAnchor="324.0" AnchorPane.rightAnchor="1397.0" AnchorPane.topAnchor="63.0" />
    <Label fx:id="date" layoutX="730.0" layoutY="96.0" styleClass="label-style-date" text="10/12/23" AnchorPane.leftAnchor="641.0" AnchorPane.topAnchor="81.0" />
    <Label fx:id="duration" layoutX="286.0" layoutY="63.0" styleClass="label-style-date" text="Duration 1:11" AnchorPane.leftAnchor="1158.0" AnchorPane.topAnchor="81.0" />
-   <Label fx:id="spoor" layoutX="286.0" layoutY="63.0" text="spoor" />
-   <Label fx:id="spoor2" layoutX="286.0" layoutY="63.0" text="spoor2" />
-   <Label fx:id="travelInformation" layoutX="286.0" layoutY="63.0" text="travelInformation" />
-   <Label fx:id="intermediateStops" layoutX="286.0" layoutY="63.0" text="intermediateStops" />
-   <Label fx:id="money" layoutX="286.0" layoutY="63.0" text="money" />
-   <Label fx:id="departureDestination" layoutX="286.0" layoutY="63.0" text="departureDestination" />
-   <Label fx:id="arrivalDestination" layoutX="286.0" layoutY="63.0" text="arrivalDestination" />
-   <AnchorPane layoutX="10.0" layoutY="10.0" styleClass="background" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="897.0" AnchorPane.topAnchor="844.0" />
-   <AnchorPane layoutX="10.0" layoutY="10.0" styleClass="background" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="1307.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="841.0" />
+   <AnchorPane layoutX="10.0" layoutY="10.0" styleClass="background" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="897.0" AnchorPane.topAnchor="844.0">
+      <children>
+         <Label fx:id="intermediateStops" alignment="CENTER" layoutX="36.0" layoutY="-2.0" prefHeight="164.0" prefWidth="847.0" styleClass="label-style-money" text="2 Tussenstop(s)" />
+      </children></AnchorPane>
+   <AnchorPane layoutX="10.0" layoutY="10.0" styleClass="background" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="1307.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="841.0">
+      <children>
+         <Label fx:id="money" alignment="CENTER" layoutX="35.0" layoutY="15.0" prefHeight="140.0" prefWidth="451.0" styleClass="label-style-money" text="€ 5,23" />
+      </children></AnchorPane>
 
 </AnchorPane>
