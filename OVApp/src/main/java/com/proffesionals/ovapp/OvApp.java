@@ -5,9 +5,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class OvApp extends Application {
-    public static Graph graph;     
+    public static Graph graph;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -19,8 +20,8 @@ public class OvApp extends Application {
         launch();
     }
 
-    
-    public static Graph intializeGraph(){ 
+
+    public static Graph intializeGraph(){
         ArrayList<Point> points = new ArrayList<>();
         ArrayList<Edge> edgesUp = new ArrayList<>();
         ArrayList<Edge> edgesDown = new ArrayList<>();
