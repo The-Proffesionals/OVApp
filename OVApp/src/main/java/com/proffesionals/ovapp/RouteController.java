@@ -30,6 +30,7 @@ public class RouteController {
                 @Override
                 public void handle(ActionEvent event) {
                     try {
+                        RouteInformation.currentJourney = journey;
                         goToEnd(event);
                     } catch (IOException e) {
                         e.printStackTrace();
