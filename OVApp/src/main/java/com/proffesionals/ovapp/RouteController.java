@@ -6,11 +6,13 @@ import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
 public class RouteController {
+    public Label route;
     @FXML
     private VBox Journeys;
     @FXML
@@ -28,6 +30,7 @@ public class RouteController {
             });
             Journeys.getChildren().add(label);
         }
+
     }
 
     @FXML
