@@ -40,10 +40,12 @@ public class GraphManipulate { // class for manipulating the graph
                     newTime = newTime.plusMinutes(train.getTime());
                 }
             }
+            Edge edge = graph.getEdges().get(endIndex);
+            journey.addStop(new Stop(edge.getPoint2(), newTime));
         } else {
-            for (int i = startIndex; i > endIndex; i--) {
+            for (int i = startIndex - 1; i > endIndex - 1; i--) {
                 Edge edge = graph.getEdges().get(i);
-                journey.addStop(new Stop(edge.getPoint1(), newTime));
+                journey.addStop(new Stop(edge.getPoint2(), newTime));
                 if (BusOrTrain){
                     Bus bus = new Bus(edge);
                     newTime = newTime.minusMinutes(bus.getTime());
@@ -52,6 +54,8 @@ public class GraphManipulate { // class for manipulating the graph
                     newTime = newTime.minusMinutes(train.getTime());
                 }
             }
+            Edge edge = graph.getEdges().get(endIndex);
+            journey.addStop(new Stop(edge.getPoint1(), newTime));
         }
 
         return journey;

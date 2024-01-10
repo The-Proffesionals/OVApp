@@ -23,6 +23,7 @@ public class RouteController {
         for (Journey journey : journeys) {
             Label label = new Label(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime().getHour() + ":"+ journey.getStart().getTime().getMinute() + " -> " + journey.getEnd().getTime()+ " " + journey.getbusOrTrain());
             label.setOnMouseClicked(actionEvent -> {
+                RouteInformation.journeyhistory.add(journey);
                 System.out.println(journey.getStart().getPoint().getName() + " " + journey.getEnd().getPoint().getName());
             });
             Journeys.getChildren().add(label);

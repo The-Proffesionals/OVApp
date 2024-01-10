@@ -18,7 +18,7 @@ public class TravelHistoryController {
             History.getChildren().add(new Label("No history"));
         } else{ 
             for (Journey journey : RouteInformation.journeyhistory) {
-                Button button = new Button(journey.getStart() + " -> " + journey.getStops());
+                Button button = new Button(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime() + " -> "+ journey.getEnd().getTime() + " " + journey.getbusOrTrain());
                 button.setOnAction(actionEvent -> {
                     try {
                         goToRouteInformation(actionEvent, journey);
