@@ -16,12 +16,12 @@ public class OvApp extends Application {
     }
 
     public static void main(String[] args) {
-        graph = intializeGraph();
+        graph = initializeGraph();
         launch();
     }
 
 
-    public static Graph intializeGraph(){
+    public static Graph initializeGraph(){
         ArrayList<Point> points = new ArrayList<>();
         ArrayList<Edge> edges = new ArrayList<>();
 
