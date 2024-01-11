@@ -48,8 +48,14 @@ public class RouteController {
 
     @FXML
     protected void onAddToFavorite() {
-        RouteInformation.favorite.add(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination));
-        FavoriteButton.setDisable(true);
+        List<List<String>> favoritesList = RouteInformation.favorite;
+        if (favoritesList.contains(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination))) {
+            FavoriteButton.setDisable(true);
+        } else {
+            RouteInformation.favorite.add(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination));
+            FavoriteButton.setDisable(true);
+        }
+
     }
 
     @FXML
