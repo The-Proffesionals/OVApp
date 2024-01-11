@@ -38,7 +38,7 @@ public class EndController {
         Duration durations = Duration.between(RouteInformation.currentJourney.getStart().getTime(), RouteInformation.currentJourney.getEnd().getTime());
         long hours = durations.toHours();
         long minutes = durations.toMinutes() % 60;
-        duration.setText(String.format("%02d:%02d", hours, minutes));
+        duration.setText(String.format("%02d:%02d uur", hours, minutes));
         departureTime.setText(RouteInformation.currentJourney.getStart().getTime().toString());
         arrivalTime.setText(RouteInformation.currentJourney.getEnd().getTime().toString());
         if (RouteInformation.currentJourney.getbusOrTrain() == true){
@@ -46,12 +46,12 @@ public class EndController {
             spoor2.setText("Spoor: 1");
         }
         else{
-            spoor.setText("Bus: 1");
-            spoor2.setText("Bus: 1");
+            spoor.setText("Halte: 1");
+            spoor2.setText("Halte: 1");
         }
-        travelInformation.setText(RouteInformation.currentJourney.getbusOrTrain() ? "Trein" : "Bus");
-        intermediateStops.setText(String.valueOf(RouteInformation.currentJourney.getStops().size() - 2));
-        money.setText(RouteInformation.currentJourney.getPrice());
+        travelInformation.setText(RouteInformation.currentJourney.getbusOrTrain() ? "Trein 420 Maastricht" : "Bus 69 Maastricht");
+        intermediateStops.setText(String.valueOf(RouteInformation.currentJourney.getStops().size() - 2) + " tussenstop(s)");
+        money.setText("€ " + RouteInformation.currentJourney.getPrice());
         departureDestination.setText(RouteInformation.currentJourney.getStart().getPoint().getName());
         arrivalDestination.setText(RouteInformation.currentJourney.getEnd().getPoint().getName());
     }
