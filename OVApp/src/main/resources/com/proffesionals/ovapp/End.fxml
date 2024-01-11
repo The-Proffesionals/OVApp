@@ -13,7 +13,7 @@
          <Label fx:id="arrivalTime" alignment="CENTER" styleClass="label-style-departureTime" text="11:11" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="86.0" />
          <ImageView fitHeight="390.0" fitWidth="92.0" layoutX="274.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="274.0" AnchorPane.topAnchor="48.0">
             <image>
-               <Image url="@../../../image/Point%20to%20point.png" />
+               <Image url="@../../../image/Pointtopoint.png" />
             </image>
          </ImageView>
          <Label fx:id="departureDestination" layoutX="421.0" layoutY="30.0" styleClass="label-style-departureDestination" stylesheets="@../../../end.css" text="Amersfoort" AnchorPane.leftAnchor="432.0" AnchorPane.topAnchor="36.0" />

@@ -53,7 +53,7 @@
     -fx-fill: rgba(10, 23, 88, 1);
     -fx-font-family: "Inter";
     -fx-font-weight: bold;
-    -fx-font-size: 85;
+   /* -fx-font-size: 850;*/
     -fx-padding: 0 20 0 20;
 }
 
@@ -62,11 +62,14 @@
       -fx-background-color: #CCCCCC; /* Kleur van de pijl */
       -fx-background-radius: 75px;
 
-     /*-fx-background-image: url('path/to/custom-arrow.png');
-     -fx-background-position: center;
-     -fx-background-repeat: no-repeat; */
      -fx-background-size: 10px 10px; /* Pas de afmetingen aan */
      -fx-padding: 0; /* Optioneel om de standaard pijl te verbergen */
+}
+
+.combo-box .list-cell
+{
+    -fx-alignment: center;
+    -fx-font-size: 100;
 }
 
 .button
