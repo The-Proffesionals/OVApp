@@ -50,9 +50,6 @@ public class RouteInformationController implements Initializable {
         if (RouteInformation.departureDestination != null && RouteInformation.arrivalDestination != null) {
             ArrBox.setValue(RouteInformation.arrivalDestination);
             DepBox.setValue(RouteInformation.departureDestination);
-        } else {
-            ArrBox.setValue("Aankomst");
-            DepBox.setValue("Vertrek");
         }
 
         for (int hour = 0; hour < 24; hour++) {
@@ -109,8 +106,7 @@ public class RouteInformationController implements Initializable {
 
     @FXML
     protected void onSearchButtonClick(ActionEvent actionEvent) throws IOException {
-        if (DepBox.getValue() != null && ArrBox.getValue() != null && DepBox.getValue() != "Departure" && ArrBox.getValue() != "Arrival" && DepBox.getValue() != "Arrival" && ArrBox.getValue() != "Departure"
-            && HourBox.getValue() != null && MinutesBox.getValue() != null && DatePicker.getValue() != null) {
+        if (DepBox.getValue() != null && ArrBox.getValue() != null) {
             RouteInformation.arrivalDestination = ArrBox.getValue();
             RouteInformation.departureDestination = DepBox.getValue();
             RouteInformation.hours = HourBox.getValue();
@@ -125,8 +121,8 @@ public class RouteInformationController implements Initializable {
     public void updateText() {
         Aankomst.setText(LanguageManager.getText("Aankomst"));
         Vertrek.setText(LanguageManager.getText("Vertrek"));
-        DepBox.setValue(LanguageManager.getText("DepBox"));
-        ArrBox.setValue(LanguageManager.getText("ArrBox"));
+        DepBox.setPromptText(LanguageManager.getText("DepBox"));
+        ArrBox.setPromptText(LanguageManager.getText("ArrBox"));
         Search.setText(LanguageManager.getText("Search"));
     }
 }
