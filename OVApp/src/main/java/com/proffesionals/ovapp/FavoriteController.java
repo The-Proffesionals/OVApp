@@ -1,6 +1,7 @@
 package com.proffesionals.ovapp;
 
 
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -20,7 +21,9 @@ public class FavoriteController {
             Favorite.getChildren().add(new Label("Nog geen favorieten"));
         } else {
             for (List<String> favorite : RouteInformation.favorite) {
+                HBox f = new HBox();
                 Button button = new Button(favorite.get(0) + " " + favorite.get(1));
+                Button remove = new Button("X");
                 button.setOnAction(actionEvent -> {
                     try {
                         goToRouteInformation(actionEvent, favorite);
@@ -28,7 +31,18 @@ public class FavoriteController {
                         e.printStackTrace();
                     }
                 });
-                Favorite.getChildren().add(button);
+                remove.setOnAction(actionEvent -> {
+                    RouteInformation.favorite.remove(favorite);
+                    try {
+                        SceneController sceneController = new SceneController(actionEvent);
+                        sceneController.setScene("favorite");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+                f.getChildren().add(button);
+                f.getChildren().add(remove);
+                Favorite.getChildren().add(f);
             }
         }
     }

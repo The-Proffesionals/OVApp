@@ -49,7 +49,7 @@ public class EndController {
             spoor.setText("Halte: 1");
             spoor2.setText("Halte: 1");
         }
-        travelInformation.setText(RouteInformation.currentJourney.getbusOrTrain() ? "Trein 420 Maastricht" : "Bus 69 Maastricht");
+        travelInformation.setText(RouteInformation.currentJourney.getbusOrTrain() ? "Intercity Maastricht" : "Bus 69 Maastricht");
         intermediateStops.setText(String.valueOf(RouteInformation.currentJourney.getStops().size() - 2) + " tussenstop(s)");
         money.setText("€ " + RouteInformation.currentJourney.getPrice());
         departureDestination.setText(RouteInformation.currentJourney.getStart().getPoint().getName());
