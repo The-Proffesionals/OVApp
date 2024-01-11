@@ -9,8 +9,5 @@
         <module name="OVApp" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="OVApp" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>
