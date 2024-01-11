@@ -106,7 +106,7 @@ public class RouteInformationController implements Initializable {
 
     @FXML
     protected void onSearchButtonClick(ActionEvent actionEvent) throws IOException {
-        if (DepBox.getValue() != null && ArrBox.getValue() != null) {
+        if (DepBox.getValue() != null && ArrBox.getValue() != null && DepBox.getValue() != ArrBox.getValue()) {
             RouteInformation.arrivalDestination = ArrBox.getValue();
             RouteInformation.departureDestination = DepBox.getValue();
             RouteInformation.hours = HourBox.getValue();

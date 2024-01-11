@@ -56,6 +56,7 @@ public class GraphManipulate { // class for manipulating the graph
             }
             Edge edge = graph.getEdges().get(endIndex);
             journey.addStop(new Stop(edge.getPoint1(), newTime));
+            journey = journey.getReverseJourney();
         }
 
         return journey;

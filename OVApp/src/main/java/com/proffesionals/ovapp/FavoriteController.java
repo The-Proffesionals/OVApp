@@ -23,7 +23,7 @@ public class FavoriteController {
         } else {
             for (List<String> favorite : RouteInformation.favorite) {
                 HBox f = new HBox();
-                Button button = new Button(favorite.get(0) + " " + favorite.get(1));
+                Button button = new Button(favorite.get(0) + " -> " + favorite.get(1));
                 Button remove = new Button("X");
                 button.setOnAction(actionEvent -> {
                     try {
