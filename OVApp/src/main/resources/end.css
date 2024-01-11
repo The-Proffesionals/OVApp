@@ -79,9 +79,41 @@
      -fx-font-weight: 400;
 }
 
+.label-style-departureDestination
+{
+    -fx-text-fill: #0A1758;
+    -fx-font-family: 'Inter';
+    -fx-font-size: 110px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+}
 
+.label-style-money
+{
+    -fx-text-fill: #0A1758;
+    -fx-font-family: 'Inter';
+    -fx-font-size: 110px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+}
 
+.label-style-travelInfo
+{
+    -fx-text-fill: #0A1758;
+    -fx-font-family: 'Inter';
+    -fx-font-size: 64px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+}
 
+.label-style-spoor
+{
+    -fx-text-fill: #0A1758;
+    -fx-font-family: 'Inter';
+    -fx-font-size: 110px;
+    -fx-font-style: normal;l
+    -fx-font-weight: 400;
+}
 
 .background {
     -fx-background-color: white; /* Achtergrondkleur van de VBox */
