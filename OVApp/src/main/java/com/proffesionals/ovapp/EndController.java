@@ -3,53 +3,57 @@ package com.proffesionals.ovapp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-
 import java.io.IOException;
+import java.time.Duration;
+import java.time.format.DateTimeFormatter;
 
 public class EndController {
 
     @FXML
-    private Label dateLabel;
+    private Label date;
     @FXML
-    private Label durationLabel;
+    private Label duration;
     @FXML
-    private Label departureTimeLabel;
+    private Label departureTime;
     @FXML
-    private Label arrivalTimeLabel;
+    private Label arrivalTime;
     @FXML
-    private Label spoorLabel;
+    private Label spoor;
     @FXML
-    private Label spoor2Label;
+    private Label spoor2;
     @FXML
-    private Label travelInformationLabel;
+    private Label travelInformation;
     @FXML
-    private Label intermediateStopsLabel;
+    private Label intermediateStops;
     @FXML
-    private Label moneyLabel;
+    private Label money;
     @FXML
-    private Label departureDestinationLabel;
+    private Label departureDestination;
     @FXML
-    private Label arrivalDestinationLabel;
+    private Label arrivalDestination;
 
     @FXML
     protected void initialize() {
-        dateLabel.setText(RouteInformation.date.toString());
-        durationLabel.setText(RouteInformation.currentJourney.getDuration().toString());
-        departureTimeLabel.setText(RouteInformation.currentJourney.getStart().getTime().toString());
-        arrivalTimeLabel.setText(RouteInformation.currentJourney.getEnd().getTime().toString());
+        date.setText(RouteInformation.date.toString());
+        Duration durations = Duration.between(RouteInformation.currentJourney.getStart().getTime(), RouteInformation.currentJourney.getEnd().getTime());
+        long hours = durations.toHours();
+        long minutes = durations.toMinutes() % 60;
+        duration.setText(String.format("%02d:%02d", hours, minutes));
+        departureTime.setText(RouteInformation.currentJourney.getStart().getTime().toString());
+        arrivalTime.setText(RouteInformation.currentJourney.getEnd().getTime().toString());
         if (RouteInformation.currentJourney.getbusOrTrain() == true){
-            spoorLabel.setText("Spoor: 1");
-            spoor2Label.setText("Spoor: 1");
+            spoor.setText("Spoor: 1");
+            spoor2.setText("Spoor: 1");
         }
         else{
-            spoorLabel.setText("Bus: 1");
-            spoor2Label.setText("Bus: 1");
+            spoor.setText("Bus: 1");
+            spoor2.setText("Bus: 1");
         }
-        travelInformationLabel.setText(RouteInformation.currentJourney.getStart().getPoint().getName() + " -> " + RouteInformation.currentJourney.getEnd().getPoint().getName());
-        intermediateStopsLabel.setText(String.valueOf(RouteInformation.currentJourney.getStops().size() - 2));
-        moneyLabel.setText(RouteInformation.currentJourney.getPrice());
-        departureDestinationLabel.setText(RouteInformation.currentJourney.getStart().getPoint().getName());
-        arrivalDestinationLabel.setText(RouteInformation.currentJourney.getEnd().getPoint().getName());
+        travelInformation.setText(RouteInformation.currentJourney.getbusOrTrain() ? "Trein" : "Bus");
+        intermediateStops.setText(String.valueOf(RouteInformation.currentJourney.getStops().size() - 2));
+        money.setText(RouteInformation.currentJourney.getPrice());
+        departureDestination.setText(RouteInformation.currentJourney.getStart().getPoint().getName());
+        arrivalDestination.setText(RouteInformation.currentJourney.getEnd().getPoint().getName());
     }
 
     @FXML

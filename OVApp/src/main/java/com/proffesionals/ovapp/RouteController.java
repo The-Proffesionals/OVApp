@@ -28,7 +28,7 @@ public class RouteController {
             label.getStyleClass().add("label-style-tijd");
             label.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
                 @Override
-                public void handle(ActionEvent event) {
+                public void handle(ActionEvent event){
                     try {
                         RouteInformation.currentJourney = journey;
                         goToEnd(event);

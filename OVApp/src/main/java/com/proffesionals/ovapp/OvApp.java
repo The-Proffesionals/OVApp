@@ -19,10 +19,6 @@ public class OvApp extends Application {
         launch();
     }
 
-
-
-
-
     public static Graph initializeGraph(){
 
 

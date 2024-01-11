@@ -12,9 +12,9 @@ public class GraphManipulate { // class for manipulating the graph
         List<Journey> returnJourneys = new ArrayList<>();
 
         for ( int i = 0; i < 2; i++){
-            Journey trainJourney = makeJourney(departure, arrival, time.plusMinutes(5 + i * 15) , startOrEndTime, graph, true);
+            Journey trainJourney = makeJourney(departure, arrival, time.plusMinutes(5 + i * 15) , startOrEndTime, graph, false);
             returnJourneys.add(trainJourney);
-            Journey busJourney = makeJourney(departure, arrival, time.plusMinutes(5 + i * 15), startOrEndTime, graph, false);
+            Journey busJourney = makeJourney(departure, arrival, time.plusMinutes(5 + i * 15), startOrEndTime, graph, true);
             returnJourneys.add(busJourney);
 
         }
