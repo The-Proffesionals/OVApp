@@ -22,7 +22,7 @@ public class RouteController {
     @FXML
     protected void initialize() {
         GraphManipulate graphManipulate = new GraphManipulate();
-        List<Journey> journeys = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph, LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, true);
+        List<Journey> journeys = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph, LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, RouteInformation.departureorarrival);
         for (Journey journey : journeys) {
             Label label = new Label(journey.getStart().getTime() + " -> " + journey.getEnd().getTime());
             label.getStyleClass().add("label-style-tijd");

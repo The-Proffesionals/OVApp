@@ -67,7 +67,6 @@ public class RouteInformationController implements Initializable {
 
         if (StartController.isLangButtonClicked()) {
             updateText();
-         //   StartController.setLangButtonClicked(false); // Reset the flag
         }
     }
 
