@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import java.io.IOException;
 
 public class FavoriteController {
+
     @FXML
     private VBox Favorite;
 
@@ -53,10 +54,21 @@ public class FavoriteController {
         sceneController.setScene("start");
     }
 
+
+    @FXML
+    protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
+        SceneController sceneController = new SceneController(actionEvent);
+        sceneController.setScene("start");
+    }
+
     private void goToRouteInformation(ActionEvent actionEvent, List<String> favorite) throws IOException {
         RouteInformation.departureDestination = favorite.get(0);
         RouteInformation.arrivalDestination = favorite.get(1);
         SceneController sceneController = new SceneController(actionEvent);
         sceneController.setScene("routeInformation");
     }
+
+
+
+
 }

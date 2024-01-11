@@ -8,6 +8,8 @@ import javafx.event.ActionEvent;
 import java.io.IOException;
 import javafx.scene.control.Label;
 
+
+
 public class TravelHistoryController {
     @FXML
     private VBox History;
@@ -33,6 +35,11 @@ public class TravelHistoryController {
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) throws IOException{
+        SceneController sceneController = new SceneController(actionEvent);
+        sceneController.setScene("start");
+    }
+    @FXML
+    protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
         SceneController sceneController = new SceneController(actionEvent);
         sceneController.setScene("start");
     }
