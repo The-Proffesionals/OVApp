@@ -34,6 +34,7 @@ public class RouteInformationController implements Initializable {
     private Button Vertrek;
     @FXML
     private Button Aankomst;
+    
 
 
     private boolean depOrArrTime = true;
@@ -98,10 +99,9 @@ public class RouteInformationController implements Initializable {
 
     @FXML
     protected void onSwapButtonClick() {
-        String Departure = DepBox.getValue();
-        String Arrival = ArrBox.getValue();
-        DepBox.setValue(Arrival);
-        ArrBox.setValue(Departure);
+        String temp = ArrBox.getValue();
+        ArrBox.setValue(DepBox.getValue());
+        DepBox.setValue(temp);
     }
 
     @FXML
