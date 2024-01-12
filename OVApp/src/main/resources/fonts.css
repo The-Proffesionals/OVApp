@@ -3,10 +3,10 @@
 @font-face
 {
     font-family: 'Inter';
-    src: url('font/static/Inter-Bold.ttf'); /* Relative path from the location of the CSS */
+    src: url('font/static/Inter-Bold.ttf');
 }
 @font-face
 {
     font-family: 'InterRegular';
-    src: url('font/static/Inter-Regular.ttf'); /* Relative path from the location of the CSS */
+    src: url('font/static/Inter-Regular.ttf');
 }

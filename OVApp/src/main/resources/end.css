@@ -2,11 +2,11 @@
 
 .root
 {
-    -fx-background-color: #FF0; /* Verander de achtergrondkleur naar lichtblauw */
+    -fx-background-color: #FF0;
 }
 .background
 {
-    -fx-background-color: white; /* Achtergrondkleur van de VBox */
+    -fx-background-color: white;
     -fx-background-radius: 75;
 }
 .button:hover
@@ -33,22 +33,22 @@
     -fx-width: 0px;
     -fx-height: 0px;
     -fx-alignment: center;
-    -fx-text-fill: #0A1758; /* Tekstkleur, vervang de hex-code naar wens */
+    -fx-text-fill: #0A1758;
     -fx-font-family: "Inter";
     -fx-font-size: 100px;
-    -fx-font-weight: bold; /* Of -fx-font-weight: bold; voor vetgedrukt */
-    -fx-text-alignment: center; /* Voor tekstuitlijning */
-    -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-background-color: transparent;
 }
 .label-style-tijd
 {
     -fx-alignment: center;
-    -fx-text-fill: #0A1758; /* Tekstkleur, vervang de hex-code naar wens */
+    -fx-text-fill: #0A1758;
     -fx-font-family: "InterRegular";
     -fx-font-size: 90px;
-    -fx-font-weight: normal; /* Of -fx-font-weight: bold; voor vetgedrukt */
-    -fx-text-alignment: center; /* Voor tekstuitlijning */
-    -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
+    -fx-font-weight: normal;
+    -fx-text-alignment: center;
+    -fx-background-color: transparent;
 }
 .label-style-date
 {
