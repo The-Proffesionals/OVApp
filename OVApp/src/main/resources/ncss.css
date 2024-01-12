@@ -1,8 +1,4 @@
-
-@font-face {
-    font-family: 'Inter';
-    src: url('font/static/Inter-Bold.ttf'); /* Relatief pad vanaf de locatie van de CSS */
-}
+@import url('fonts.css');
 
 .button:hover
 {

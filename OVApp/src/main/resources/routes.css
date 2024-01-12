@@ -1,13 +1,4 @@
-@font-face
-{
-    font-family: 'Inter';
-    src: url('font/static/Inter-Bold.ttf'); /* Relatief pad vanaf de locatie van de CSS */
-}
-@font-face
-{
-    font-family: 'InterRegular';
-    src: url('font/static/Inter-Regular.ttf'); /* Relatief pad vanaf de locatie van de CSS */
-}
+@import url('fonts.css');
 
 .root {
     -fx-background-color: #FF0; /* Verander de achtergrondkleur naar lichtblauw */

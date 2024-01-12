@@ -13,9 +13,8 @@ public class StartController {
     static boolean ENGLangButtonClicked = false; //is the language change button clicked?
 
     public void initialize(){
-        if (StartController.isLangButtonClicked()) {
-            FillText();
-        }
+        FillText();
+        
     }
 
     @FXML

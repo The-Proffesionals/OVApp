@@ -1,33 +1,19 @@
-
-
-@font-face
-{
-    font-family: 'Inter';
-    src: url('font/static/Inter-Bold.ttf'); /* Relatief pad vanaf de locatie van de CSS */
-}
-
+@import url('fonts.css');
 
 .button:hover
 {
   -fx-background-color : #07f7f7;
 }
 
-.button:pressed
-{
-    -fx-background-color : #29D9D9;
-}
-
-
-
-.button-style
+.test
 {
     -fx-flex-shrink: 0;
     -fx-background-radius: 75px;
     -fx-background-color: #FF0;
 
-    -fx-font-family: "Inter"; /* Gebruik de eerder gedefinieerde naam voor het lettertype */
+    -fx-font-family: "Inter"; 
+    -fx-font-weight: bold;
     -fx-text-fill: "#0a1758";
-    /* -fx-font-weight: bold; */
     -fx-font-size: 85;
 }
 
