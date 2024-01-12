@@ -65,9 +65,9 @@ public class RouteInformationController implements Initializable {
 
         Vertrek.setStyle("-fx-text-fill: #0A1758;");
 
-        if (StartController.isLangButtonClicked()) {
-            updateText();
-        }
+
+        updateText();
+        
     }
 
     @FXML

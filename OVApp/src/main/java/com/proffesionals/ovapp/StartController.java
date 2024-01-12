@@ -43,7 +43,7 @@ public class StartController {
         setLanguage(new Locale("en"));
         updateText();
         setLangButtonClicked(true);
-        LanguageManager.setCurrentLanguage(new Locale("en"));
+        LanguageManager.setLanguage(new Locale("en"));
     }
     @FXML
     protected void onChangeLanguagetoD(){
