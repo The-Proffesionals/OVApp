@@ -70,32 +70,21 @@
     -fx-background-repeat: no-repeat;
 }
 
-.date-picker .arrow-button:hover
-{
-    -fx-background-color : #07f7f7;
-}
-.date-picker .arrow-button:pressed
-{
-    -fx-background-color : #29D9D9;
-}
-
 .combo-box:hover
 {
     -fx-background-color : #07f7f7;
 }
-
 .combo-box:pressed
 {
     -fx-background-color : #29D9D9;
 }
+
 .combo-box
 {
     -fx-flex-shrink: 0;
     -fx-background-radius: 75px;
     -fx-background-color: #FF0;
 }
-
-
 .combo-box-base .text
 {
     -fx-fill: rgba(10, 23, 88, 1);
@@ -103,7 +92,6 @@
     -fx-font-weight: bold;
     -fx-padding: 0 20 0 20;
 }
-
 .combo-box-remove-arrow .arrow
 {
      -fx-background-color: #CCCCCC;
@@ -112,7 +100,6 @@
      -fx-background-size: 10px 10px;
      -fx-padding: 0;
 }
-
 .combo-box .list-cell
 {
     -fx-alignment: center;
@@ -154,41 +141,40 @@
     -fx-font-weight: bold;
     -fx-text-fill: grey;
 }
-
 .date-picker
 {
     -fx-background-color: transparent;
 }
+.date-picker .arrow-button:hover
+{
+    -fx-background-color : #07f7f7;
+}
+.date-picker .arrow-button:pressed
+{
+    -fx-background-color : #29D9D9;
+}
+.date-picker-popup
+{
+    -fx-font-size: 65px;
+}
 .date-picker-popup .month-year-pane .button .arrow-button
 {
--fx-background-color: "#0a1758";
+    -fx-background-color: "#0a1758";
 }
-.date-picker-popup .calendar-grid
+.date-picker-popup .calendar-grid .week-number-cell
 {
--fx-pref-width: 700;
--fx-pref-height: 700;
-}
-.date-picker-popup .popup-content {
-    -fx-pref-width: 700px;
-    -fx-pref-height: 700px;
-}
-.date-picker .text-field {
-    -fx-font-size: 3px;
-}
-.date-picker-popup  .week-number-cell {
     -fx-pref-width: 0;
     -fx-min-width: 0;
     -fx-max-width: 0;
     visibility: hidden;
 }
 .date-picker .arrow-button
- {
+{
      -fx-background-image: url('image/calendar.png');
      -fx-shape: null;
      -fx-flex-shrink: 0;
      -fx-background-radius: 75px;
      -fx-background-color: #FF0;
-
      -fx-background-position: center;
      -fx-background-repeat: no-repeat;
 }
@@ -208,8 +194,4 @@
 {
     -fx-background-color: "#FFFF00";
     -fx-text-fill: black;
-}
-.date-picker .day-cell:selected
-{
-    -fx-background-color: "#FFFF00";
 }

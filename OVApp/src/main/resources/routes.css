@@ -6,7 +6,7 @@
 }
 .button:hover
 {
-  -fx-background-color : #07f7f7;
+    -fx-background-color : #07f7f7;
 }
 .button:pressed
 {
@@ -91,7 +91,7 @@
 
 .line
 {
--fx-stroke: #FF0;
--fx-stroke-width: 28;
+    -fx-stroke: #FF0;
+    -fx-stroke-width: 28;
 }
 
