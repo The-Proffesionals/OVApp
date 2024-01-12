@@ -24,7 +24,7 @@ public class FavoriteController {
             for (List<String> favorite : RouteInformation.favorite) {
                 HBox f = new HBox();
                 Button button = new Button(favorite.get(0) + " -> " + favorite.get(1));
-                Button remove = new Button("X");
+                Button remove = new Button();
                 button.setOnAction(actionEvent -> {
                     try {
                         goToRouteInformation(actionEvent, favorite);
@@ -41,6 +41,7 @@ public class FavoriteController {
                         e.printStackTrace();
                     }
                 });
+                remove.getStyleClass().add("starklick-button");
                 f.getChildren().add(button);
                 f.getChildren().add(remove);
                 Favorite.getChildren().add(f);

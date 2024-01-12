@@ -34,8 +34,8 @@
           <Button fx:id="Search" onAction="#onSearchButtonClick" stylesheets="@../../../ncss.css" text="Plan je reis" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="856.0" />
 
 
-           <Button fx:id="Vertrek" layoutX="767.0" layoutY="64.0" onAction="#onDepartureButtonClick" styleClass="selected" stylesheets="@../../../ncss.css" text="Vertrek" />
-           <Button fx:id="Aankomst" layoutX="1273.0" layoutY="64.0" onAction="#onArrivalButtonClick" styleClass="selected" stylesheets="@../../../ncss.css" text="Aankomst" />
+           <Button fx:id="Vertrek" layoutX="632.0" layoutY="64.0" onAction="#onDepartureButtonClick" prefHeight="180.0" prefWidth="680.0" styleClass="selected" stylesheets="@../../../ncss.css" text="Vertrek" />
+           <Button fx:id="Aankomst" layoutX="1319.0" layoutY="64.0" onAction="#onArrivalButtonClick" styleClass="selected" stylesheets="@../../../ncss.css" text="Aankomst" />
          <ImageView fitHeight="117.0" fitWidth="111.0" layoutX="87.0" layoutY="907.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@../../../image/scope.png" />

@@ -32,7 +32,7 @@
 
     -fx-flex-shrink: 0;
     -fx-background-radius: 75px;
-    -fx-background-color: #FF0;
+    -fx-background-color: transparent;
 
     -fx-font-family: "Inter"; /* Gebruik de eerder gedefinieerde naam voor het lettertype */
     -fx-text-fill: "#0a1758";
@@ -67,6 +67,7 @@
 {
     -fx-text-fill: #07f7f7;
 }
+/*
 .languageD-button
 {
     -fx-background-image: url('image/dutch.png');
@@ -84,6 +85,7 @@
     -fx-background-repeat: no-repeat;
 
 }
+*/
 
 .vbox {
     -fx-background-color: white; /* Achtergrondkleur van de VBox */
@@ -103,6 +105,15 @@
 .home-button
 {
     -fx-background-image: url('image/house.png');
+    -fx-background-size: 110px auto;
+    -fx-background-color: transparent;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.starklick-button
+{
+    -fx-background-image: url('image/starfilled.png');
     -fx-background-size: 110px auto;
     -fx-background-color: transparent;
     -fx-background-position: center;
