@@ -116,6 +116,9 @@ public class RouteInformationController implements Initializable {
             SceneController sceneController = new SceneController(actionEvent);
             sceneController.setScene("Routes");
         } else {
+            if (ArrBox.getValue().equals(DepBox.getValue())){
+                ArrBox.setStyle("-fx-background-color: #FFD6CC;"); 
+            }
             highlightIfEmpty(DepBox);
             highlightIfEmpty(ArrBox);
         }
