@@ -50,9 +50,11 @@ public class RouteController {
     protected void onAddToFavorite() {
         List<List<String>> favoritesList = RouteInformation.favorite;
         if (favoritesList.contains(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination))) {
+            FavoriteButton.getStyleClass().add("starklick-button");
             FavoriteButton.setDisable(true);
         } else {
             RouteInformation.favorite.add(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination));
+            FavoriteButton.getStyleClass().add("starklick-button");
             FavoriteButton.setDisable(true);
         }
 
