@@ -8,7 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Button;
-import java.util.Locale;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
