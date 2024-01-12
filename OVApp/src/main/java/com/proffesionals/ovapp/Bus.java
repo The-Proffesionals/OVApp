@@ -1,7 +1,7 @@
 package com.proffesionals.ovapp;
 
 public class Bus extends Edge{
-    float priceVariable = 0.15f;
+    float priceVariable = 0.10f;
     float timeVariable = 0.95f;
     
     Bus(Edge edge){

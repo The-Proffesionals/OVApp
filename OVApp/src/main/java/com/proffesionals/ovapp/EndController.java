@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import java.io.IOException;
 import java.time.Duration;
+import java.time.format.DateTimeFormatter;
 
 public class EndController {
 
@@ -33,7 +34,7 @@ public class EndController {
 
     @FXML
     protected void initialize() {
-        date.setText(RouteInformation.date.toString());
+        date.setText(DateTimeFormatter.ofPattern("dd-MM-yy").format(RouteInformation.date));
         Duration durations = Duration.between(RouteInformation.currentJourney.getStart().getTime(), RouteInformation.currentJourney.getEnd().getTime());
         long hours = durations.toHours();
         long minutes = durations.toMinutes() % 60;

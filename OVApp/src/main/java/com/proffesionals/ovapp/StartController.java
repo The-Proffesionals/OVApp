@@ -44,13 +44,11 @@ public class StartController {
         updateText();
         setLangButtonClicked(true);
         LanguageManager.setCurrentLanguage(new Locale("en"));
-     //   System.out.println("Change language");
     }
     @FXML
     protected void onChangeLanguagetoD(){
         LanguageManager.setLanguage(new Locale("nl"));
         updateText();
-        //   System.out.println("Taal kiezen");
     }
     public void updateText() {
         Route_select.setText(LanguageManager.getText("Route_select"));

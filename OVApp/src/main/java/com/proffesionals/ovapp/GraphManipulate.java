@@ -18,9 +18,9 @@ public class GraphManipulate { // class for manipulating the graph
                 Journey busJourney = makeJourney(departure, arrival, time.plusMinutes(5 + i * 15), startOrEndTime, graph, true);
                 returnJourneys.add(busJourney);
             } else {
-                Journey trainJourney = makeJourney(departure, arrival, time.minusMinutes(15 - i * -5) , startOrEndTime, graph, false);
+                Journey trainJourney = makeJourney(departure, arrival, time.minusMinutes(20 - i * 5) , startOrEndTime, graph, false);
                 returnJourneys.add(trainJourney);
-                Journey busJourney = makeJourney(departure, arrival, time.minusMinutes(15 - i * -5), startOrEndTime, graph, true);
+                Journey busJourney = makeJourney(departure, arrival, time.minusMinutes(20 - i * 5), startOrEndTime, graph, true);
                 returnJourneys.add(busJourney);
             }
         }
