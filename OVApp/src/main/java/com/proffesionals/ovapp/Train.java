@@ -1,7 +1,7 @@
 package com.proffesionals.ovapp;
 
 public class Train extends Edge{
-    float priceVariable = 0.20f;
+    float priceVariable = 0.12f;
     float timeVariable = 1.2f;
 
     Train(Edge edge){
