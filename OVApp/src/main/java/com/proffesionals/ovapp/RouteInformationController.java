@@ -66,7 +66,7 @@ public class RouteInformationController implements Initializable {
         Vertrek.setStyle("-fx-text-fill: #0A1758;");
 
 
-        updateText();
+        FillText();
         
     }
 
@@ -117,7 +117,7 @@ public class RouteInformationController implements Initializable {
             sceneController.setScene("Routes");
         }
     }
-    public void updateText() {
+    public void FillText() {
         Aankomst.setText(LanguageManager.getText("Aankomst"));
         Vertrek.setText(LanguageManager.getText("Vertrek"));
         DepBox.setPromptText(LanguageManager.getText("DepBox"));

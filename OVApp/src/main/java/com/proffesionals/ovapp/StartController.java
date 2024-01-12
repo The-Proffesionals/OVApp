@@ -10,12 +10,11 @@ public class StartController {
     public Button TravelHistory_select;
     public Button Favorite_select;
     public Button Route_select;
-    static boolean LangButtonClicked = false; //is the language change button clicked?
+    static boolean ENGLangButtonClicked = false; //is the language change button clicked?
 
     public void initialize(){
         if (StartController.isLangButtonClicked()) {
-            updateText();
-            //   StartController.setLangButtonClicked(false); // Reset the flag
+            FillText();
         }
     }
 
@@ -41,26 +40,25 @@ public class StartController {
     @FXML
     protected void onChangeLanguagetoE(){
         setLanguage(new Locale("en"));
-        updateText();
+        FillText();
         setLangButtonClicked(true);
-        LanguageManager.setLanguage(new Locale("en"));
     }
     @FXML
     protected void onChangeLanguagetoD(){
         LanguageManager.setLanguage(new Locale("nl"));
-        updateText();
+        FillText();
     }
-    public void updateText() {
+    public void FillText() {
         Route_select.setText(LanguageManager.getText("Route_select"));
         Favorite_select.setText(LanguageManager.getText("Favorite_select"));
         TravelHistory_select.setText(LanguageManager.getText("TravelHistory_select"));
     }
 
     public static boolean isLangButtonClicked() {
-        return LangButtonClicked;
+        return ENGLangButtonClicked;
     }
 
     public static void setLangButtonClicked(boolean clicked) {
-        LangButtonClicked = clicked;
+        ENGLangButtonClicked = clicked;
     }
 }
