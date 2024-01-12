@@ -1,7 +1,7 @@
 
 .combo-box
 {
--fx-min-width: 751px;
+    -fx-min-width: 751px;
     -fx-max-width: 751px;
     -fx-min-height: 210px;
     -fx-max-height: 210px;
@@ -10,38 +10,30 @@
     -fx-background-radius: 75px;
     -fx-background-color: #FF0;
 
-   /* -fx-font-family: "Inter"; /* Gebruik de eerder gedefinieerde naam voor het lettertype */
     -fx-text-fill: "#0a1758";
     -fx-font-weight: bold;
     -fx-font-size: 85;
 }
+
 .combo-box .listview
 {
     -fx-text-fill: red;
 }
-
-.combo-box .list-view {
+.combo-box .list-view
+{
     -fx-background-color: white;
     -fx-text-fill: black;
 }
-
-
-/*.combo-box .arrow-button {
-    -fx-background-color: #EEEEEE;
-}
-*/
-
-.combo-box .arrow {
+.combo-box .arrow
+{
     -fx-background-color: blue;
-
 }
-.combo-box .arrow-button {
+.combo-box .arrow-button
+{
     -fx-background-image: url('/image/arrowdown.png')
 }
-
-
-
-.combo-box .cell {
+.combo-box .cell
+{
     -fx-padding: 5px;
     -fx-border-color: lightgray;
     -fx-border-width: 0 0 1 0;

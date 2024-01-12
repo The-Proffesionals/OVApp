@@ -1,32 +1,30 @@
 @import url('fonts.css');
 
-.root {
+.root
+{
     -fx-background-color: #FF0; /* Verander de achtergrondkleur naar lichtblauw */
 }
-
-
-
+.background
+{
+    -fx-background-color: white; /* Achtergrondkleur van de VBox */
+    -fx-background-radius: 75;
+}
 .button:hover
 {
-  -fx-background-color : #07f7f7;
+    -fx-background-color : #07f7f7;
 }
-
 .button:pressed
 {
     -fx-background-color : #29D9D9;
 }
-
-
-
 .button
 {
     -fx-flex-shrink: 0;
     -fx-background-radius: 75px;
     -fx-background-color: #FF0;
 
-    -fx-font-family: "Inter"; /* Gebruik de eerder gedefinieerde naam voor het lettertype */
+    -fx-font-family: "Inter";
     -fx-text-fill: "#0a1758";
-   /* -fx-font-weight: bold;*/
     -fx-font-size: 85;
 }
 
@@ -69,7 +67,6 @@
      -fx-font-style: normal;
      -fx-font-weight: 400;
 }
-
 .label-style-departureDestination
 {
     -fx-text-fill: #0A1758;
@@ -78,7 +75,6 @@
     -fx-font-style: normal;
     -fx-font-weight: 700;
 }
-
 .label-style-money
 {
     -fx-text-fill: #0A1758;
@@ -87,7 +83,6 @@
     -fx-font-style: normal;
     -fx-font-weight: 400;
 }
-
 .label-style-travelInfo
 {
     -fx-text-fill: #0A1758;
@@ -96,7 +91,6 @@
     -fx-font-style: normal;
     -fx-font-weight: 400;
 }
-
 .label-style-spoor
 {
     -fx-text-fill: #0A1758;
@@ -105,12 +99,6 @@
     -fx-font-style: normal;l
     -fx-font-weight: 400;
 }
-
-.background {
-    -fx-background-color: white; /* Achtergrondkleur van de VBox */
-   -fx-background-radius: 75;
-}
-
 .back-button
 {
     -fx-background-image: url('image/pijlterug.png');
@@ -119,7 +107,6 @@
     -fx-background-position: 50px center;
     -fx-background-repeat: no-repeat;
 }
-
 .home-button
 {
     -fx-background-image: url('image/house.png');
@@ -128,6 +115,9 @@
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
 }
+
+
+
 
 
 

@@ -5,7 +5,7 @@
   -fx-background-color : #07f7f7;
 }
 
-.test
+.button
 {
     -fx-flex-shrink: 0;
     -fx-background-radius: 75px;
@@ -16,7 +16,6 @@
     -fx-text-fill: "#0a1758";
     -fx-font-size: 85;
 }
-
 .languageD-button
 {
     -fx-background-image: url('image/dutch.png');
