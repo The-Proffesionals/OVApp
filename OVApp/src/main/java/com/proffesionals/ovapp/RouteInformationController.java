@@ -115,6 +115,9 @@ public class RouteInformationController implements Initializable {
 
             SceneController sceneController = new SceneController(actionEvent);
             sceneController.setScene("Routes");
+        } else {
+            highlightIfEmpty(DepBox);
+            highlightIfEmpty(ArrBox);
         }
     }
     public void FillText() {
@@ -124,4 +127,19 @@ public class RouteInformationController implements Initializable {
         ArrBox.setPromptText(LanguageManager.getText("ArrBox"));
         Search.setText(LanguageManager.getText("Search"));
     }
+    private void highlightIfEmpty(ComboBox<String> comboBox) {
+        comboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null && !newValue.isEmpty()) {
+                // ComboBox is not empty, remove the highlighting
+                comboBox.setStyle("");
+            } else {
+                // ComboBox is empty, apply the highlighting
+                comboBox.setStyle("-fx-background-color: #FFD6CC;");
+            }
+        });
+        if (comboBox.getValue() == null || comboBox.getValue().isEmpty()) {
+            comboBox.setStyle("-fx-background-color: #FFD6CC;");
+        }
+    }
 }
+
