@@ -1,3 +1,5 @@
+
+
 @font-face
 {
     font-family: 'Inter';
@@ -17,7 +19,7 @@
 
 
 
-.button
+.button-style
 {
     -fx-flex-shrink: 0;
     -fx-background-radius: 75px;
@@ -25,22 +27,10 @@
 
     -fx-font-family: "Inter"; /* Gebruik de eerder gedefinieerde naam voor het lettertype */
     -fx-text-fill: "#0a1758";
-   /* -fx-font-weight: bold;*/
+    /* -fx-font-weight: bold; */
     -fx-font-size: 85;
 }
 
-.label-style
-{
-    -fx-width: 151px;
-    -fx-height: 199px;
-    -fx-alignment: center;
-    -fx-text-fill: #0A1758; /* Tekstkleur, vervang de hex-code naar wens */
-    -fx-font-family: "Inter";
-    -fx-font-size: 150px;
-    -fx-font-weight: normal; /* Of -fx-font-weight: bold; voor vetgedrukt */
-    -fx-text-alignment: center; /* Voor tekstuitlijning */
-    -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
-}
 .languageD-button
 {
     -fx-background-image: url('image/dutch.png');
@@ -59,18 +49,7 @@
     -fx-background-repeat: no-repeat;
     -fx-background-radius: 30px;
 }
-.label-style
-{
-    -fx-width: 151px;
-    -fx-height: 199px;
-    -fx-alignment: center;
-    -fx-text-fill: #0A1758; /* Tekstkleur, vervang de hex-code naar wens */
-    -fx-font-family: "Inter";
-    -fx-font-size: 150px;
-    -fx-font-weight: normal; /* Of -fx-font-weight: bold; voor vetgedrukt */
-    -fx-text-alignment: center; /* Voor tekstuitlijning */
-    -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
-}
+
 
 
 

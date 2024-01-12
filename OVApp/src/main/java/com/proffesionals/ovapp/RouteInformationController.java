@@ -66,7 +66,7 @@ public class RouteInformationController implements Initializable {
         Vertrek.setStyle("-fx-text-fill: #0A1758;");
 
 
-        updateText();
+        FillText();
         
     }
 
@@ -115,13 +115,34 @@ public class RouteInformationController implements Initializable {
 
             SceneController sceneController = new SceneController(actionEvent);
             sceneController.setScene("Routes");
+        } else {
+            if (ArrBox.getValue() != null&& DepBox.getValue() != null && ArrBox.getValue().equals(DepBox.getValue())){
+                ArrBox.setStyle("-fx-background-color: #FFD6CC;");
+            }
+            highlightIfEmpty(DepBox);
+            highlightIfEmpty(ArrBox);
         }
     }
-    public void updateText() {
+    public void FillText() {
         Aankomst.setText(LanguageManager.getText("Aankomst"));
         Vertrek.setText(LanguageManager.getText("Vertrek"));
         DepBox.setPromptText(LanguageManager.getText("DepBox"));
         ArrBox.setPromptText(LanguageManager.getText("ArrBox"));
         Search.setText(LanguageManager.getText("Search"));
     }
+    private void highlightIfEmpty(ComboBox<String> comboBox) {
+        comboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null && !newValue.isEmpty()) {
+                // ComboBox is not empty, remove the highlighting
+                comboBox.setStyle("");
+            } else {
+                // ComboBox is empty, apply the highlighting
+                comboBox.setStyle("-fx-background-color: #FFD6CC;");
+            }
+        });
+        if (comboBox.getValue() == null || comboBox.getValue().isEmpty()) {
+            comboBox.setStyle("-fx-background-color: #FFD6CC;");
+        }
+    }
 }
+
