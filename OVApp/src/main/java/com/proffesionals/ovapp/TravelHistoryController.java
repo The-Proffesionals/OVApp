@@ -21,6 +21,7 @@ public class TravelHistoryController {
         } else{ 
             for (Journey journey : RouteInformation.journeyhistory) {
                 Button button = new Button(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime() + " -> "+ journey.getEnd().getTime() + " " + journey.getbusOrTrain());
+                button.getStyleClass().add("label-style-History");
                 button.setOnAction(actionEvent -> {
                     try {
                         goToRouteInformation(actionEvent, journey);

@@ -83,6 +83,23 @@
     -fx-text-fill: #07f7f7;
 }
 
+.label-style-History
+{
+    -fx-alignment: center;
+    -fx-text-fill: #0A1758;
+    -fx-font-family: "InterRegular";
+    -fx-font-size: 30px;
+    -fx-font-weight: normal;
+    -fx-text-alignment: center;
+    -fx-background-color: transparent;
+}
+.label-style-History:hover
+{
+    -fx-background-fill: #07f7f7;
+    -fx-font-size: 75px;
+
+}
+
 .vbox
 {
     -fx-background-color: white;

@@ -43,7 +43,7 @@
             <VBox.margin>
                 <Insets top="45.0" />
             </VBox.margin>
-            <VBox fx:id="History" styleClass="label-style-tijd" stylesheets="@../../../routes.css" />
+            <VBox fx:id="History" styleClass="label-style-History" stylesheets="@../../../routes.css" />
         </HBox>
     </VBox>
 
