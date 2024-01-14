@@ -42,14 +42,14 @@ public class EndController {
         departureTime.setText(RouteInformation.currentJourney.getStart().getTime().toString());
         arrivalTime.setText(RouteInformation.currentJourney.getEnd().getTime().toString());
         if (RouteInformation.currentJourney.getbusOrTrain() == true){
-            spoor.setText("Spoor: 1");
-            spoor2.setText("Spoor: 1");
-        }
-        else{
             spoor.setText("Halte: 1");
             spoor2.setText("Halte: 1");
         }
-        travelInformation.setText(RouteInformation.currentJourney.getbusOrTrain() ? "Intercity" : "Bus 69");
+        else{
+            spoor.setText("Spoor: 1");
+            spoor2.setText("Spoor: 1");
+        }
+        travelInformation.setText(RouteInformation.currentJourney.getbusOrTrain() ? "Bus 69" : "Intercity");
         intermediateStops.setText(String.valueOf(RouteInformation.currentJourney.getStops().size() - 2) + " tussenstop(s)");
         money.setText("€ " + RouteInformation.currentJourney.getPrice());
         departureDestination.setText(RouteInformation.currentJourney.getStart().getPoint().getName());

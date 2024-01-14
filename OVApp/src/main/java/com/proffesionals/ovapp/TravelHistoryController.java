@@ -17,9 +17,10 @@ public class TravelHistoryController {
     @FXML
     protected void initialize() {
         if (RouteInformation.journeyhistory.isEmpty()) {
-            History.getChildren().add(new Label("No history"));
-        } else{ 
-            for (int i = RouteInformation.journeyhistory.size() - 1; i >= 0; i--) {
+            History.getChildren().add(new Label("Geen reisgeschiedenis"));
+        } else {
+            int maxJourneysShown = 7;
+            for (int i = 0; i < RouteInformation.journeyhistory.size() ; i++) {
                 Journey journey = RouteInformation.journeyhistory.get(i);
                 Button button = new Button(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime() + " -> "+ journey.getEnd().getTime() + " " + (journey.getbusOrTrain()? "Bus" : "Train" ));
                 button.getStyleClass().add("label-style-History");
@@ -30,6 +31,9 @@ public class TravelHistoryController {
                         e.printStackTrace();
                     }
                 });
+                if (i>= maxJourneysShown){
+                    History.getChildren().remove(0);
+                }
                 History.getChildren().add(button);
             }
         }
