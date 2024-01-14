@@ -19,7 +19,8 @@ public class TravelHistoryController {
         if (RouteInformation.journeyhistory.isEmpty()) {
             History.getChildren().add(new Label("No history"));
         } else{ 
-            for (Journey journey : RouteInformation.journeyhistory) {
+            for (int i = RouteInformation.journeyhistory.size() - 1; i >= 0; i--) {
+                Journey journey = RouteInformation.journeyhistory.get(i);
                 Button button = new Button(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime() + " -> "+ journey.getEnd().getTime() + " " + (journey.getbusOrTrain()? "Bus" : "Train" ));
                 button.getStyleClass().add("label-style-History");
                 button.setOnAction(actionEvent -> {
