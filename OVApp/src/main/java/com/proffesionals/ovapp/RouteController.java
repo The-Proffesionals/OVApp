@@ -11,13 +11,17 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.event.EventHandler;
 
+
 public class RouteController {
     @FXML
     private Label route;
+    public Label bestOption;
+
     @FXML
     private VBox Journeys;
     @FXML
     private Button FavoriteButton;
+
 
     @FXML
     protected void initialize() {
@@ -44,6 +48,7 @@ public class RouteController {
             });
             Journeys.getChildren().add(label);
         }
+        FillText();
     }
 
     @FXML
@@ -75,5 +80,10 @@ public class RouteController {
     private void goToEnd(ActionEvent event) throws IOException {
         SceneController sceneController = new SceneController(event);
         sceneController.setScene("End");
+    }
+    public void FillText() {
+        bestOption.setText(LanguageManager.getText("bestOption"));
+//        Favorite_select.setText(LanguageManager.getText("Favorite_select"));
+//        TravelHistory_select.setText(LanguageManager.getText("TravelHistory_select"));
     }
 }

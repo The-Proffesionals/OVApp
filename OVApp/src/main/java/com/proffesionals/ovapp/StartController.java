@@ -2,6 +2,8 @@ package com.proffesionals.ovapp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+
 import java.io.IOException;
 import java.util.Locale;
 import static com.proffesionals.ovapp.LanguageManager.setLanguage;
