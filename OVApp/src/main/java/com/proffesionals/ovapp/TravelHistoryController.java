@@ -8,6 +8,8 @@ import javafx.event.ActionEvent;
 import java.io.IOException;
 import javafx.scene.control.Label;
 
+
+
 public class TravelHistoryController {
     @FXML
     private VBox History;
@@ -15,10 +17,13 @@ public class TravelHistoryController {
     @FXML
     protected void initialize() {
         if (RouteInformation.journeyhistory.isEmpty()) {
-            History.getChildren().add(new Label("No history"));
-        } else{ 
-            for (Journey journey : RouteInformation.journeyhistory) {
-                Button button = new Button(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime() + " -> "+ journey.getEnd().getTime() + " " + journey.getbusOrTrain());
+            History.getChildren().add(new Label("Geen reisgeschiedenis"));
+        } else {
+            int maxJourneysShown = 7;
+            for (int i = 0; i < RouteInformation.journeyhistory.size() ; i++) {
+                Journey journey = RouteInformation.journeyhistory.get(i);
+                Button button = new Button(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime() + " -> "+ journey.getEnd().getTime() + " " + (journey.getbusOrTrain()? "Bus" : "Train" ));
+                button.getStyleClass().add("label-style-History");
                 button.setOnAction(actionEvent -> {
                     try {
                         goToRouteInformation(actionEvent, journey);
@@ -26,6 +31,9 @@ public class TravelHistoryController {
                         e.printStackTrace();
                     }
                 });
+                if (i>= maxJourneysShown){
+                    History.getChildren().remove(0);
+                }
                 History.getChildren().add(button);
             }
         }
@@ -33,6 +41,11 @@ public class TravelHistoryController {
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) throws IOException{
+        SceneController sceneController = new SceneController(actionEvent);
+        sceneController.setScene("start");
+    }
+    @FXML
+    protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
         SceneController sceneController = new SceneController(actionEvent);
         sceneController.setScene("start");
     }

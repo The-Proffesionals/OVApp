@@ -1,96 +1,28 @@
-@font-face
+@import url('fonts.css');
+
+.root
 {
-    font-family: 'Inter';
-    src: url('font/static/Inter-Bold.ttf'); /* Relatief pad vanaf de locatie van de CSS */
+    -fx-background-color: #FF0;
 }
-@font-face
-{
-    font-family: 'InterRegular';
-    src: url('font/static/Inter-Regular.ttf'); /* Relatief pad vanaf de locatie van de CSS */
-}
-
-.root {
-    -fx-background-color: #FF0; /* Verander de achtergrondkleur naar lichtblauw */
-}
-
-
-
 .button:hover
 {
-  -fx-background-color : #07f7f7;
+    -fx-background-color : #07f7f7;
 }
-
 .button:pressed
 {
     -fx-background-color : #29D9D9;
 }
 
-
-
 .button
 {
-
     -fx-flex-shrink: 0;
     -fx-background-radius: 75px;
-    -fx-background-color: #FF0;
+    -fx-background-color: transparent;
 
-    -fx-font-family: "Inter"; /* Gebruik de eerder gedefinieerde naam voor het lettertype */
+    -fx-font-family: "Inter";
     -fx-text-fill: "#0a1758";
-   /* -fx-font-weight: bold;*/
     -fx-font-size: 85;
 }
-
-.label-style-title
-{
-    -fx-width: 0px;
-    -fx-height: 0px;
-    -fx-alignment: center;
-    -fx-text-fill: #0A1758; /* Tekstkleur, vervang de hex-code naar wens */
-    -fx-font-family: "Inter";
-    -fx-font-size: 100px;
-    -fx-font-weight: bold; /* Of -fx-font-weight: bold; voor vetgedrukt */
-    -fx-text-alignment: center; /* Voor tekstuitlijning */
-    -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
-}
-.label-style-tijd
-{
-    -fx-alignment: center;
-    -fx-text-fill: #0A1758; /* Tekstkleur, vervang de hex-code naar wens */
-    -fx-font-family: "InterRegular";
-    -fx-font-size: 90px;
-    -fx-font-weight: normal; /* Of -fx-font-weight: bold; voor vetgedrukt */
-    -fx-text-alignment: center; /* Voor tekstuitlijning */
-    -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
-}
-
-.label-style-tijd:hover
-{
-    -fx-text-fill: #07f7f7;
-}
-.languageD-button
-{
-    -fx-background-image: url('image/dutch.png');
-    -fx-background-size: 100px auto;
-    -fx-background-color: #FF0;
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-}
-.languageE-button
-{
-    -fx-background-image: url('image/eng.png');
-    -fx-background-size: 110px auto;
-    -fx-background-color: #FF0;
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-
-}
-
-.vbox {
-    -fx-background-color: white; /* Achtergrondkleur van de VBox */
-    -fx-background-radius: 75;
-}
-
-
 .back-button
 {
     -fx-background-image: url('image/pijlterug.png');
@@ -99,7 +31,6 @@
     -fx-background-position: 50px center;
     -fx-background-repeat: no-repeat;
 }
-
 .home-button
 {
     -fx-background-image: url('image/house.png');
@@ -108,15 +39,6 @@
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
 }
-
-
-.line
-{
--fx-stroke: #FF0; /* Kleur van de lijn */ ;
--fx-stroke-width: 28; /* Dikte van de lijn */
-}
-
-
 .star-button
 {
     -fx-background-image: url('image/star.png');
@@ -125,3 +47,68 @@
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
 }
+.starklick-button
+{
+    -fx-background-image: url('image/starfilled.png');
+    -fx-background-size: 110px auto;
+    -fx-background-color: transparent;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.label-style-title
+{
+    -fx-width: 0px;
+    -fx-height: 0px;
+    -fx-alignment: center;
+    -fx-text-fill: #0A1758;
+    -fx-font-family: "Inter";
+    -fx-font-size: 100px;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-background-color: transparent;
+}
+.label-style-tijd
+{
+    -fx-alignment: center;
+    -fx-text-fill: #0A1758;
+    -fx-font-family: "InterRegular";
+    -fx-font-size: 90px;
+    -fx-font-weight: normal;
+    -fx-text-alignment: center;
+    -fx-background-color: transparent;
+}
+.label-style-tijd:hover
+{
+    -fx-text-fill: #07f7f7;
+}
+
+.label-style-History
+{
+    -fx-alignment: center;
+    -fx-text-fill: #0A1758;
+    -fx-font-family: "InterRegular";
+    -fx-font-size: 30px;
+    -fx-font-weight: normal;
+    -fx-text-alignment: center;
+    -fx-background-color: transparent;
+}
+.label-style-History:hover
+{
+    -fx-background-fill: #07f7f7;
+    -fx-font-size: 75px;
+
+}
+
+.vbox
+{
+    -fx-background-color: white;
+    -fx-background-radius: 75;
+}
+
+.line
+{
+    -fx-stroke: #FF0;
+    -fx-stroke-width: 28;
+}
+

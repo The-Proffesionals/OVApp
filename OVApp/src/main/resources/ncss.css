@@ -1,91 +1,45 @@
-
-@font-face {
-    font-family: 'Inter';
-    src: url('font/static/Inter-Bold.ttf'); /* Relatief pad vanaf de locatie van de CSS */
-}
+@import url('fonts.css');
 
 .button:hover
 {
   -fx-background-color : #07f7f7;
 }
-
 .button:pressed
 {
     -fx-background-color : #29D9D9;
 }
 
-
-.combo-box:hover
-{
-  -fx-background-color : #07f7f7;
-}
-
-.combo-box:pressed
-{
-  -fx-background-color : #29D9D9;
-}
-
-
-.date-picker .arrow-button:hover
-{
--fx-background-color : #07f7f7;
-}
-
-.date-picker .arrow-button:pressed
-{
--fx-background-color : #29D9D9;
-}
-
-
-
-
-
-.combo-box
-{
-    -fx-flex-shrink: 0;
-    -fx-background-radius: 75px;
-    -fx-background-color: #FF0;
-}
-
-
-.combo-box-base .text
-{
-    -fx-fill: rgba(10, 23, 88, 1);
-    -fx-font-family: "Inter";
-    -fx-font-weight: bold;
-    -fx-font-size: 85;
-    -fx-padding: 0 20 0 20;
-}
-
-.combo-box-remove-arrow .arrow
-{
-      -fx-background-color: #CCCCCC; /* Kleur van de pijl */
-      -fx-background-radius: 75px;
-
-     /*-fx-background-image: url('path/to/custom-arrow.png');
-     -fx-background-position: center;
-     -fx-background-repeat: no-repeat; */
-     -fx-background-size: 10px 10px; /* Pas de afmetingen aan */
-     -fx-padding: 0; /* Optioneel om de standaard pijl te verbergen */
-}
-
 .button
 {
-   /* -fx-min-width: 751px;
-    -fx-max-width: 751px;
-    -fx-min-height: 210px;
-    -fx-max-height: 210px; */
-
     -fx-flex-shrink: 0;
     -fx-background-radius: 75px;
     -fx-background-color: #FF0;
-
-    -fx-font-family: "Inter"; /* Gebruik de eerder gedefinieerde naam voor het lettertype */
+    -fx-font-family: "Inter";
     -fx-text-fill: "#0a1758";
     -fx-font-weight: bold;
     -fx-font-size: 85;
 }
+.vertrek-button
+{
+    /* Display style */
+    -fx-display: flex;
 
+    /* Afmetingen */
+    -fx-width: 386px;
+    -fx-height: 102px;
+    -fx-background-color: transparent;
+
+    /* Flexbox eigenschappen */
+    -fx-flex-direction: column;
+    -fx-justify-content: center;
+    -fx-flex-shrink: 0;
+
+    /* Tekststijlen */
+    -fx-alignment: center;
+    -fx-font-family: "Inter";
+    -fx-font-size: 96px;
+    -fx-font-weight: bold;
+}
 .viekantButton
 {
     -fx-min-width: 292px;
@@ -94,79 +48,11 @@
     -fx-max-height: 245px;
     -fx-flex-shrink: 0;
 
-    -fx-font-family: "Inter"; /* Gebruik de eerder gedefinieerde naam voor het lettertype */
+    -fx-font-family: "Inter";
     -fx-text-fill: "#0a1758";
     -fx-font-weight: bold;
     -fx-font-size: 115;
 }
-
-.label-style
-{
-    -fx-width: 151px;
-    -fx-height: 199px;
-    -fx-alignment: center;
-    -fx-text-fill: #0A1758; /* Tekstkleur, vervang de hex-code naar wens */
-    -fx-font-family: "Inter";
-    -fx-font-size: 150px;
-    -fx-font-weight: normal; /* Of -fx-font-weight: bold; voor vetgedrukt */
-    -fx-text-alignment: center; /* Voor tekstuitlijning */
-    -fx-background-color: transparent; /* Optioneel, voor achtergrondkleur van het label */
-}
-
-.vertrek-button
-{
-/* Display style */
-    -fx-display: flex; /* Hiermee wordt flexbox-layout gebruikt voor positionering en uitlijning van elementen. */
-
-    /* Afmetingen */
-    -fx-width: 386px; /* Breedte van het label */
-    -fx-height: 102px; /* Hoogte van het label */
-    -fx-background-color: transparent;
-
-    /* Flexbox eigenschappen */
-    -fx-flex-direction: column; /* Bepaalt de richting van de flex-items in de container (kolomrichting) */
-    -fx-justify-content: center; /* Hiermee wordt de inhoud van het label verticaal gecentreerd */
-    -fx-flex-shrink: 0; /* Voorkomt dat het label krimpt wanneer dat niet nodig is */
-
-    /* Tekststijlen */
-    -fx-alignment: center; /* Uitlijning van de tekst binnen het label */
-    -fx-font-family: "Inter"; /* Lettertypefamilie */
-    -fx-font-size: 96px; /* Tekstgrootte */
-    -fx-font-weight: bold; /* Dikte van het lettertype */
-   /* -fx-line-spacing: normal; /* Afstand tussen regels tekst */
-}
-
-.selected
-{
-    /* Display style */
-    -fx-display: flex; /* Hiermee wordt flexbox-layout gebruikt voor positionering en uitlijning van elementen. */
-
-    /* Afmetingen */
-    -fx-width: 386px; /* Breedte van het label */
-    -fx-height: 102px; /* Hoogte van het label */
-    -fx-background-color: transparent;
-
-    /* Flexbox eigenschappen */
-    -fx-flex-direction: column; /* Bepaalt de richting van de flex-items in de container (kolomrichting) */
-    -fx-justify-content: center; /* Hiermee wordt de inhoud van het label verticaal gecentreerd */
-    -fx-flex-shrink: 0; /* Voorkomt dat het label krimpt wanneer dat niet nodig is */
-
-    /* Tekststijlen */
-    -fx-alignment: center; /* Uitlijning van de tekst binnen het label */
-    -fx-font-family: "Inter"; /* Lettertypefamilie */
-    -fx-font-size: 96px; /* Tekstgrootte */
-    -fx-font-weight: bold; /* Dikte van het lettertype */
-    -fx-text-fill: grey;
-    /* -fx-line-spacing: normal; /* Afstand tussen regels tekst */
-}
-
-/*
-.button-with-image
-{
--fx-background-size: cover; * Om de afbeelding te schalen zodat deze de hele button bedekt *
--fx-background-position: center; * Om de positie van de afbeelding in de button aan te passen *
-}
-*/
 .back-button
 {
     -fx-background-image: url('image/pijlterug.png');
@@ -175,7 +61,6 @@
     -fx-background-position: 50px center;
     -fx-background-repeat: no-repeat;
 }
-
 .home-button
 {
     -fx-background-image: url('image/house.png');
@@ -185,58 +70,125 @@
     -fx-background-repeat: no-repeat;
 }
 
+.combo-box:hover
+{
+    -fx-background-color : #07f7f7;
+}
+.combo-box:pressed
+{
+    -fx-background-color : #29D9D9;
+}
 
+.combo-box
+{
+    -fx-flex-shrink: 0;
+    -fx-background-radius: 75px;
+    -fx-background-color: #FF0;
+}
+.combo-box .list-cell
+{
+    -fx-alignment: center;
+    -fx-font-size: 100;
+    /*-fx-background-color: BLUE;*/
+}
+.Kleinermaker .list-cell:focused
+{
+    -fx-alignment: center;
+    -fx-font-size: 85;
+}
+.combo-box-base .text
+{
+    -fx-fill: rgba(10, 23, 88, 1);
+    -fx-font-family: "Inter";
+    -fx-font-weight: bold;
+    -fx-padding: 0 20 0 20;
+}
+.combo-box-remove-arrow .arrow
+{
+     -fx-background-color: #CCCCCC;
+     -fx-background-radius: 75px;
+
+     -fx-background-size: 10px 10px;
+     -fx-padding: 0;
+}
+
+.label-style
+{
+    -fx-width: 151px;
+    -fx-height: 199px;
+    -fx-alignment: center;
+    -fx-text-fill: #0A1758;
+    -fx-font-family: "Inter";
+    -fx-font-size: 150px;
+    -fx-font-weight: normal;
+    -fx-text-alignment: center;
+    -fx-background-color: transparent;
+}
+
+.selected
+{
+    /* Display style */
+    -fx-display: flex;
+
+    /* Afmetingen */
+    -fx-width: 386px;
+    -fx-height: 102px;
+    -fx-background-color: transparent;
+
+    /* Flexbox eigenschappen */
+    -fx-flex-direction: column;
+    -fx-justify-content: center;
+    -fx-flex-shrink: 0;
+
+    /* Tekststijlen */
+    -fx-alignment: center;
+    -fx-font-family: "Inter";
+    -fx-font-size: 96px;
+    -fx-font-weight: bold;
+    -fx-text-fill: grey;
+}
 .date-picker
 {
     -fx-background-color: transparent;
-
 }
-
+.date-picker .arrow-button:hover
+{
+    -fx-background-color : #07f7f7;
+}
+.date-picker .arrow-button:pressed
+{
+    -fx-background-color : #29D9D9;
+}
+.date-picker-popup
+{
+    -fx-font-size: 65px;
+}
 .date-picker-popup .month-year-pane .button .arrow-button
 {
--fx-background-color: "#0a1758";
+    -fx-background-color: "#0a1758";
 }
-
-.date-picker-popup .calendar-grid
+.date-picker-popup .calendar-grid .week-number-cell
 {
--fx-pref-width: 700;
--fx-pref-height: 700;
-}
-/* Stel de grootte van de kalenderpop-up in */
-.date-picker-popup .popup-content {
-    -fx-pref-width: 700px; /* Pas de breedte aan */
-    -fx-pref-height: 700px; /* Pas de hoogte aan */
-}
-/* Pas de tekstgrootte aan binnen de DatePicker */
-.date-picker .text-field {
-    -fx-font-size: 3px; /* Pas de tekstgrootte aan */
-}
-
-.date-picker-popup  .week-number-cell {
     -fx-pref-width: 0;
     -fx-min-width: 0;
     -fx-max-width: 0;
     visibility: hidden;
 }
-
 .date-picker .arrow-button
- {
+{
      -fx-background-image: url('image/calendar.png');
      -fx-shape: null;
      -fx-flex-shrink: 0;
      -fx-background-radius: 75px;
      -fx-background-color: #FF0;
-
      -fx-background-position: center;
      -fx-background-repeat: no-repeat;
 }
-
 .date-picker .arrow-button .arrow
 {
     -fx-shape: null;
     -fx-background-color: transparent;
 }
-
 .date-picker .text-field
 {
     -fx-opacity: 0;
@@ -244,14 +196,8 @@
     -fx-background-color: transparent;
     -fx-background-insets: 0;
 }
-
 .date-picker .day-cell:hover
 {
     -fx-background-color: "#FFFF00";
     -fx-text-fill: black;
-}
-
-.date-picker .day-cell:selected
-{
-    -fx-background-color: "#FFFF00";
 }

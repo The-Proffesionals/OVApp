@@ -25,7 +25,6 @@ public class SceneController {
         primaryStage.setResizable(false);
         primaryStage.setFullScreen(true);
 
-
         primaryStage.show();
     }
 

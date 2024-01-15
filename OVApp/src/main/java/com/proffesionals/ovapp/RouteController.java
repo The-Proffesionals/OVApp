@@ -22,7 +22,7 @@ public class RouteController {
     @FXML
     protected void initialize() {
         GraphManipulate graphManipulate = new GraphManipulate();
-        List<Journey> journeys = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph, LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, true);
+        List<Journey> journeys = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph, LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, RouteInformation.departureorarrival);
         for (Journey journey : journeys) {
             Label label = new Label(journey.getStart().getTime() + " -> " + journey.getEnd().getTime());
             label.getStyleClass().add("label-style-tijd");
@@ -48,8 +48,16 @@ public class RouteController {
 
     @FXML
     protected void onAddToFavorite() {
-        RouteInformation.favorite.add(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination));
-        FavoriteButton.setDisable(true);
+        List<List<String>> favoritesList = RouteInformation.favorite;
+        if (favoritesList.contains(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination))) {
+            FavoriteButton.getStyleClass().add("starklick-button");
+            FavoriteButton.setDisable(true);
+        } else {
+            RouteInformation.favorite.add(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination));
+            FavoriteButton.getStyleClass().add("starklick-button");
+            FavoriteButton.setDisable(true);
+        }
+
     }
 
     @FXML

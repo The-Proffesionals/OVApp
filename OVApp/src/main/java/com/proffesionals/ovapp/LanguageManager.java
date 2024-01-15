@@ -3,14 +3,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class LanguageManager {
-    private static ResourceBundle text;
-    public static Locale currentLanguage = Locale.of("nl");
-
-    public static void setLocale(Locale language) {
-        //Load ResourceBundle on provided language
-        text = ResourceBundle.getBundle("text", language);
-        currentLanguage = language;
-    }
+    private static ResourceBundle text = ResourceBundle.getBundle("text", Locale.of("nl"));    
 
     //Get text from ResourceBundle
     public static String getText(String key) {
@@ -18,13 +11,7 @@ public class LanguageManager {
     }
 
     public static void setLanguage(Locale language) {
-        setLocale(language);
-    }
-    public static Locale getCurrentLanguage() {
-        return currentLanguage;
-    }
-    public static void setCurrentLanguage(Locale language) {
-        currentLanguage = language;
+        text = ResourceBundle.getBundle("text", language);
     }
 }
 

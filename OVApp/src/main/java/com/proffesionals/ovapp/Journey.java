@@ -4,9 +4,6 @@ import java.util.List;
 
 import java.time.Duration;
 import java.util.ArrayList;
-import java.time.LocalTime;
-import java.time.LocalDate;
-
 
 
 public class Journey {
@@ -44,6 +41,15 @@ public class Journey {
     public String getPrice(){
         Float Price = GraphManipulate.getPrice(this);
         return String.format("%.2f", Price);
+    }
+
+    public Journey getReverseJourney(){
+        Journey reverseJourney = new Journey(BusOrTrain);
+        for (int i = stops.size() - 1; i >= 0; i--){
+            Stop stop = new Stop(stops.get(stops.size() - 1 - i).getPoint(), stops.get(i).getTime());
+            reverseJourney.addStop(stop);
+        }
+        return reverseJourney;
     }
 }
 
