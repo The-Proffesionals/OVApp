@@ -25,7 +25,7 @@ public class RouteInformationController implements Initializable {
     @FXML
     private ComboBox<String> ArrBox;
     @FXML
-    private ComboBox<Integer> MinutesBox;
+    private ComboBox<String> MinutesBox;
     @FXML
     private ComboBox<Integer> HourBox;
     @FXML
@@ -51,9 +51,13 @@ public class RouteInformationController implements Initializable {
         }
         HourBox.setValue(currentTime.getHour());
         for (int minutes = 0; minutes <= 60; minutes += 5) {
-            MinutesBox.getItems().add(minutes);
+            if (minutes < 10) {
+                MinutesBox.getItems().add("0" + minutes); 
+            } else{
+                MinutesBox.getItems().add(String.valueOf(minutes));
+            }
         }
-        MinutesBox.setValue(currentTime.getMinute());
+        MinutesBox.setValue(String.valueOf(currentTime.getMinute()));
         DatePicker.setValue(LocalDate.now());
 
         Vertrek.setStyle("-fx-text-fill: #0A1758;");
@@ -103,7 +107,7 @@ public class RouteInformationController implements Initializable {
             RouteInformation.arrivalDestination = ArrBox.getValue();
             RouteInformation.departureDestination = DepBox.getValue();
             RouteInformation.hours = HourBox.getValue();
-            RouteInformation.minutes = MinutesBox.getValue();
+            RouteInformation.minutes = Integer.parseInt(MinutesBox.getValue());
             RouteInformation.date = DatePicker.getValue();
             RouteInformation.departureorarrival = depOrArrTime;
 
@@ -147,7 +151,11 @@ public class RouteInformationController implements Initializable {
         }
         if (RouteInformation.hours != -1 && RouteInformation.minutes != -1) {
             HourBox.setValue(RouteInformation.hours);
-            MinutesBox.setValue(RouteInformation.minutes);
+            if (RouteInformation.minutes < 10) {
+                MinutesBox.setValue("0" + RouteInformation.minutes);
+            } else {
+                MinutesBox.setValue(String.valueOf(RouteInformation.minutes));
+            }
         }
         if (RouteInformation.date != null) {
             DatePicker.setValue(RouteInformation.date);
