@@ -36,21 +36,23 @@
                <String fx:value="Kleinermaker" />
             </styleClass></ComboBox>
 
-           <ComboBox fx:id="DepartureOrArival" layoutX="42.0" layoutY="542.0" prefHeight="236.0" prefWidth="764.0" promptText="aankomst" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="304.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="1122.0" AnchorPane.topAnchor="542.0">
+           <ComboBox fx:id="DepartureOrArival" layoutX="42.0" layoutY="542.0" prefHeight="236.0" prefWidth="808.0" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="304.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="1122.0" AnchorPane.topAnchor="542.0">
             <styleClass>
                <String fx:value="list-cell" />
                <String fx:value="combo-box-remove-arrow" />
                <String fx:value="Kleinermaker" />
             </styleClass></ComboBox>
-           <ComboBox fx:id="MinutesBox" layoutX="1020.0" layoutY="542.0" prefHeight="236.0" prefWidth="266.0" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="304.0" AnchorPane.leftAnchor="1020.0" AnchorPane.rightAnchor="642.0" AnchorPane.topAnchor="542.0">
+           <ComboBox fx:id="HourBox" layoutX="1020.0" layoutY="542.0" prefHeight="236.0" prefWidth="266.0" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="304.0" AnchorPane.leftAnchor="1020.0" AnchorPane.rightAnchor="642.0" AnchorPane.topAnchor="542.0">
             <styleClass>
                <String fx:value="combo-box-remove-arrow" />
                <String fx:value="tijdbox" />
+               <String fx:value="tijdboxList" />
             </styleClass></ComboBox>
-           <ComboBox fx:id="HourBox" layoutX="1347.0" layoutY="546.0" prefHeight="236.0" prefWidth="266.0" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="1347.0" AnchorPane.rightAnchor="315.0" AnchorPane.topAnchor="546.0">
+           <ComboBox fx:id="MinutesBox" layoutX="1347.0" layoutY="546.0" prefHeight="236.0" prefWidth="266.0" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="1347.0" AnchorPane.rightAnchor="315.0" AnchorPane.topAnchor="546.0">
             <styleClass>
                <String fx:value="combo-box-remove-arrow" />
                <String fx:value="tijdbox" />
+               <String fx:value="tijdboxList" />
             </styleClass></ComboBox>
           <Button fx:id="Search" onAction="#onSearchButtonClick" stylesheets="@../../../ncss.css" text="Plan je reis" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="856.0" />
                     <ImageView fitHeight="117.0" fitWidth="111.0" layoutX="87.0" layoutY="907.0" pickOnBounds="true" preserveRatio="true" />

@@ -91,13 +91,6 @@
     -fx-font-size: 100;
     /*-fx-background-color: BLUE;*/
 }
-.tijdbox .list-cell
-{
-    -fx-alignment: center;
-    -fx-font-size: 90;
-    /*-fx-background-color: BLUE;*/
-}
-
 .Kleinermaker .list-cell:focused
 {
     -fx-alignment: center;
@@ -117,6 +110,17 @@
 
      -fx-background-size: 10px 10px;
      -fx-padding: 0;
+}
+.tijdbox .list-cell
+{
+    -fx-alignment: center;
+    -fx-font-size: 90;
+    /*-fx-background-color: BLUE;*/
+}
+.tijdboxList .combo-box-popup .list-view
+{
+    -fx-max-height: 250px;
+    -fx-pref-height: 250px;
 }
 
 .label-style

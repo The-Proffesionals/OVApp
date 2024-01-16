@@ -54,7 +54,7 @@ public class RouteInformationController implements Initializable {
             HourBox.getItems().add(hour);
         }
         HourBox.setValue(currentTime.getHour());
-        for (int minutes = 0; minutes <= 60; minutes += 5) {
+        for (int minutes = 0; minutes < 60; minutes += 5) {
             if (minutes < 10) {
                 MinutesBox.getItems().add("0" + minutes); 
             } else{
