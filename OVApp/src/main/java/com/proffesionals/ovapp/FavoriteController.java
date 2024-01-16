@@ -21,7 +21,7 @@ public class FavoriteController {
     @FXML
     protected void initialize() {
         if (RouteInformation.favorite.isEmpty()) {
-            Favorite.getChildren().add(new Label("Nog geen favorieten"));
+            Favorite.getChildren().add(new Label(LanguageManager.getText("noFavorite")));
         } else {
             for (List<String> favorite : RouteInformation.favorite) {
                 HBox f = new HBox();

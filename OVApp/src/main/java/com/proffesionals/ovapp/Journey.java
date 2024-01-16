@@ -46,7 +46,7 @@ public class Journey {
     public Journey getReverseJourney(){
         Journey reverseJourney = new Journey(BusOrTrain);
         for (int i = stops.size() - 1; i >= 0; i--){
-            Stop stop = new Stop(stops.get(stops.size() - 1 - i).getPoint(), stops.get(i).getTime());
+            Stop stop = new Stop(stops.get(stops.size() - 1 - i).getPoint(), stops.get(i).getTime(), stops.get(i).getDate());
             reverseJourney.addStop(stop);
         }
         return reverseJourney;

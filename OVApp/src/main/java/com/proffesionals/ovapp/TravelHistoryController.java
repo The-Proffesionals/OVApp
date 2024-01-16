@@ -19,12 +19,13 @@ public class TravelHistoryController {
     @FXML
     protected void initialize() {
         if (RouteInformation.journeyhistory.isEmpty()) {
-            History.getChildren().add(new Label("Geen reisgeschiedenis"));
+            History.getChildren().add(new Label(LanguageManager.getText("noTravelHistory")));
         } else {
             int maxJourneysShown = 7;
             for (int i = 0; i < RouteInformation.journeyhistory.size() ; i++) {
                 Journey journey = RouteInformation.journeyhistory.get(i);
-                Button button = new Button(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime() + " -> "+ journey.getEnd().getTime() + " " + (journey.getbusOrTrain()? "Bus" : "Train" ));
+                String trainOrBus = journey.getbusOrTrain() ? LanguageManager.getText("bus") : LanguageManager.getText("train");
+                Button button = new Button(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime() + " -> "+ journey.getEnd().getTime() + " " + trainOrBus);
                 button.getStyleClass().add("label-style-History");
                 button.setOnAction(actionEvent -> {
                     try {
@@ -47,6 +48,7 @@ public class TravelHistoryController {
         SceneController sceneController = new SceneController(actionEvent);
         sceneController.setScene("start");
     }
+
     @FXML
     protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
         SceneController sceneController = new SceneController(actionEvent);
@@ -54,14 +56,15 @@ public class TravelHistoryController {
     }
 
     private void goToRouteInformation(ActionEvent actionEvent, Journey journey) throws IOException {
-        // RouteInformation.departureDestination = journey.getDeparture();
-        // RouteInformation.arrivalDestination = journey.getArrival();
-        // RouteInformation.date = journey.getDateTime().toLocalDate();
-        // RouteInformation.hours = journey.getDateTime().getHour();
-        // RouteInformation.minutes = journey.getDateTime().getMinute();
+        RouteInformation.departureDestination = journey.getStart().getPoint().getName();
+        RouteInformation.arrivalDestination = journey.getEnd().getPoint().getName();
+        RouteInformation.date = journey.getStart().getDate();
+        RouteInformation.hours = journey.getStart().getTime().getHour();
+        RouteInformation.minutes = journey.getStart().getTime().getMinute();
         SceneController sceneController = new SceneController(actionEvent);
         sceneController.setScene("routeInformation");
     }
+
     public void FillText() {
         travelHistory.setText(LanguageManager.getText("travelHistory"));
     }
