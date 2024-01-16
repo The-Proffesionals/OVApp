@@ -14,7 +14,7 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-    <VBox prefHeight="943.0" prefWidth="1797.0" styleClass="vbox" stylesheets="@../../../routes.css" VBox.vgrow="SOMETIMES">
+    <VBox prefHeight="943.0" prefWidth="1797.0" styleClass="vbox" VBox.vgrow="SOMETIMES">
         <VBox.margin>
             <Insets bottom="79.0" left="62.0" right="61.0" top="80.0" />
         </VBox.margin>
@@ -33,7 +33,7 @@
                 </HBox.margin>
             </Button>
             <Region prefHeight="160.0" prefWidth="266.0" />
-            <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="613.0" styleClass="label-style-title" stylesheets="@../../../routes.css" text="Beste optie" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="613.0" styleClass="label-style-title" text="Beste optie" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
                 <HBox.margin>
                     <Insets />
                 </HBox.margin>
@@ -50,7 +50,7 @@
             <VBox.margin>
                 <Insets top="45.0" />
             </VBox.margin>
-            <VBox fx:id="Journeys" styleClass="label-style-tijd" stylesheets="@../../../routes.css" />
+            <VBox fx:id="Journeys" styleClass="label-style-tijd"/>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0">
                 <HBox.margin>
                     <Insets />

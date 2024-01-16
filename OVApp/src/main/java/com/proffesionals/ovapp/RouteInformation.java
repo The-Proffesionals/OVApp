@@ -14,4 +14,14 @@ public class RouteInformation {
     public static List<List<String>> favorite = new ArrayList<>();
     public static List<Journey> journeyhistory = new ArrayList<>();
     public static Journey currentJourney;
+
+    public static void clearCurrentJourney() {
+        currentJourney = null;
+        arrivalDestination = null;
+        departureDestination = null;
+        hours = -1;
+        minutes = -1;
+        departureorarrival = true;
+        date = null;
+    }
 }
