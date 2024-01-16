@@ -61,7 +61,11 @@ public class RouteInformationController implements Initializable {
                 MinutesBox.getItems().add(String.valueOf(minutes));
             }
         }
-        MinutesBox.setValue(String.valueOf(currentTime.getMinute()));
+        if (currentTime.getMinute() < 10) {
+            MinutesBox.setValue("0" + currentTime.getMinute());
+        } else {
+            MinutesBox.setValue(String.valueOf(currentTime.getMinute()));
+        }
         DatePicker.setValue(LocalDate.now());
 
         FillText();
