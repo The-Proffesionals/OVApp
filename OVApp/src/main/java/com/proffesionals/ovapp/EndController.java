@@ -54,6 +54,8 @@ public class EndController {
         money.setText("€ " + RouteInformation.currentJourney.getPrice());
         departureDestination.setText(RouteInformation.currentJourney.getStart().getPoint().getName());
         arrivalDestination.setText(RouteInformation.currentJourney.getEnd().getPoint().getName());
+
+        FillText();
     }
 
     @FXML
@@ -65,5 +67,12 @@ public class EndController {
     protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
         SceneController sceneController = new SceneController(actionEvent);
         sceneController.setScene("Start");
+    }
+    public void FillText() {
+        duration.setText(LanguageManager.getText("duration"));
+        spoor.setText(LanguageManager.getText("spoor"));
+        spoor2.setText(LanguageManager.getText("spoor2"));
+        intermediateStops.setText(LanguageManager.getText("intermediateStops"));
+
     }
 }

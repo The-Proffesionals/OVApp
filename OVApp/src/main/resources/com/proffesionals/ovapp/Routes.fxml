@@ -33,7 +33,7 @@
                 </HBox.margin>
             </Button>
             <Region prefHeight="160.0" prefWidth="266.0" />
-            <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="613.0" styleClass="label-style-title" text="Beste optie" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <Label fx:id="bestOption" alignment="CENTER" contentDisplay="CENTER" prefWidth="613.0" styleClass="label-style-title" stylesheets="@../../../routes.css" text="Beste optie" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
                 <HBox.margin>
                     <Insets />
                 </HBox.margin>

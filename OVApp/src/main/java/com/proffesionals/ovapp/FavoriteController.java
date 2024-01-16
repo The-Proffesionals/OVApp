@@ -15,6 +15,8 @@ public class FavoriteController {
 
     @FXML
     private VBox Favorite;
+    @FXML
+    private Label favoriet;
 
     @FXML
     protected void initialize() {
@@ -47,6 +49,7 @@ public class FavoriteController {
                 Favorite.getChildren().add(f);
             }
         }
+        FillText();
     }
 
     @FXML
@@ -67,6 +70,9 @@ public class FavoriteController {
         RouteInformation.arrivalDestination = favorite.get(1);
         SceneController sceneController = new SceneController(actionEvent);
         sceneController.setScene("routeInformation");
+    }
+    public void FillText() {
+        favoriet.setText(LanguageManager.getText("favoriet"));
     }
 
 

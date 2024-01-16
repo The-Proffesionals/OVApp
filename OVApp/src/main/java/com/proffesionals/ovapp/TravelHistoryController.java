@@ -13,6 +13,8 @@ import javafx.scene.control.Label;
 public class TravelHistoryController {
     @FXML
     private VBox History;
+    @FXML
+    private Label travelHistory;
 
     @FXML
     protected void initialize() {
@@ -37,6 +39,7 @@ public class TravelHistoryController {
                 History.getChildren().add(button);
             }
         }
+        FillText();
     }
 
     @FXML
@@ -58,5 +61,8 @@ public class TravelHistoryController {
         // RouteInformation.minutes = journey.getDateTime().getMinute();
         SceneController sceneController = new SceneController(actionEvent);
         sceneController.setScene("routeInformation");
+    }
+    public void FillText() {
+        travelHistory.setText(LanguageManager.getText("travelHistory"));
     }
 }
