@@ -35,8 +35,6 @@ public class RouteInformationController implements Initializable {
     @FXML
     private Button Aankomst;
     
-
-
     private boolean depOrArrTime = true;
 
     private ObservableList<String> allStations = FXCollections.observableArrayList("Den Helder C","Utrecht C","Amsterdam C","Den Bosch C","Eindhoven C","Roermond C","Maastricht C");
@@ -47,11 +45,6 @@ public class RouteInformationController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         ArrBox.setItems(allStations);
         DepBox.setItems(allStations);
-
-        if (RouteInformation.departureDestination != null && RouteInformation.arrivalDestination != null) {
-            ArrBox.setValue(RouteInformation.arrivalDestination);
-            DepBox.setValue(RouteInformation.departureDestination);
-        }
 
         for (int hour = 0; hour < 24; hour++) {
             HourBox.getItems().add(hour);
@@ -67,6 +60,7 @@ public class RouteInformationController implements Initializable {
 
 
         FillText();
+        addCurrentJourney();
         
     }
 
@@ -143,6 +137,25 @@ public class RouteInformationController implements Initializable {
         if (comboBox.getValue() == null || comboBox.getValue().isEmpty()) {
             comboBox.setStyle("-fx-background-color: #FFD6CC;");
         }
+    }
+
+    private void addCurrentJourney(){
+        
+        if (RouteInformation.departureDestination != null && RouteInformation.arrivalDestination != null) {
+            ArrBox.setValue(RouteInformation.arrivalDestination);
+            DepBox.setValue(RouteInformation.departureDestination);
+        }
+        if (RouteInformation.hours != -1 && RouteInformation.minutes != -1) {
+            HourBox.setValue(RouteInformation.hours);
+            MinutesBox.setValue(RouteInformation.minutes);
+        }
+        if (RouteInformation.date != null) {
+            DatePicker.setValue(RouteInformation.date);
+        }
+        if (RouteInformation.departureorarrival == false) {
+            onArrivalButtonClick();
+        }
+
     }
 }
 
