@@ -125,7 +125,7 @@
     -fx-background-color: transparent;
 }
 
-.selected
+.VrtAnkLable
 {
     /* Display style */
     -fx-display: flex;
@@ -147,6 +147,7 @@
     -fx-font-weight: bold;
     -fx-text-fill: grey;
 }
+
 .date-picker
 {
     -fx-background-color: transparent;

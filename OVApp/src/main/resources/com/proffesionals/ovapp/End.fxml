@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../../../end.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proffesionals.ovapp.EndController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../../../end.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proffesionals.ovapp.EndController">
    <AnchorPane styleClass="background" AnchorPane.bottomAnchor="321.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="292.0">
       <children>
          <Label fx:id="departureTime" alignment="CENTER" layoutX="224.0" layoutY="172.0" styleClass="label-style-departureTime" text="10:00" AnchorPane.leftAnchor="71.0" AnchorPane.topAnchor="57.0" />
@@ -25,14 +23,14 @@
    <Button layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="160.0" prefWidth="174.0" styleClass="back-button" AnchorPane.bottomAnchor="865.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="1653.0" AnchorPane.topAnchor="63.0" />
    <Button layoutX="288.0" layoutY="97.0" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="160.0" prefWidth="192.0" styleClass="home-button" AnchorPane.bottomAnchor="865.0" AnchorPane.leftAnchor="324.0" AnchorPane.rightAnchor="1397.0" AnchorPane.topAnchor="63.0" />
    <Label fx:id="date" layoutX="677.0" layoutY="87.0" styleClass="label-style-date" text="10/12/24" AnchorPane.leftAnchor="677.0" AnchorPane.topAnchor="87.0" />
-   <Label fx:id="duration" layoutX="1357.0" layoutY="86.0" styleClass="label-style-date" text="10:11 uur" AnchorPane.leftAnchor="1357.0" AnchorPane.topAnchor="86.0" />
+   <Label fx:id="duration" layoutX="1335.0" layoutY="86.0" prefHeight="119.0" prefWidth="460.0" styleClass="label-style-date" text="10:11 uur" AnchorPane.leftAnchor="1335.0" AnchorPane.topAnchor="86.0" />
    <AnchorPane layoutX="10.0" layoutY="10.0" styleClass="background" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="897.0" AnchorPane.topAnchor="844.0">
       <children>
          <Label fx:id="intermediateStops" alignment="CENTER" layoutX="36.0" layoutY="-2.0" prefHeight="164.0" prefWidth="847.0" styleClass="label-style-money" text="2 Tussenstop(s)" />
       </children></AnchorPane>
    <AnchorPane layoutX="10.0" layoutY="10.0" styleClass="background" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="1307.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="841.0">
       <children>
-         <Label fx:id="money" alignment="CENTER" layoutX="35.0" layoutY="15.0" prefHeight="140.0" prefWidth="451.0" styleClass="label-style-money" text="€ 5,23" />
+         <Label fx:id="money" alignment="CENTER" layoutX="-12.0" prefHeight="164.0" prefWidth="526.0" styleClass="label-style-money" text="€ 15,23" />
       </children></AnchorPane>
 
 </AnchorPane>
