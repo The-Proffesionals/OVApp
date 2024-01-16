@@ -34,9 +34,9 @@ public class RouteInformationController implements Initializable {
     private Button Vertrek;
     @FXML
     private Button Aankomst;
+    @FXML
+    private ComboBox<String> DepartureOrArival;
     
-    private boolean depOrArrTime = true;
-
     private ObservableList<String> allStations = FXCollections.observableArrayList("Den Helder C","Utrecht C","Amsterdam C","Den Bosch C","Eindhoven C","Roermond C","Maastricht C");
     private LocalTime currentTime = LocalTime.now();
 
@@ -45,6 +45,10 @@ public class RouteInformationController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         ArrBox.setItems(allStations);
         DepBox.setItems(allStations);
+
+        DepartureOrArival.getItems().add(LanguageManager.getText("Vertrek"));
+        DepartureOrArival.getItems().add(LanguageManager.getText("Aankomst"));
+        DepartureOrArival.setValue(LanguageManager.getText("Vertrek"));
 
         for (int hour = 0; hour < 24; hour++) {
             HourBox.getItems().add(hour);
@@ -59,9 +63,6 @@ public class RouteInformationController implements Initializable {
         }
         MinutesBox.setValue(String.valueOf(currentTime.getMinute()));
         DatePicker.setValue(LocalDate.now());
-
-        Vertrek.setStyle("-fx-text-fill: #0A1758;");
-
 
         FillText();
         addCurrentJourney();
@@ -81,20 +82,6 @@ public class RouteInformationController implements Initializable {
     }
 
     @FXML
-    protected void onDepartureButtonClick() {
-        depOrArrTime = true;
-        Vertrek.setStyle("-fx-text-fill: #0A1758;");
-        Aankomst.setStyle("-fx-text-fill: #808080;");
-    }
-
-    @FXML
-    protected void onArrivalButtonClick() {
-        depOrArrTime = false;
-        Vertrek.setStyle("-fx-text-fill: #808080;");
-        Aankomst.setStyle("-fx-text-fill: #0A1758;");
-    }
-
-    @FXML
     protected void onSwapButtonClick() {
         String temp = ArrBox.getValue();
         ArrBox.setValue(DepBox.getValue());
@@ -109,8 +96,11 @@ public class RouteInformationController implements Initializable {
             RouteInformation.hours = HourBox.getValue();
             RouteInformation.minutes = Integer.parseInt(MinutesBox.getValue());
             RouteInformation.date = DatePicker.getValue();
-            RouteInformation.departureorarrival = depOrArrTime;
-
+            if (DepartureOrArival.getValue().equals(LanguageManager.getText("Aankomst"))) {
+                RouteInformation.departureorarrival = false;
+            } else {
+                RouteInformation.departureorarrival = true;
+            }
             SceneController sceneController = new SceneController(actionEvent);
             sceneController.setScene("Routes");
         } else {
@@ -122,8 +112,6 @@ public class RouteInformationController implements Initializable {
         }
     }
     public void FillText() {
-        Aankomst.setText(LanguageManager.getText("Aankomst"));
-        Vertrek.setText(LanguageManager.getText("Vertrek"));
         DepBox.setPromptText(LanguageManager.getText("DepBox"));
         ArrBox.setPromptText(LanguageManager.getText("ArrBox"));
         Search.setText(LanguageManager.getText("Search"));
@@ -161,7 +149,7 @@ public class RouteInformationController implements Initializable {
             DatePicker.setValue(RouteInformation.date);
         }
         if (RouteInformation.departureorarrival == false) {
-            onArrivalButtonClick();
+            DepartureOrArival.setValue(LanguageManager.getText("Aankomst"));
         }
 
     }

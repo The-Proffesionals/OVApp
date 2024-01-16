@@ -37,10 +37,8 @@
            <ComboBox fx:id="HourBox" layoutX="379.0" layoutY="545.0" prefWidth="150.0" styleClass="combo-box-remove-arrow" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="290.0" AnchorPane.leftAnchor="379.0" AnchorPane.rightAnchor="1255.0" AnchorPane.topAnchor="545.0" />
           <Button fx:id="Search" onAction="#onSearchButtonClick" stylesheets="@../../../ncss.css" text="Plan je reis" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="856.0" />
 
-
-           <Button fx:id="Vertrek" layoutX="632.0" layoutY="64.0" onAction="#onDepartureButtonClick" prefHeight="180.0" prefWidth="680.0" styleClass="VrtAnkLable" stylesheets="@../../../ncss.css" text="Vertrek" />
-           <Button fx:id="Aankomst" layoutX="1319.0" layoutY="64.0" onAction="#onArrivalButtonClick" styleClass="VrtAnkLable" stylesheets="@../../../ncss.css" text="Aankomst" />
-         <ImageView fitHeight="117.0" fitWidth="111.0" layoutX="87.0" layoutY="907.0" pickOnBounds="true" preserveRatio="true" />
+           <ComboBox fx:id="DepartureOrArival"/>
+                    <ImageView fitHeight="117.0" fitWidth="111.0" layoutX="87.0" layoutY="907.0" pickOnBounds="true" preserveRatio="true" />
          <ImageView fitHeight="112.0" fitWidth="61.0" layoutX="720.0" layoutY="613.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@../../../image/dubblepont2.png" />
