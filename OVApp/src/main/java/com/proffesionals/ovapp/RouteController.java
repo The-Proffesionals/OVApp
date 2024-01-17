@@ -14,7 +14,7 @@ import java.util.List;
 
 public class RouteController extends SceneController {
     @FXML
-    private Label route;
+    private Label bestOption;
     @FXML
     private VBox GoToEnd;
     @FXML
@@ -70,7 +70,7 @@ public class RouteController extends SceneController {
     }
 
     public void FillText() {
-        route.setText(LanguageManager.getText("bestOption"));
+        bestOption.setText(LanguageManager.getText("bestOption"));
     }
 
 }
