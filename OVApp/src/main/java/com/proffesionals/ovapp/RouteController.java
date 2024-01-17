@@ -14,11 +14,12 @@ import java.util.List;
 
 public class RouteController extends SceneController {
     @FXML
-    private Label route;
+    private Label bestOption;
     @FXML
     private VBox GoToEnd;
     @FXML
     private Button FavoriteButton;
+
 
     @FXML
     protected void initialize() {
@@ -45,6 +46,7 @@ public class RouteController extends SceneController {
             });
             GoToEnd.getChildren().add(route);
         }
+        FillText();
     }
 
     @FXML
@@ -52,13 +54,12 @@ public class RouteController extends SceneController {
         List<List<String>> favoritesList = RouteInformation.favorite;
         if (favoritesList.contains(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination))) {
             FavoriteButton.getStyleClass().add("starklick-button");
-            FavoriteButton.setDisable(true);
+            FavoriteButton.setDisable(false);
         } else {
             RouteInformation.favorite.add(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination));
             FavoriteButton.getStyleClass().add("starklick-button");
-            FavoriteButton.setDisable(true);
+            FavoriteButton.setDisable(false);
         }
-
     }
 
     @FXML
@@ -67,4 +68,9 @@ public class RouteController extends SceneController {
         Node newScene = (Node) actionEvent.getSource();
         setScene(newScene.getId());
     }
+
+    public void FillText() {
+        bestOption.setText(LanguageManager.getText("bestOption"));
+    }
+
 }

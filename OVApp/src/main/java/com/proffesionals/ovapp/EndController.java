@@ -3,7 +3,6 @@ package com.proffesionals.ovapp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import java.io.IOException;
 import java.time.Duration;
@@ -36,26 +35,7 @@ public class EndController extends SceneController {
 
     @FXML
     protected void initialize() {
-        date.setText(DateTimeFormatter.ofPattern("dd-MM-yy").format(RouteInformation.date));
-        Duration durations = Duration.between(RouteInformation.currentJourney.getStart().getTime(), RouteInformation.currentJourney.getEnd().getTime());
-        long hours = durations.toHours();
-        long minutes = durations.toMinutes() % 60;
-        duration.setText(String.format("%02d:%02d uur", hours, minutes));
-        departureTime.setText(RouteInformation.currentJourney.getStart().getTime().toString());
-        arrivalTime.setText(RouteInformation.currentJourney.getEnd().getTime().toString());
-        if (RouteInformation.currentJourney.getbusOrTrain() == true){
-            spoor.setText("Halte: 1");
-            spoor2.setText("Halte: 1");
-        }
-        else{
-            spoor.setText("Spoor: 1");
-            spoor2.setText("Spoor: 1");
-        }
-        travelInformation.setText(RouteInformation.currentJourney.getbusOrTrain() ? "Bus 69" : "Intercity");
-        intermediateStops.setText(String.valueOf(RouteInformation.currentJourney.getStops().size() - 2) + " tussenstop(s)");
-        money.setText("€ " + RouteInformation.currentJourney.getPrice());
-        departureDestination.setText(RouteInformation.currentJourney.getStart().getPoint().getName());
-        arrivalDestination.setText(RouteInformation.currentJourney.getEnd().getPoint().getName());
+        FillText();
     }
 
     @FXML
@@ -63,5 +43,29 @@ public class EndController extends SceneController {
         getScene(actionEvent);
         Node Search = (Node) actionEvent.getSource();
         setScene(Search.getId());
+    }
+
+    public void FillText() {
+        date.setText(DateTimeFormatter.ofPattern("dd-MM-yy").format(RouteInformation.date));
+        Duration durations = Duration.between(RouteInformation.currentJourney.getStart().getTime(), RouteInformation.currentJourney.getEnd().getTime());
+        duration.setText(String.format("%02d:%02d " + LanguageManager.getText("hour"),  durations.toHours(), durations.toMinutes() % 60));
+
+        departureTime.setText(RouteInformation.currentJourney.getStart().getTime().toString());
+        arrivalTime.setText(RouteInformation.currentJourney.getEnd().getTime().toString());
+
+        travelInformation.setText(RouteInformation.currentJourney.getbusOrTrain() ? "Bus 69" : "Intercity");
+        intermediateStops.setText(String.valueOf(RouteInformation.currentJourney.getStops().size() - 2) + " " +LanguageManager.getText("intermediateStops"));
+        money.setText("€ " + RouteInformation.currentJourney.getPrice());
+        departureDestination.setText(RouteInformation.currentJourney.getStart().getPoint().getName());
+        arrivalDestination.setText(RouteInformation.currentJourney.getEnd().getPoint().getName());
+
+        if (RouteInformation.currentJourney.getbusOrTrain() == true){
+            spoor.setText(LanguageManager.getText("stop"));
+            spoor2.setText(LanguageManager.getText("stop"));
+        }
+        else{
+            spoor.setText(LanguageManager.getText("spoor"));
+            spoor2.setText(LanguageManager.getText("spoor"));
+        }
     }
 }

@@ -13,15 +13,15 @@ import java.io.IOException;
 import java.util.List;
 
 public class FavoriteController extends SceneController {
-    public Button Home2;
-    public Button Back2;
     @FXML
     private VBox Favorite;
+    @FXML
+    private Label favoriet;
 
     @FXML
     protected void initialize() {
         if (RouteInformation.favorite.isEmpty()) {
-            Favorite.getChildren().add(new Label("Nog geen favorieten"));
+            Favorite.getChildren().add(new Label(LanguageManager.getText("noFavorite")));
         } else {
             for (List<String> favorite : RouteInformation.favorite) {
                 HBox f = new HBox();
@@ -39,8 +39,6 @@ public class FavoriteController extends SceneController {
                 remove.setOnAction(actionEvent -> {
                     RouteInformation.favorite.remove(favorite);
                     try {
-                        getScene(actionEvent);
-                        Node Favorite_select = (Node) actionEvent.getSource();
                         setScene("GoToFavorite");
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -52,6 +50,7 @@ public class FavoriteController extends SceneController {
                 Favorite.getChildren().add(f);
             }
         }
+        FillText();
     }
 
     @FXML
@@ -69,4 +68,11 @@ public class FavoriteController extends SceneController {
         Node Favorite = (Node) actionEvent.getSource();
         setScene(Favorite.getId());
     }
+    public void FillText() {
+        favoriet.setText(LanguageManager.getText("favoriet"));
+    }
+
+
+
+
 }
