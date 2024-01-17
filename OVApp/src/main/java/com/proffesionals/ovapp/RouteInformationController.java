@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Button;
@@ -17,9 +18,11 @@ import java.util.ResourceBundle;
 
 
 
-public class RouteInformationController implements Initializable {
+public class RouteInformationController extends SceneController implements Initializable {
     @FXML
-    private Button Search;
+    public Button Search;
+    public Button Home;
+    public Button Back1;
     @FXML
     private ComboBox<String> DepBox;
     @FXML
@@ -70,14 +73,16 @@ public class RouteInformationController implements Initializable {
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) throws IOException {
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("start");
+        getScene(actionEvent);
+        Node Home = (Node) actionEvent.getSource();
+        setScene(Home.getId());
     }
 
     @FXML
     protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("start");
+        getScene(actionEvent);
+        Node Home = (Node) actionEvent.getSource();
+        setScene(Home.getId());
     }
 
     @FXML
@@ -111,8 +116,9 @@ public class RouteInformationController implements Initializable {
             RouteInformation.date = DatePicker.getValue();
             RouteInformation.departureorarrival = depOrArrTime;
 
-            SceneController sceneController = new SceneController(actionEvent);
-            sceneController.setScene("Routes");
+            getScene(actionEvent);
+            Node Search = (Node) actionEvent.getSource();
+            setScene(Search.getId());
         } else {
             if (ArrBox.getValue() != null&& DepBox.getValue() != null && ArrBox.getValue().equals(DepBox.getValue())){
                 ArrBox.setStyle("-fx-background-color: #FFD6CC;");

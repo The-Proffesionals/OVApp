@@ -2,13 +2,16 @@ package com.proffesionals.ovapp;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.format.DateTimeFormatter;
 
-public class EndController {
+public class EndController extends SceneController {
 
+    public Button Back5;
     @FXML
     private Label date;
     @FXML
@@ -58,12 +61,14 @@ public class EndController {
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) throws IOException {
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("Routes");
+        getScene(actionEvent);
+        Node Search = (Node) actionEvent.getSource();
+        setScene(Search.getId());
     }
     @FXML
     protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("Start");
+        getScene(actionEvent);
+        Node Home = (Node) actionEvent.getSource();
+        setScene(Home.getId());
     }
 }

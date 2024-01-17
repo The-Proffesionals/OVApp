@@ -1,12 +1,13 @@
 package com.proffesionals.ovapp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import java.io.IOException;
 import java.util.Locale;
 import static com.proffesionals.ovapp.LanguageManager.setLanguage;
 
-public class StartController {
+public class StartController extends SceneController {
     public Button TravelHistory_select;
     public Button Favorite_select;
     public Button Route_select;
@@ -18,21 +19,23 @@ public class StartController {
 
     @FXML
     protected void onRouteSelect(ActionEvent actionEvent) throws IOException {
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("RouteInformation");
-
+        getScene(actionEvent);
+        Node Route_select = (Node) actionEvent.getSource();
+        setScene(Route_select.getId());
     }
 
     @FXML
     protected void onFavorite(ActionEvent actionEvent) throws IOException {
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("Favorite");
+        getScene(actionEvent);
+        Node Favorite_select = (Node) actionEvent.getSource();
+        setScene(Favorite_select.getId());
     }
 
     @FXML
     protected void onTravelHistory(ActionEvent actionEvent) throws IOException {
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("TravelHistory");
+        getScene(actionEvent);
+        Node TravelHistory_select = (Node) actionEvent.getSource();
+        setScene(TravelHistory_select.getId());
     }
 
     @FXML

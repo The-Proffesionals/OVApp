@@ -1,17 +1,20 @@
 package com.proffesionals.ovapp;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+
 import java.io.IOException;
 import java.time.LocalTime;
 import java.util.List;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
-import javafx.event.EventHandler;
-
-public class RouteController {
+public class RouteController extends SceneController {
+    public Button Back4;
+    public Button Home4;
     @FXML
     private Label route;
     @FXML
@@ -24,9 +27,9 @@ public class RouteController {
         GraphManipulate graphManipulate = new GraphManipulate();
         List<Journey> journeys = graphManipulate.getRoute(RouteInformation.departureDestination, RouteInformation.arrivalDestination, OvApp.graph, LocalTime.of(RouteInformation.hours, RouteInformation.minutes), RouteInformation.date, RouteInformation.departureorarrival);
         for (Journey journey : journeys) {
-            Label label = new Label(journey.getStart().getTime() + " -> " + journey.getEnd().getTime());
-            label.getStyleClass().add("label-style-tijd");
-            label.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
+            Label route = new Label(journey.getStart().getTime() + " -> " + journey.getEnd().getTime());
+            route.getStyleClass().add("label-style-tijd");
+            route.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event){
                     try {
@@ -38,11 +41,11 @@ public class RouteController {
                 }
             });
 
-            label.setOnMouseClicked(event -> {
+            route.setOnMouseClicked(event -> {
                 RouteInformation.journeyhistory.add(journey);
-                label.fireEvent(new ActionEvent());
+                route.fireEvent(new ActionEvent());
             });
-            Journeys.getChildren().add(label);
+            Journeys.getChildren().add(route);
         }
     }
 
@@ -62,18 +65,21 @@ public class RouteController {
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) throws IOException {
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("RouteInformation");
+        getScene(actionEvent);
+        Node Route_select = (Node) actionEvent.getSource();
+        setScene(Route_select.getId());
     }
 
     @FXML
     protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("start");
+        getScene(actionEvent);
+        Node Home = (Node) actionEvent.getSource();
+        setScene(Home.getId());
     }
 
-    private void goToEnd(ActionEvent event) throws IOException {
-        SceneController sceneController = new SceneController(event);
-        sceneController.setScene("End");
+    private void goToEnd(ActionEvent actionEvent) throws IOException {
+        getScene(actionEvent);
+        Node Journeys = (Node) actionEvent.getSource();
+        setScene(Journeys.getId());
     }
 }

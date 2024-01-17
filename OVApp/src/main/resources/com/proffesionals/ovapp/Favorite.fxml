@@ -20,12 +20,12 @@
             <VBox.margin>
                 <Insets bottom="30.0" top="30.0" />
             </VBox.margin>
-            <Button id="back" maxHeight="-Infinity" maxWidth="166.0" onAction="#onBackButtonClick" prefWidth="122.0" styleClass="back-button">
+            <Button fx:id="Back2" maxHeight="-Infinity" maxWidth="166.0" onAction="#onBackButtonClick" prefWidth="122.0" styleClass="back-button">
                 <HBox.margin>
                     <Insets />
                 </HBox.margin>
             </Button>
-            <Button onAction="#onHomeButtonClick" prefWidth="106.0" styleClass="home-button">
+            <Button fx:id="Home2" onAction="#onHomeButtonClick" prefWidth="106.0" styleClass="home-button">
                 <HBox.margin>
                     <Insets left="81.0" />
                 </HBox.margin>

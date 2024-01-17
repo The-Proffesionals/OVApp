@@ -4,7 +4,7 @@ public class Bus extends Edge{
     float priceVariable = 0.10f;
     float timeVariable = 0.95f;
     
-    Bus(Edge edge){
+    public Bus(Edge edge){
         super(edge.getPoint1(), edge.getPoint2(), edge.getDistance());
     }
 

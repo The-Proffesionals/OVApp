@@ -1,16 +1,20 @@
 package com.proffesionals.ovapp;
 
 
-import javafx.scene.layout.VBox;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
-import java.io.IOException;
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+
+import java.io.IOException;
 
 
 
-public class TravelHistoryController {
+public class TravelHistoryController extends SceneController {
+    public Button Back3;
+    public Button Home3;
     @FXML
     private VBox History;
 
@@ -41,13 +45,15 @@ public class TravelHistoryController {
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) throws IOException{
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("start");
+        getScene(actionEvent);
+        Node Home = (Node) actionEvent.getSource();
+        setScene(Home.getId());
     }
     @FXML
     protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("start");
+        getScene(actionEvent);
+        Node Home = (Node) actionEvent.getSource();
+        setScene(Home.getId());
     }
 
     private void goToRouteInformation(ActionEvent actionEvent, Journey journey) throws IOException {
@@ -56,7 +62,8 @@ public class TravelHistoryController {
         // RouteInformation.date = journey.getDateTime().toLocalDate();
         // RouteInformation.hours = journey.getDateTime().getHour();
         // RouteInformation.minutes = journey.getDateTime().getMinute();
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("routeInformation");
+        getScene(actionEvent);
+        Node Route_select = (Node) actionEvent.getSource();
+        setScene(Route_select.getId());
     }
 }

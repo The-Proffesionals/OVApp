@@ -1,18 +1,20 @@
 package com.proffesionals.ovapp;
 
 
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
-import java.util.List;
-import javafx.event.ActionEvent;
 import java.io.IOException;
+import java.util.List;
 
-public class FavoriteController {
-
+public class FavoriteController extends SceneController {
+    public Button Home2;
+    public Button Back2;
     @FXML
     private VBox Favorite;
 
@@ -35,8 +37,9 @@ public class FavoriteController {
                 remove.setOnAction(actionEvent -> {
                     RouteInformation.favorite.remove(favorite);
                     try {
-                        SceneController sceneController = new SceneController(actionEvent);
-                        sceneController.setScene("favorite");
+                        getScene(actionEvent);
+                        Node Favorite_select = (Node) actionEvent.getSource();
+                        setScene(Favorite_select.getId());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -51,25 +54,24 @@ public class FavoriteController {
 
     @FXML
     protected void onBackButtonClick(ActionEvent actionEvent) throws IOException{
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("start");
+        getScene(actionEvent);
+        Node Home = (Node) actionEvent.getSource();
+        setScene(Home.getId());
     }
 
 
     @FXML
     protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("start");
+        getScene(actionEvent);
+        Node Home = (Node) actionEvent.getSource();
+        setScene(Home.getId());
     }
 
     private void goToRouteInformation(ActionEvent actionEvent, List<String> favorite) throws IOException {
         RouteInformation.departureDestination = favorite.get(0);
         RouteInformation.arrivalDestination = favorite.get(1);
-        SceneController sceneController = new SceneController(actionEvent);
-        sceneController.setScene("routeInformation");
+        getScene(actionEvent);
+        Node Favorite = (Node) actionEvent.getSource();
+        setScene(Favorite.getId());
     }
-
-
-
-
 }

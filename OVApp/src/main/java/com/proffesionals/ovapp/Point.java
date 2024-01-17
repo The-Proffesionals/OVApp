@@ -3,7 +3,7 @@ package com.proffesionals.ovapp;
 public class Point {
     private String name;
 
-    Point(String name){
+    public Point(String name){
         this.name = name;
     }
 
