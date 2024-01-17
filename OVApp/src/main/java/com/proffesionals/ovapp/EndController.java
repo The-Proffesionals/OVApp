@@ -64,12 +64,12 @@ public class EndController {
         arrivalDestination.setText(RouteInformation.currentJourney.getEnd().getPoint().getName());
 
         if (RouteInformation.currentJourney.getbusOrTrain() == true){
-            spoor.setText(LanguageManager.getText("spoor"));
-            spoor2.setText(LanguageManager.getText("spoor"));
-        }
-        else{
             spoor.setText(LanguageManager.getText("stop"));
             spoor2.setText(LanguageManager.getText("stop"));
+        }
+        else{
+            spoor.setText(LanguageManager.getText("spoor"));
+            spoor2.setText(LanguageManager.getText("spoor"));
         }
     }
 }
