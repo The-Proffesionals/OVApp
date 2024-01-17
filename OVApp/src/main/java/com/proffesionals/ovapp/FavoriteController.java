@@ -13,8 +13,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class FavoriteController extends SceneController {
-    public Button Home2;
-    public Button Back2;
     @FXML
     private VBox Favorite;
 
@@ -39,8 +37,6 @@ public class FavoriteController extends SceneController {
                 remove.setOnAction(actionEvent -> {
                     RouteInformation.favorite.remove(favorite);
                     try {
-                        getScene(actionEvent);
-                        Node Favorite_select = (Node) actionEvent.getSource();
                         setScene("GoToFavorite");
                     } catch (IOException e) {
                         e.printStackTrace();
