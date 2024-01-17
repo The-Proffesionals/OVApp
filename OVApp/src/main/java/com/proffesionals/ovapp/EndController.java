@@ -11,7 +11,6 @@ import java.time.format.DateTimeFormatter;
 
 public class EndController extends SceneController {
 
-    public Button Back5;
     @FXML
     private Label date;
     @FXML
@@ -60,15 +59,9 @@ public class EndController extends SceneController {
     }
 
     @FXML
-    protected void onBackButtonClick(ActionEvent actionEvent) throws IOException {
+    protected void goToNewScene(ActionEvent actionEvent) throws IOException {
         getScene(actionEvent);
         Node Search = (Node) actionEvent.getSource();
         setScene(Search.getId());
-    }
-    @FXML
-    protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
-        getScene(actionEvent);
-        Node Home = (Node) actionEvent.getSource();
-        setScene(Home.getId());
     }
 }

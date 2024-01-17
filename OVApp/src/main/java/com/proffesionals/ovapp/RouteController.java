@@ -13,12 +13,10 @@ import java.time.LocalTime;
 import java.util.List;
 
 public class RouteController extends SceneController {
-    public Button Back4;
-    public Button Home4;
     @FXML
     private Label route;
     @FXML
-    private VBox Journeys;
+    private VBox GoToEnd;
     @FXML
     private Button FavoriteButton;
 
@@ -34,18 +32,18 @@ public class RouteController extends SceneController {
                 public void handle(ActionEvent event){
                     try {
                         RouteInformation.currentJourney = journey;
-                        goToEnd(event);
+                        goToNewScene(event);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
             });
-
+            route.setId("GoToEnd");
             route.setOnMouseClicked(event -> {
                 RouteInformation.journeyhistory.add(journey);
                 route.fireEvent(new ActionEvent());
             });
-            Journeys.getChildren().add(route);
+            GoToEnd.getChildren().add(route);
         }
     }
 
@@ -64,22 +62,9 @@ public class RouteController extends SceneController {
     }
 
     @FXML
-    protected void onBackButtonClick(ActionEvent actionEvent) throws IOException {
+    protected void goToNewScene(ActionEvent actionEvent) throws IOException {
         getScene(actionEvent);
-        Node Route_select = (Node) actionEvent.getSource();
-        setScene(Route_select.getId());
-    }
-
-    @FXML
-    protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
-        getScene(actionEvent);
-        Node Home = (Node) actionEvent.getSource();
-        setScene(Home.getId());
-    }
-
-    private void goToEnd(ActionEvent actionEvent) throws IOException {
-        getScene(actionEvent);
-        Node Journeys = (Node) actionEvent.getSource();
-        setScene(Journeys.getId());
+        Node newScene = (Node) actionEvent.getSource();
+        setScene(newScene.getId());
     }
 }

@@ -48,22 +48,11 @@ public class SceneController {
     }
 
     private void loadHashMap(){
-        sceneTitles.put("Route_select", "RouteInformation");
-        sceneTitles.put("Search", "Routes");
-        sceneTitles.put("route", "End");
-        sceneTitles.put("Home", "Start");
-        sceneTitles.put("Home2", "Start");
-        sceneTitles.put("Home3", "Start");
-        sceneTitles.put("Home4", "Start");
-        sceneTitles.put("Home5", "Start");
-        sceneTitles.put("Back1", "Start");
-        sceneTitles.put("Back2", "Start");
-        sceneTitles.put("Back3", "Start");
-        sceneTitles.put("Back4", "RouteInformation");
-        sceneTitles.put("Back5", "Routes");
-        sceneTitles.put("Favorite_select", "Favorite");
-        sceneTitles.put("TravelHistory_select", "TravelHistory");
-        sceneTitles.put("Journeys","End");
-        sceneTitles.put("Favorite","RouteInformation");
+        sceneTitles.put("GoToRouteInformation", "RouteInformation");
+        sceneTitles.put("GoToRoutes", "Routes");
+        sceneTitles.put("GoToEnd", "End");
+        sceneTitles.put("GoToStart", "Start");;
+        sceneTitles.put("GoToFavorite", "Favorite");
+        sceneTitles.put("GoToTravelHistory", "TravelHistory");
     }
 }

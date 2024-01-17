@@ -21,8 +21,8 @@
                   </image>
                </ImageView>
             </graphic></Button>
-          <Button fx:id="Back1" onAction="#onBackButtonClick" prefHeight="408.0" prefWidth="430.0" styleClass="back-button" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="869.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="1719.0" AnchorPane.topAnchor="37.0" />
-          <Button fx:id="Home" layoutX="780.0" layoutY="87.0" onAction="#onHomeButtonClick" prefHeight="412.0" prefWidth="482.0" styleClass="home-button" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="866.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="1461.0" AnchorPane.topAnchor="40.0" />
+          <Button fx:id="GoToStart" onAction="#goToNewScene" prefHeight="408.0" prefWidth="430.0" styleClass="back-button" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="869.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="1719.0" AnchorPane.topAnchor="37.0" />
+          <Button fx:id="GoToStart" layoutX="780.0" layoutY="87.0" onAction="#goToNewScene" prefHeight="412.0" prefWidth="482.0" styleClass="home-button" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="866.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="1461.0" AnchorPane.topAnchor="40.0" />
          <ComboBox fx:id="ArrBox" promptText="aankomst" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="593.0" AnchorPane.leftAnchor="1138.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="277.0">
             <styleClass>
                <String fx:value="list-cell" />
@@ -35,7 +35,7 @@
             </styleClass></ComboBox>
            <ComboBox fx:id="MinutesBox" layoutX="822.0" layoutY="545.0" prefWidth="150.0" styleClass="combo-box-remove-arrow" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="290.0" AnchorPane.leftAnchor="822.0" AnchorPane.rightAnchor="806.0" AnchorPane.topAnchor="545.0" />
            <ComboBox fx:id="HourBox" layoutX="379.0" layoutY="545.0" prefWidth="150.0" styleClass="combo-box-remove-arrow" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="290.0" AnchorPane.leftAnchor="379.0" AnchorPane.rightAnchor="1255.0" AnchorPane.topAnchor="545.0" />
-          <Button fx:id="Search" onAction="#onSearchButtonClick" stylesheets="@../../../ncss.css" text="Plan je reis" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="856.0" />
+          <Button fx:id="GoToRoutes" onAction="#onSearchButtonClick" stylesheets="@../../../ncss.css" text="Plan je reis" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="856.0" />
 
 
            <Button fx:id="Vertrek" layoutX="632.0" layoutY="64.0" onAction="#onDepartureButtonClick" prefHeight="180.0" prefWidth="680.0" styleClass="VrtAnkLable" stylesheets="@../../../ncss.css" text="Vertrek" />

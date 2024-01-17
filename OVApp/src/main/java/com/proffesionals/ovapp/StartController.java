@@ -8,9 +8,9 @@ import java.util.Locale;
 import static com.proffesionals.ovapp.LanguageManager.setLanguage;
 
 public class StartController extends SceneController {
-    public Button TravelHistory_select;
-    public Button Favorite_select;
-    public Button Route_select;
+    public Button GoToTravelHistory;
+    public Button GoToFavorite;
+    public Button GoToRouteInformation;
 
     public void initialize(){
         FillText();
@@ -18,24 +18,10 @@ public class StartController extends SceneController {
     }
 
     @FXML
-    protected void onRouteSelect(ActionEvent actionEvent) throws IOException {
+    protected void goToNewScene(ActionEvent actionEvent) throws IOException {
         getScene(actionEvent);
-        Node Route_select = (Node) actionEvent.getSource();
-        setScene(Route_select.getId());
-    }
-
-    @FXML
-    protected void onFavorite(ActionEvent actionEvent) throws IOException {
-        getScene(actionEvent);
-        Node Favorite_select = (Node) actionEvent.getSource();
-        setScene(Favorite_select.getId());
-    }
-
-    @FXML
-    protected void onTravelHistory(ActionEvent actionEvent) throws IOException {
-        getScene(actionEvent);
-        Node TravelHistory_select = (Node) actionEvent.getSource();
-        setScene(TravelHistory_select.getId());
+        Node newScene = (Node) actionEvent.getSource();
+        setScene(newScene.getId());
     }
 
     @FXML
@@ -51,8 +37,8 @@ public class StartController extends SceneController {
     }
 
     public void FillText() {
-        Route_select.setText(LanguageManager.getText("Route_select"));
-        Favorite_select.setText(LanguageManager.getText("Favorite_select"));
-        TravelHistory_select.setText(LanguageManager.getText("TravelHistory_select"));
+        GoToRouteInformation.setText(LanguageManager.getText("Route_select"));
+        GoToFavorite.setText(LanguageManager.getText("Favorite_select"));
+        GoToTravelHistory.setText(LanguageManager.getText("TravelHistory_select"));
     }
 }

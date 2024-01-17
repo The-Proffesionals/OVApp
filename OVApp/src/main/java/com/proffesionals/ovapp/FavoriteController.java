@@ -27,6 +27,7 @@ public class FavoriteController extends SceneController {
                 HBox f = new HBox();
                 Button button = new Button(favorite.get(0) + " -> " + favorite.get(1));
                 Button remove = new Button();
+                button.setId("GoToRouteInformation");
                 button.setOnAction(actionEvent -> {
                     try {
                         goToRouteInformation(actionEvent, favorite);
@@ -34,12 +35,13 @@ public class FavoriteController extends SceneController {
                         e.printStackTrace();
                     }
                 });
+
                 remove.setOnAction(actionEvent -> {
                     RouteInformation.favorite.remove(favorite);
                     try {
                         getScene(actionEvent);
                         Node Favorite_select = (Node) actionEvent.getSource();
-                        setScene(Favorite_select.getId());
+                        setScene("GoToFavorite");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -53,19 +55,12 @@ public class FavoriteController extends SceneController {
     }
 
     @FXML
-    protected void onBackButtonClick(ActionEvent actionEvent) throws IOException{
+    protected void goToNewScene(ActionEvent actionEvent) throws IOException{
         getScene(actionEvent);
         Node Home = (Node) actionEvent.getSource();
         setScene(Home.getId());
     }
 
-
-    @FXML
-    protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
-        getScene(actionEvent);
-        Node Home = (Node) actionEvent.getSource();
-        setScene(Home.getId());
-    }
 
     private void goToRouteInformation(ActionEvent actionEvent, List<String> favorite) throws IOException {
         RouteInformation.departureDestination = favorite.get(0);

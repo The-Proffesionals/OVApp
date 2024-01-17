@@ -20,9 +20,7 @@ import java.util.ResourceBundle;
 
 public class RouteInformationController extends SceneController implements Initializable {
     @FXML
-    public Button Search;
-    public Button Home;
-    public Button Back1;
+    public Button GoToRoutes;
     @FXML
     private ComboBox<String> DepBox;
     @FXML
@@ -72,14 +70,7 @@ public class RouteInformationController extends SceneController implements Initi
     }
 
     @FXML
-    protected void onBackButtonClick(ActionEvent actionEvent) throws IOException {
-        getScene(actionEvent);
-        Node Home = (Node) actionEvent.getSource();
-        setScene(Home.getId());
-    }
-
-    @FXML
-    protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
+    protected void goToNewScene(ActionEvent actionEvent) throws IOException {
         getScene(actionEvent);
         Node Home = (Node) actionEvent.getSource();
         setScene(Home.getId());
@@ -132,7 +123,7 @@ public class RouteInformationController extends SceneController implements Initi
         Vertrek.setText(LanguageManager.getText("Vertrek"));
         DepBox.setPromptText(LanguageManager.getText("DepBox"));
         ArrBox.setPromptText(LanguageManager.getText("ArrBox"));
-        Search.setText(LanguageManager.getText("Search"));
+        GoToRoutes.setText(LanguageManager.getText("Search"));
     }
     private void highlightIfEmpty(ComboBox<String> comboBox) {
         comboBox.valueProperty().addListener((observable, oldValue, newValue) -> {

@@ -22,12 +22,12 @@
             <VBox.margin>
                 <Insets bottom="30.0" top="30.0" />
             </VBox.margin>
-            <Button fx:id="Back4" maxHeight="-Infinity" maxWidth="166.0" onAction="#onBackButtonClick" prefWidth="122.0" styleClass="back-button">
+            <Button fx:id="GoToRouteInformation" maxHeight="-Infinity" maxWidth="166.0" onAction="#goToNewScene" prefWidth="122.0" styleClass="back-button">
                 <HBox.margin>
                     <Insets />
                 </HBox.margin>
             </Button>
-            <Button fx:id="Home4" onAction="#onHomeButtonClick" prefWidth="106.0" styleClass="home-button">
+            <Button fx:id="GoToStart" onAction="#goToNewScene" prefWidth="106.0" styleClass="home-button">
                 <HBox.margin>
                     <Insets left="81.0" />
                 </HBox.margin>
@@ -50,7 +50,7 @@
             <VBox.margin>
                 <Insets top="45.0" />
             </VBox.margin>
-            <VBox fx:id="Journeys" styleClass="label-style-tijd"/>
+            <VBox fx:id="GoToEnd" styleClass="label-style-tijd"/>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0">
                 <HBox.margin>
                     <Insets />

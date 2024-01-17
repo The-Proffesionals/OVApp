@@ -28,6 +28,7 @@ public class TravelHistoryController extends SceneController {
                 Journey journey = RouteInformation.journeyhistory.get(i);
                 Button button = new Button(journey.getStart().getPoint().getName() + " -> " + journey.getEnd().getPoint().getName() + " " + journey.getStart().getTime() + " -> "+ journey.getEnd().getTime() + " " + (journey.getbusOrTrain()? "Bus" : "Train" ));
                 button.getStyleClass().add("label-style-History");
+                button.setId("GoToRouteInformation");
                 button.setOnAction(actionEvent -> {
                     try {
                         goToRouteInformation(actionEvent, journey);
@@ -44,18 +45,12 @@ public class TravelHistoryController extends SceneController {
     }
 
     @FXML
-    protected void onBackButtonClick(ActionEvent actionEvent) throws IOException{
+    protected void goToNewScene(ActionEvent actionEvent) throws IOException{
         getScene(actionEvent);
         Node Home = (Node) actionEvent.getSource();
         setScene(Home.getId());
     }
-    @FXML
-    protected void onHomeButtonClick(ActionEvent actionEvent) throws IOException {
-        getScene(actionEvent);
-        Node Home = (Node) actionEvent.getSource();
-        setScene(Home.getId());
-    }
-
+    
     private void goToRouteInformation(ActionEvent actionEvent, Journey journey) throws IOException {
         // RouteInformation.departureDestination = journey.getDeparture();
         // RouteInformation.arrivalDestination = journey.getArrival();
