@@ -12,18 +12,9 @@ import java.io.IOException;
 import java.time.LocalTime;
 import java.util.List;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
-import javafx.event.EventHandler;
-
-public class RouteController {
+public class RouteController extends SceneController {
     @FXML
     private Label route;
-    public Label bestOption;
-
     @FXML
     private VBox GoToEnd;
     @FXML
@@ -77,14 +68,9 @@ public class RouteController {
         Node newScene = (Node) actionEvent.getSource();
         setScene(newScene.getId());
     }
+
     public void FillText() {
-        bestOption.setText(LanguageManager.getText("bestOption"));
-//        Favorite_select.setText(LanguageManager.getText("Favorite_select"));
-//        TravelHistory_select.setText(LanguageManager.getText("TravelHistory_select"));
+
     }
-    public void FillText() {
-        bestOption.setText(LanguageManager.getText("bestOption"));
-//        Favorite_select.setText(LanguageManager.getText("Favorite_select"));
-//        TravelHistory_select.setText(LanguageManager.getText("TravelHistory_select"));
-    }
+
 }

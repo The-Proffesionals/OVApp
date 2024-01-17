@@ -101,8 +101,7 @@ public class RouteInformationController extends SceneController implements Initi
             } else {
                 RouteInformation.departureorarrival = true;
             }
-            SceneController sceneController = new SceneController(actionEvent);
-            sceneController.setScene("Routes");
+            goToNewScene(actionEvent);
         } else {
             if (ArrBox.getValue() != null&& DepBox.getValue() != null && ArrBox.getValue().equals(DepBox.getValue())){
                 ArrBox.setStyle("-fx-background-color: #FFD6CC;");
