@@ -70,7 +70,7 @@ public class RouteController extends SceneController {
     }
 
     public void FillText() {
-
+        route.setText(LanguageManager.getText("bestOption"));
     }
 
 }
