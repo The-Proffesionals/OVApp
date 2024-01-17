@@ -12,13 +12,23 @@ import java.io.IOException;
 import java.time.LocalTime;
 import java.util.List;
 
-public class RouteController extends SceneController {
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+import javafx.event.EventHandler;
+
+public class RouteController {
     @FXML
     private Label route;
+    public Label bestOption;
+
     @FXML
     private VBox GoToEnd;
     @FXML
     private Button FavoriteButton;
+
 
     @FXML
     protected void initialize() {
@@ -45,6 +55,7 @@ public class RouteController extends SceneController {
             });
             GoToEnd.getChildren().add(route);
         }
+        FillText();
     }
 
     @FXML
@@ -52,13 +63,12 @@ public class RouteController extends SceneController {
         List<List<String>> favoritesList = RouteInformation.favorite;
         if (favoritesList.contains(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination))) {
             FavoriteButton.getStyleClass().add("starklick-button");
-            FavoriteButton.setDisable(true);
+            FavoriteButton.setDisable(false);
         } else {
             RouteInformation.favorite.add(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination));
             FavoriteButton.getStyleClass().add("starklick-button");
-            FavoriteButton.setDisable(true);
+            FavoriteButton.setDisable(false);
         }
-
     }
 
     @FXML
@@ -66,5 +76,15 @@ public class RouteController extends SceneController {
         getScene(actionEvent);
         Node newScene = (Node) actionEvent.getSource();
         setScene(newScene.getId());
+    }
+    public void FillText() {
+        bestOption.setText(LanguageManager.getText("bestOption"));
+//        Favorite_select.setText(LanguageManager.getText("Favorite_select"));
+//        TravelHistory_select.setText(LanguageManager.getText("TravelHistory_select"));
+    }
+    public void FillText() {
+        bestOption.setText(LanguageManager.getText("bestOption"));
+//        Favorite_select.setText(LanguageManager.getText("Favorite_select"));
+//        TravelHistory_select.setText(LanguageManager.getText("TravelHistory_select"));
     }
 }

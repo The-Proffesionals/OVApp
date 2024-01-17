@@ -35,9 +35,9 @@ public class RouteInformationController extends SceneController implements Initi
     private Button Vertrek;
     @FXML
     private Button Aankomst;
+    @FXML
+    private ComboBox<String> DepartureOrArival;
     
-    private boolean depOrArrTime = true;
-
     private ObservableList<String> allStations = FXCollections.observableArrayList("Den Helder C","Utrecht C","Amsterdam C","Den Bosch C","Eindhoven C","Roermond C","Maastricht C");
     private LocalTime currentTime = LocalTime.now();
 
@@ -47,22 +47,27 @@ public class RouteInformationController extends SceneController implements Initi
         ArrBox.setItems(allStations);
         DepBox.setItems(allStations);
 
+        DepartureOrArival.getItems().add(LanguageManager.getText("Vertrek"));
+        DepartureOrArival.getItems().add(LanguageManager.getText("Aankomst"));
+        DepartureOrArival.setValue(LanguageManager.getText("Vertrek"));
+
         for (int hour = 0; hour < 24; hour++) {
             HourBox.getItems().add(hour);
         }
         HourBox.setValue(currentTime.getHour());
-        for (int minutes = 0; minutes <= 60; minutes += 5) {
+        for (int minutes = 0; minutes < 60; minutes += 5) {
             if (minutes < 10) {
                 MinutesBox.getItems().add("0" + minutes); 
             } else{
                 MinutesBox.getItems().add(String.valueOf(minutes));
             }
         }
-        MinutesBox.setValue(String.valueOf(currentTime.getMinute()));
+        if (currentTime.getMinute() < 10) {
+            MinutesBox.setValue("0" + currentTime.getMinute());
+        } else {
+            MinutesBox.setValue(String.valueOf(currentTime.getMinute()));
+        }
         DatePicker.setValue(LocalDate.now());
-
-        Vertrek.setStyle("-fx-text-fill: #0A1758;");
-
 
         FillText();
         addCurrentJourney();
@@ -74,20 +79,6 @@ public class RouteInformationController extends SceneController implements Initi
         getScene(actionEvent);
         Node Home = (Node) actionEvent.getSource();
         setScene(Home.getId());
-    }
-
-    @FXML
-    protected void onDepartureButtonClick() {
-        depOrArrTime = true;
-        Vertrek.setStyle("-fx-text-fill: #0A1758;");
-        Aankomst.setStyle("-fx-text-fill: #808080;");
-    }
-
-    @FXML
-    protected void onArrivalButtonClick() {
-        depOrArrTime = false;
-        Vertrek.setStyle("-fx-text-fill: #808080;");
-        Aankomst.setStyle("-fx-text-fill: #0A1758;");
     }
 
     @FXML
@@ -105,11 +96,13 @@ public class RouteInformationController extends SceneController implements Initi
             RouteInformation.hours = HourBox.getValue();
             RouteInformation.minutes = Integer.parseInt(MinutesBox.getValue());
             RouteInformation.date = DatePicker.getValue();
-            RouteInformation.departureorarrival = depOrArrTime;
-
-            getScene(actionEvent);
-            Node Search = (Node) actionEvent.getSource();
-            setScene(Search.getId());
+            if (DepartureOrArival.getValue().equals(LanguageManager.getText("Aankomst"))) {
+                RouteInformation.departureorarrival = false;
+            } else {
+                RouteInformation.departureorarrival = true;
+            }
+            SceneController sceneController = new SceneController(actionEvent);
+            sceneController.setScene("Routes");
         } else {
             if (ArrBox.getValue() != null&& DepBox.getValue() != null && ArrBox.getValue().equals(DepBox.getValue())){
                 ArrBox.setStyle("-fx-background-color: #FFD6CC;");
@@ -119,8 +112,6 @@ public class RouteInformationController extends SceneController implements Initi
         }
     }
     public void FillText() {
-        Aankomst.setText(LanguageManager.getText("Aankomst"));
-        Vertrek.setText(LanguageManager.getText("Vertrek"));
         DepBox.setPromptText(LanguageManager.getText("DepBox"));
         ArrBox.setPromptText(LanguageManager.getText("ArrBox"));
         GoToRoutes.setText(LanguageManager.getText("Search"));
@@ -158,7 +149,7 @@ public class RouteInformationController extends SceneController implements Initi
             DatePicker.setValue(RouteInformation.date);
         }
         if (RouteInformation.departureorarrival == false) {
-            onArrivalButtonClick();
+            DepartureOrArival.setValue(LanguageManager.getText("Aankomst"));
         }
 
     }
