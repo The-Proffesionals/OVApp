@@ -11,27 +11,7 @@ import java.time.format.DateTimeFormatter;
 public class EndController extends SceneController {
 
     @FXML
-    private Label date;
-    @FXML
-    private Label duration;
-    @FXML
-    private Label departureTime;
-    @FXML
-    private Label arrivalTime;
-    @FXML
-    private Label spoor;
-    @FXML
-    private Label spoor2;
-    @FXML
-    private Label travelInformation;
-    @FXML
-    private Label intermediateStops;
-    @FXML
-    private Label money;
-    @FXML
-    private Label departureDestination;
-    @FXML
-    private Label arrivalDestination;
+    private Label date, duration, departureTime, arrivalTime, spoor, spoor2, travelInformation, intermediateStops, money, departureDestination, arrivalDestination;
 
     @FXML
     protected void initialize() {

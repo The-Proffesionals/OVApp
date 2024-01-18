@@ -29,7 +29,7 @@ public class GraphManipulate { // class for manipulating the graph
     }
 
     private Journey makeJourney(Point departure, Point arrival, LocalTime currentTime, Boolean startOrEndTime, Graph graph, Boolean BusOrTrain){
-        Journey journey = new Journey(BusOrTrain);
+        Journey journey = new Journey(BusOrTrain, startOrEndTime);
         Integer startIndex = getPointIndex(departure, graph);
         Integer endIndex = getPointIndex(arrival, graph);
         LocalTime newTime = currentTime;
