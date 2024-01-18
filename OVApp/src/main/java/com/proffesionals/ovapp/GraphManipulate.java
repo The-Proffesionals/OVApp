@@ -33,6 +33,8 @@ public class GraphManipulate { // class for manipulating the graph
         Integer startIndex = getPointIndex(departure, graph);
         Integer endIndex = getPointIndex(arrival, graph);
         LocalTime newTime = currentTime;
+        if (startIndex == null || endIndex == null){ return null;}
+
         if (startOrEndTime){
             if (startIndex < endIndex) {
                 Edge edge = graph.getEdges().get(startIndex);

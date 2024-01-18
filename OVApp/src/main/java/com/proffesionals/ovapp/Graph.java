@@ -6,7 +6,7 @@ public class Graph {
     private ArrayList<Edge> edges;
     private ArrayList<Point> points;
     
-    Graph(ArrayList<Edge> edges, ArrayList<Point> points){
+    public Graph(ArrayList<Edge> edges, ArrayList<Point> points){
         this.edges = edges;
         this.points = points;
     }

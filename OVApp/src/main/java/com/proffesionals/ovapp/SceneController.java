@@ -40,8 +40,6 @@ public class SceneController {
         stage = (Stage) main.getWindow();
     }
 
-
-
     public void setScene(String btnID) throws IOException {
         main.setRoot(FXMLLoader.load(getClass().getResource( sceneTitles.get(btnID) + ".fxml")));
       //  stage.show();
