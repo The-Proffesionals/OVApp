@@ -1,0 +1,214 @@
+@import url('fonts.css');
+
+.button:hover
+{
+  -fx-background-color : #07f7f7;
+}
+.button:pressed
+{
+    -fx-background-color : #29D9D9;
+}
+
+.button
+{
+    -fx-flex-shrink: 0;
+    -fx-background-radius: 75px;
+    -fx-background-color: #FF0;
+    -fx-font-family: "Inter";
+    -fx-text-fill: "#0a1758";
+    -fx-font-weight: bold;
+    -fx-font-size: 85;
+}
+.vertrek-button
+{
+    /* Display style */
+    -fx-display: flex;
+
+    /* Afmetingen */
+    -fx-width: 386px;
+    -fx-height: 102px;
+    -fx-background-color: transparent;
+
+    /* Flexbox eigenschappen */
+    -fx-flex-direction: column;
+    -fx-justify-content: center;
+    -fx-flex-shrink: 0;
+
+    /* Tekststijlen */
+    -fx-alignment: center;
+    -fx-font-family: "Inter";
+    -fx-font-size: 96px;
+    -fx-font-weight: bold;
+}
+.viekantButton
+{
+    -fx-min-width: 292px;
+    -fx-max-width: 292px;
+    -fx-min-height: 245px;
+    -fx-max-height: 245px;
+    -fx-flex-shrink: 0;
+
+    -fx-font-family: "Inter";
+    -fx-text-fill: "#0a1758";
+    -fx-font-weight: bold;
+    -fx-font-size: 115;
+}
+.back-button
+{
+    -fx-background-image: url('image/pijlterug.png');
+    -fx-background-size: 60px auto;
+    -fx-background-color: #FF0;
+    -fx-background-position: 50px center;
+    -fx-background-repeat: no-repeat;
+}
+.home-button
+{
+    -fx-background-image: url('image/house.png');
+    -fx-background-size: 110px auto;
+    -fx-background-color: #FF0;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.combo-box:hover
+{
+    -fx-background-color : #07f7f7;
+}
+.combo-box:pressed
+{
+    -fx-background-color : #29D9D9;
+}
+
+.combo-box
+{
+    -fx-flex-shrink: 0;
+    -fx-background-radius: 75px;
+    -fx-background-color: #FF0;
+}
+.combo-box .list-cell
+{
+    -fx-alignment: center;
+    -fx-font-size: 100;
+    /*-fx-background-color: BLUE;*/
+}
+.Kleinermaker .list-cell:focused
+{
+    -fx-alignment: center;
+    -fx-font-size: 85;
+}
+.combo-box-base .text
+{
+    -fx-fill: rgba(10, 23, 88, 1);
+    -fx-font-family: "Inter";
+    -fx-font-weight: bold;
+    -fx-padding: 0 20 0 20;
+}
+.combo-box-remove-arrow .arrow
+{
+     -fx-background-color: #CCCCCC;
+     -fx-background-radius: 75px;
+     -fx-background-size: 10px 10px;
+     -fx-padding: 0;
+}
+.tijdbox .list-cell
+{
+    -fx-alignment: center;
+    -fx-font-size: 90;
+    /*-fx-background-color: BLUE;*/
+}
+.tijdboxList .combo-box-popup .list-view
+{
+    -fx-max-height: 250px;
+    -fx-pref-height: 250px;
+}
+
+.label-style
+{
+    -fx-width: 151px;
+    -fx-height: 199px;
+    -fx-alignment: center;
+    -fx-text-fill: #0A1758;
+    -fx-font-family: "Inter";
+    -fx-font-size: 150px;
+    -fx-font-weight: normal;
+    -fx-text-alignment: center;
+    -fx-background-color: transparent;
+}
+
+.VrtAnkLable
+{
+    /* Display style */
+    -fx-display: flex;
+
+    /* Afmetingen */
+    -fx-width: 386px;
+    -fx-height: 102px;
+    -fx-background-color: transparent;
+
+    /* Flexbox eigenschappen */
+    -fx-flex-direction: column;
+    -fx-justify-content: center;
+    -fx-flex-shrink: 0;
+
+    /* Tekststijlen */
+    -fx-alignment: center;
+    -fx-font-family: "Inter";
+    -fx-font-size: 96px;
+    -fx-font-weight: bold;
+    -fx-text-fill: grey;
+}
+
+.date-picker
+{
+    -fx-background-color: transparent;
+}
+.date-picker .arrow-button:hover
+{
+    -fx-background-color : #07f7f7;
+}
+.date-picker .arrow-button:pressed
+{
+    -fx-background-color : #29D9D9;
+}
+.date-picker-popup
+{
+    -fx-font-size: 65px;
+}
+.date-picker-popup .month-year-pane .button .arrow-button
+{
+    -fx-background-color: "#0a1758";
+}
+.date-picker-popup .calendar-grid .week-number-cell
+{
+    -fx-pref-width: 0;
+    -fx-min-width: 0;
+    -fx-max-width: 0;
+    visibility: hidden;
+}
+.date-picker .arrow-button
+{
+     -fx-background-image: url('image/calendar.png');
+     -fx-shape: null;
+     -fx-flex-shrink: 0;
+     -fx-background-radius: 75px;
+     -fx-background-color: #FF0;
+     -fx-background-position: center;
+     -fx-background-repeat: no-repeat;
+}
+.date-picker .arrow-button .arrow
+{
+    -fx-shape: null;
+    -fx-background-color: transparent;
+}
+.date-picker .text-field
+{
+    -fx-opacity: 0;
+    -fx-pref-width: 0px;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+.date-picker .day-cell:hover
+{
+    -fx-background-color: "#FFFF00";
+    -fx-text-fill: black;
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" minHeight="0.0" minWidth="0.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proffesionals.ovapp.RouteInformationController">
+   <AnchorPane prefHeight="1080.0" prefWidth="1920.0">
+      <children>
+           <DatePicker fx:id="DatePicker" layoutX="1596.0" layoutY="542.0" minHeight="220.0" minWidth="266.0" prefHeight="220.0" prefWidth="266.0" styleClass="viekantButton" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="295.0" AnchorPane.leftAnchor="1596.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="542.0" />
+         <Button layoutX="849.0" layoutY="295.0" onAction="#onSwapButtonClick" prefHeight="180.0" prefWidth="218.0" styleClass="vertrek-button" stylesheets="@../../../ncss.css">
+            <graphic>
+               <ImageView fitHeight="118.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../image/right-left-solid.png" />
+                  </image>
+               </ImageView>
+            </graphic></Button>
+          <Button fx:id="GoToStart" onAction="#goToNewScene" prefHeight="408.0" prefWidth="430.0" styleClass="back-button" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="869.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="1719.0" AnchorPane.topAnchor="37.0" />
+          <Button fx:id="GoToStart" layoutX="780.0" layoutY="87.0" onAction="#goToNewScene" prefHeight="412.0" prefWidth="482.0" styleClass="home-button" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="866.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="1461.0" AnchorPane.topAnchor="40.0" />
+         <ComboBox fx:id="ArrBox" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="593.0" AnchorPane.leftAnchor="1138.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="277.0">
+            <styleClass>
+               <String fx:value="list-cell" />
+               <String fx:value="Kleinermaker" />
+               <String fx:value="combo-box-remove-arrow" />
+            </styleClass></ComboBox>
+         <ComboBox fx:id="DepBox" layoutX="40.0" layoutY="265.0" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="605.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="1129.0" AnchorPane.topAnchor="265.0">
+            <styleClass>
+               <String fx:value="list-cell" />
+               <String fx:value="combo-box-remove-arrow" />
+               <String fx:value="Kleinermaker" />
+            </styleClass></ComboBox>
+
+           <ComboBox fx:id="DepartureOrArival" layoutX="42.0" layoutY="542.0" prefHeight="236.0" prefWidth="808.0" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="304.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="1122.0" AnchorPane.topAnchor="542.0">
+            <styleClass>
+               <String fx:value="list-cell" />
+               <String fx:value="Kleinermaker" />
+               <String fx:value="combo-box-remove-arrow" />
+            </styleClass></ComboBox>
+           <ComboBox fx:id="HourBox" layoutX="1020.0" layoutY="542.0" prefHeight="236.0" prefWidth="266.0" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="304.0" AnchorPane.leftAnchor="1020.0" AnchorPane.rightAnchor="642.0" AnchorPane.topAnchor="542.0">
+            <styleClass>
+               <String fx:value="combo-box-remove-arrow" />
+               <String fx:value="tijdbox" />
+               <String fx:value="tijdboxList" />
+            </styleClass></ComboBox>
+           <ComboBox fx:id="MinutesBox" layoutX="1347.0" layoutY="546.0" prefHeight="236.0" prefWidth="266.0" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="1347.0" AnchorPane.rightAnchor="315.0" AnchorPane.topAnchor="546.0">
+            <styleClass>
+               <String fx:value="combo-box-remove-arrow" />
+               <String fx:value="tijdbox" />
+               <String fx:value="tijdboxList" />
+            </styleClass></ComboBox>
+          <Button fx:id="GoToRoutes" onAction="#onSearchButtonClick" stylesheets="@../../../ncss.css" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="856.0" />
+                    <ImageView fitHeight="117.0" fitWidth="111.0" layoutX="87.0" layoutY="907.0" pickOnBounds="true" preserveRatio="true" />
+         <ImageView fitHeight="112.0" fitWidth="61.0" layoutX="1286.0" layoutY="606.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../image/dubblepont2.png" />
+            </image>
+         </ImageView>
+         <ImageView fitHeight="33.0" fitWidth="56.0" layoutX="692.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../image/arrowdown.png" />
+            </image>
+         </ImageView>
+      </children>
+   </AnchorPane>
+</VBox>

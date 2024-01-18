@@ -5,7 +5,7 @@ public class Edge {
     private Point point2;
     private int distance;
     
-    Edge(Point point1, Point point2, int distance){
+    public Edge(Point point1, Point point2, int distance){
         this.point1 = point1;
         this.point2 = point2;
         this.distance = distance;
@@ -22,5 +22,11 @@ public class Edge {
 
     public int getDistance() {
         return distance;
+    }
+    public float getPrice(){
+        return 0;
+    }
+    public int getTime(){
+        return 0;
     }
 }

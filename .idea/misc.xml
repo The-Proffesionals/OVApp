@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/OVApp/pom.xml" />
       </list>
     </option>
+    <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="openjdk-19" project-jdk-type="JavaSDK" />
 </project>

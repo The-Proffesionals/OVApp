@@ -3,22 +3,16 @@ package com.proffesionals.ovapp;
 import java.util.ArrayList;
 
 public class Graph {
-    private ArrayList<Edge> edgesUp;
-    private ArrayList<Edge> edgesDown;
+    private ArrayList<Edge> edges;
     private ArrayList<Point> points;
     
-    Graph(ArrayList<Edge> edgesUp, ArrayList<Edge> edgesDown, ArrayList<Point> points){
-        this.edgesDown = edgesDown;
-        this.edgesUp = edgesUp;
+    Graph(ArrayList<Edge> edges, ArrayList<Point> points){
+        this.edges = edges;
         this.points = points;
     }
 
-    public ArrayList<Edge> getEdgesUp() {
-        return edgesUp;
-    }
-
-    public ArrayList<Edge> getEdgesDown() {
-        return edgesDown;
+    public ArrayList<Edge> getEdges() {
+        return edges;
     }
 
     public ArrayList<Point> getPoints() {

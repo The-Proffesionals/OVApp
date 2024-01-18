@@ -1,0 +1,41 @@
+@import url('fonts.css');
+
+.button:hover
+{
+  -fx-background-color : #07f7f7;
+}
+
+.button
+{
+    -fx-flex-shrink: 0;
+    -fx-background-radius: 75px;
+    -fx-background-color: #FF0;
+
+    -fx-font-family: "Inter"; 
+    -fx-font-weight: bold;
+    -fx-text-fill: "#0a1758";
+    -fx-font-size: 85;
+}
+.languageD-button
+{
+    -fx-background-image: url('image/dutch.png');
+    -fx-background-size: 100px auto;
+    -fx-background-color: #FF0;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-radius: 30px;
+}
+.languageE-button
+{
+    -fx-background-image: url('image/eng.png');
+    -fx-background-size: 100px auto;
+    -fx-background-color: #FF0;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-radius: 30px;
+}
+
+
+
+
+
