@@ -52,14 +52,10 @@ public class RouteController extends SceneController {
     @FXML
     protected void onAddToFavorite() {
         List<List<String>> favoritesList = RouteInformation.favorite;
-        if (favoritesList.contains(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination))) {
-            FavoriteButton.getStyleClass().add("starklick-button");
-            FavoriteButton.setDisable(false);
-        } else {
+        if (!favoritesList.contains(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination))) {
             RouteInformation.favorite.add(List.of(RouteInformation.departureDestination, RouteInformation.arrivalDestination));
-            FavoriteButton.getStyleClass().add("starklick-button");
-            FavoriteButton.setDisable(false);
         }
+        FavoriteButton.getStyleClass().add("starklick-button");
     }
 
     @FXML

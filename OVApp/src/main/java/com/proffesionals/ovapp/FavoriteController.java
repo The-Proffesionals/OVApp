@@ -28,6 +28,7 @@ public class FavoriteController extends SceneController {
                 Button button = new Button(favorite.get(0) + " -> " + favorite.get(1));
                 Button remove = new Button();
                 button.setId("GoToRouteInformation");
+                remove.setId("GoToFavorite");
                 button.setOnAction(actionEvent -> {
                     try {
                         goToRouteInformation(actionEvent, favorite);
@@ -39,7 +40,7 @@ public class FavoriteController extends SceneController {
                 remove.setOnAction(actionEvent -> {
                     RouteInformation.favorite.remove(favorite);
                     try {
-                        setScene("GoToFavorite");
+                        goToNewScene(actionEvent);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

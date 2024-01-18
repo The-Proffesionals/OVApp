@@ -101,6 +101,7 @@ public class RouteInformationController extends SceneController implements Initi
             } else {
                 RouteInformation.departureorarrival = true;
             }
+
             goToNewScene(actionEvent);
         } else {
             if (ArrBox.getValue() != null&& DepBox.getValue() != null && ArrBox.getValue().equals(DepBox.getValue())){
