@@ -61,6 +61,7 @@ public class TravelHistoryController extends SceneController {
         RouteInformation.date = journey.getStart().getDate();
         RouteInformation.hours = journey.getStart().getTime().getHour();
         RouteInformation.minutes = journey.getStart().getTime().getMinute();
+        RouteInformation.departureorarrival = journey.getDepartureOrArival();
 
         getScene(actionEvent);
         Node Route_select = (Node) actionEvent.getSource();

@@ -49,8 +49,7 @@ public class RouteInformationController extends SceneController implements Initi
 
         DepartureOrArival.getItems().add(LanguageManager.getText("Vertrek"));
         DepartureOrArival.getItems().add(LanguageManager.getText("Aankomst"));
-        DepartureOrArival.setValue(LanguageManager.getText("Vertrek"));
-
+        
         for (int hour = 0; hour < 24; hour++) {
             HourBox.getItems().add(hour);
         }
@@ -150,6 +149,11 @@ public class RouteInformationController extends SceneController implements Initi
         }
         if (RouteInformation.departureorarrival == false) {
             DepartureOrArival.setValue(LanguageManager.getText("Aankomst"));
+        }
+        if (!RouteInformation.departureorarrival) {
+            DepartureOrArival.setValue(LanguageManager.getText("Aankomst"));
+        } else {
+            DepartureOrArival.setValue(LanguageManager.getText("Vertrek"));
         }
 
     }
