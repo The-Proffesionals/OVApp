@@ -36,7 +36,7 @@ public class GraphManipulate { // class for manipulating the graph
         if (startOrEndTime){
             if (startIndex < endIndex) {
                 Edge edge = graph.getEdges().get(startIndex);
-                journey.addStop(new Stop(edge.getPoint1(), newTime, RouteInformation.date));
+                journey.addStop(new JourneyStop(edge.getPoint1(), newTime, RouteInformation.date));
                 for (int i = startIndex; i < endIndex; i++) {
                     if (BusOrTrain){
                         Bus bus = new Bus(edge);
@@ -46,13 +46,13 @@ public class GraphManipulate { // class for manipulating the graph
                         newTime = newTime.plusMinutes(train.getTime());
                     }
                     edge = graph.getEdges().get(i);
-                    journey.addStop(new Stop(edge.getPoint2(), newTime, RouteInformation.date));
+                    journey.addStop(new JourneyStop(edge.getPoint2(), newTime, RouteInformation.date));
                 }
 
             } else {
                 for (int i = startIndex - 1; i > endIndex - 1; i--) {
                     Edge edge = graph.getEdges().get(i);
-                    journey.addStop(new Stop(edge.getPoint2(), newTime, RouteInformation.date));
+                    journey.addStop(new JourneyStop(edge.getPoint2(), newTime, RouteInformation.date));
                     if (BusOrTrain){
                         Bus bus = new Bus(edge);
                         newTime = newTime.plusMinutes(bus.getTime());
@@ -62,12 +62,12 @@ public class GraphManipulate { // class for manipulating the graph
                     }
                 }
                 Edge edge = graph.getEdges().get(endIndex);
-                journey.addStop(new Stop(edge.getPoint1(), newTime, RouteInformation.date));
+                journey.addStop(new JourneyStop(edge.getPoint1(), newTime, RouteInformation.date));
             }
         } else {
             if (startIndex < endIndex) {
                 Edge edge = graph.getEdges().get(startIndex);
-                journey.addStop(new Stop(edge.getPoint1(), newTime, RouteInformation.date));
+                journey.addStop(new JourneyStop(edge.getPoint1(), newTime, RouteInformation.date));
                 for (int i = startIndex; i < endIndex; i++) {
                     if (BusOrTrain){
                         Bus bus = new Bus(edge);
@@ -77,13 +77,13 @@ public class GraphManipulate { // class for manipulating the graph
                         newTime = newTime.minusMinutes(train.getTime());
                     }
                     edge = graph.getEdges().get(i);
-                    journey.addStop(new Stop(edge.getPoint2(), newTime, RouteInformation.date));
+                    journey.addStop(new JourneyStop(edge.getPoint2(), newTime, RouteInformation.date));
                 }
 
             } else {
                 for (int i = startIndex - 1; i > endIndex - 1; i--) {
                     Edge edge = graph.getEdges().get(i);
-                    journey.addStop(new Stop(edge.getPoint2(), newTime, RouteInformation.date));
+                    journey.addStop(new JourneyStop(edge.getPoint2(), newTime, RouteInformation.date));
                     if (BusOrTrain){
                         Bus bus = new Bus(edge);
                         newTime = newTime.minusMinutes(bus.getTime());
@@ -93,7 +93,7 @@ public class GraphManipulate { // class for manipulating the graph
                     }
                 }
                 Edge edge = graph.getEdges().get(endIndex);
-                journey.addStop(new Stop(edge.getPoint1(), newTime, RouteInformation.date));
+                journey.addStop(new JourneyStop(edge.getPoint1(), newTime, RouteInformation.date));
             }
             journey = journey.getReverseJourney();
         }
