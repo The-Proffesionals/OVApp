@@ -3,12 +3,12 @@ package com.proffesionals.ovapp;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Stop {
+public class JourneyStop {
     private Point point;
     private LocalTime time;
     private LocalDate date;
 
-    public Stop(Point point, LocalTime time, LocalDate date) {
+    public JourneyStop(Point point, LocalTime time, LocalDate date) {
         this.point = point;
         this.time = time;
         this.date = date;

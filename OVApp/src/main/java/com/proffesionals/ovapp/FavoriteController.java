@@ -46,8 +46,7 @@ public class FavoriteController extends SceneController {
                     }
                 });
                 remove.getStyleClass().add("starklick-button");
-                f.getChildren().add(button);
-                f.getChildren().add(remove);
+                f.getChildren().addAll(button, remove);
                 Favorite.getChildren().add(f);
             }
         }

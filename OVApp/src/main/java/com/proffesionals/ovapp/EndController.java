@@ -34,7 +34,7 @@ public class EndController extends SceneController {
         arrivalTime.setText(RouteInformation.currentJourney.getEnd().getTime().toString());
 
         travelInformation.setText(RouteInformation.currentJourney.getbusOrTrain() ? "Bus 69" : "Intercity");
-        intermediateStops.setText(String.valueOf(RouteInformation.currentJourney.getStops().size() - 2) + " " + LanguageManager.getText("intermediateStops"));
+        intermediateStops.setText(String.valueOf(RouteInformation.currentJourney.getJourneyStops().size() - 2) + " " + LanguageManager.getText("intermediateStops"));
         money.setText("€ " + RouteInformation.currentJourney.getPrice());
         departureDestination.setText(RouteInformation.currentJourney.getStart().getPoint().getName());
         arrivalDestination.setText(RouteInformation.currentJourney.getEnd().getPoint().getName());

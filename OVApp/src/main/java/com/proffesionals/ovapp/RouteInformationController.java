@@ -95,12 +95,9 @@ public class RouteInformationController extends SceneController implements Initi
             RouteInformation.hours = HourBox.getValue();
             RouteInformation.minutes = Integer.parseInt(MinutesBox.getValue());
             RouteInformation.date = DatePicker.getValue();
-            if (DepartureOrArival.getValue().equals(LanguageManager.getText("Aankomst"))) {
-                RouteInformation.departureorarrival = false;
-            } else {
-                RouteInformation.departureorarrival = true;
-            }
 
+            RouteInformation.departureorarrival = !DepartureOrArival.getValue().equals(LanguageManager.getText("Aankomst"));
+            
             goToNewScene(actionEvent);
         } else {
             if (ArrBox.getValue() != null&& DepBox.getValue() != null && ArrBox.getValue().equals(DepBox.getValue())){
@@ -116,14 +113,9 @@ public class RouteInformationController extends SceneController implements Initi
         GoToRoutes.setText(LanguageManager.getText("Search"));
     }
     private void highlightIfEmpty(ComboBox<String> comboBox) {
+        comboBox.valueProperty().removeListener((observable, oldValue, newValue) -> {});
         comboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue != null && !newValue.isEmpty()) {
-                // ComboBox is not empty, remove the highlighting
-                comboBox.setStyle("");
-            } else {
-                // ComboBox is empty, apply the highlighting
-                comboBox.setStyle("-fx-background-color: #FFD6CC;");
-            }
+            comboBox.setStyle(""); 
         });
         if (comboBox.getValue() == null || comboBox.getValue().isEmpty()) {
             comboBox.setStyle("-fx-background-color: #FFD6CC;");

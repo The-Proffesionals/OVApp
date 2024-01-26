@@ -7,34 +7,34 @@ import java.util.ArrayList;
 
 
 public class Journey {
-    private List<Stop> stops;
+    private List<JourneyStop> journeyStops;
     private boolean BusOrTrain;
     private boolean startOrEndTime;
 
     public Journey(boolean BusOrTrain, boolean startOrEndTime) {
         this.BusOrTrain = BusOrTrain;
         this.startOrEndTime = startOrEndTime;
-        this.stops = new ArrayList<>();
+        this.journeyStops = new ArrayList<>();
     }
 
     public boolean getDepartureOrArival(){
         return startOrEndTime;
     }
 
-    public void addStop(Stop stop) {
-        stops.add(stop);
+    public void addStop(JourneyStop stop) {
+        journeyStops.add(stop);
     }
 
-    public List<Stop> getStops() {
-        return stops;
+    public List<JourneyStop> getJourneyStops() {
+        return journeyStops;
     }
 
-    public Stop getStart() {
-        return stops.get(0);
+    public JourneyStop getStart() {
+        return journeyStops.get(0);
     }
 
-    public Stop getEnd() {
-        return stops.get(stops.size() - 1);
+    public JourneyStop getEnd() {
+        return journeyStops.get(journeyStops.size() - 1);
     }
 
     public boolean getbusOrTrain(){
@@ -51,8 +51,8 @@ public class Journey {
 
     public Journey getReverseJourney(){
         Journey reverseJourney = new Journey(BusOrTrain, startOrEndTime);
-        for (int i = stops.size() - 1; i >= 0; i--){
-            Stop stop = new Stop(stops.get(stops.size() - 1 - i).getPoint(), stops.get(i).getTime(), stops.get(i).getDate());
+        for (int i = journeyStops.size() - 1; i >= 0; i--){
+            JourneyStop stop = new JourneyStop(journeyStops.get(journeyStops.size() - 1 - i).getPoint(), journeyStops.get(i).getTime(), journeyStops.get(i).getDate());
             reverseJourney.addStop(stop);
         }
         return reverseJourney;

@@ -7,7 +7,7 @@ public class Train extends Edge{
     public Train(Edge edge){
         super(edge.getPoint1(), edge.getPoint2(), edge.getDistance());
     }
-
+    
     public float getPrice(){
         return priceVariable * getDistance();
     }
